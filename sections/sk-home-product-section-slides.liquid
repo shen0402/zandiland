@@ -1,0 +1,111 @@
+
+
+<div class="production-section-home">
+    <div class="product-section-heading-wrapper-home" data-ix="fadeindown">
+      <h2 class="section-heading center black">{{section.settings.main_heading}}</h2>
+    </div>
+    <div class="product-slider-wrapper">
+      <div class="product-slider-container">
+        <div class="product-slider-flex-row">
+  
+            {% for block in section.blocks %}
+  
+                <div class="product-slider-flex-col">
+                  <div class="product-slider-flex-col-inner">
+                    <div>
+                      <div class="product-slider-img-wrapper">
+                        <a href="{{block.settings.btn_url}}" class="product-slider-img-link w-inline-block"><img src="{{block.settings.bundle_image | img_url: '1100x' }}" loading="eager" alt="{{block.settings.bundle_name}}" class="product-slider-main-img"><img src="//cdn.shopify.com/s/files/1/1242/8658/files/product-bg-p-sk-update.png" loading="eager"  alt="Pink Background" class="product-slider-bg-img">
+                          <div class="product-slider-img-overlay"></div>
+                        </a>
+                      </div>
+                      <div class="product-slider-info-wrapper">
+                        <h4 class="product-slider-heading">
+                          <a href="{{block.settings.btn_url}}" class="product-slider-heading-link">{{block.settings.bundle_name}}</a>
+                        </h4>
+                        {% unless block.settings.bundle_sub_heading == blank %}
+                        <div class="product-slider-sub-heading">{{block.settings.bundle_sub_heading}}</div>
+                        {% endunless %}
+                          <div class="product-slider-price-text">{{block.settings.bundle_price}}</div>
+                      </div>
+                    </div>
+  
+                    
+                    <div class="product-slider-btn-wrapper">
+                      <a href="{{block.settings.btn_url}}" class="btn-main-sk btn-main-sm sk-collection-btn w-button">{{block.settings.btn_text}}</a>
+                    </div>
+                  </div>
+                </div>
+  
+  
+            {% endfor %}  
+  
+  
+          
+          
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  {% schema %}
+  {
+    "name": "Bundles Section",
+    "settings": [
+        {
+           "type": "text",
+           "id": "main_heading",
+           "label": "Main Heading",
+           "default": "SHOP EASY WITH OUR BUNDLES!"
+        }
+  
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Bundle",
+        "settings": [
+          {
+            "label": "Bundle Name",
+            "id": "bundle_name",
+            "type": "text"
+          },
+          {
+            "label": "Bundle Image",
+            "id": "bundle_image",
+            "type": "image_picker"
+          },
+          {
+            "label": "Bundle Secondary Heading",
+            "id": "bundle_sub_heading",
+            "type": "text"
+          },
+          {
+            "label": "Bundle Price",
+            "id": "bundle_price",
+            "type": "text"
+          },
+          {
+            "label": "Bundle Button Text",
+            "id": "btn_text",
+            "default": "Learn More",
+            "type": "text"
+          },
+          {
+            "label": "Bundle Link",
+            "id": "btn_url",
+            "type": "url"
+          }
+  
+        ]
+      }
+    ]
+  }
+  {% endschema %}
+  
+  
+  
+  

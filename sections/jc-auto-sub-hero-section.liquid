@@ -1,0 +1,35 @@
+<div class="bar-cta">
+  <div class="container-xl">
+    <div class="bar-cta-flex-row">
+      <h2 class="bar-cta-heading-auto">{{section.settings.heading_text}}</h2>
+      <a href="{{section.settings.link_url}}" class="bar-cta-flex-link w-inline-block">
+        <div>{{section.settings.link_text}}</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min-new.png" alt="Arrow" class="bar-cta-flex-img"></a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Black Bar Section" ,
+  "settings": [	
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "LOOKING TO UPDATE YOUR PREFERENCES?",
+         "label": "Heading Text"
+      },
+      {
+         "type": "text",
+         "id": "link_text",
+         "default": "Manage your Auto Shipments",
+         "label": "Link Text"
+      },
+      {
+         "type": "url",
+         "id": "link_url",
+         "label": "Link URL"
+      }
+     
+  ]
+}
+{% endschema %}

@@ -1,0 +1,151 @@
+
+
+<div class="banner-section-home banner-section-home-{{section.id}}">
+  
+
+  {% if section.settings.whole_banner_url %}
+    <a class="banner-url" href="{{section.settings.whole_banner_url}}"></a>
+    {%endif%}
+
+  <div class="banner-content-wrapper">
+    <div class="banner-container-home-sm" style="justify-content: {{section.settings.text_placement}};">
+      <div class="banner-content-inner" style="text-align: {{section.settings.text_align}}" data-ix="fadeinleft">
+        <div class="banner-heading-wrapper">
+          <h3 class="w-basic-heading section-heading" id="banner-section-1-heading">{{section.settings.banner-section-1-heading}}</h3>
+        </div>
+        <div class="banner-text-wrapper">
+          <p class="banner-text secondary" id="banner-section-1-label">{{section.settings.banner-section-1-label}}</p>
+          <p class="banner-text" id="banner-section-1-sub-heading" >{{section.settings.banner-section-1-sub-heading}}</p>
+        </div>
+        {% unless section.settings.hide_btn %}
+        <div class="banner-btn-wrapper">
+          <a href="{{section.settings.banner-section-1-btn-link}}" class="btn-main w-button" id="banner-section-1-btn" style="background-color: {{section.settings.banner-section-1-btn-color}};" >{{section.settings.banner-section-1-btn-text}}</a>
+        </div>
+        {%endunless%}
+      </div>
+    </div>
+  </div>
+  {% unless section.settings.hide_new_badge %}
+    <div class="banner-badge-wrapper-home"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/new-badge-min-sk-update.png" loading="lazy" alt="" class="banner-badge-home"></div>
+  {%endunless%}
+</div>
+
+{% if section.settings.banner_1_bg_image %}
+  <style type="text/css">
+    .banner-section-home.banner-section-home-{{section.id}} {
+      background-image: url({{ section.settings.banner_1_bg_image | img_url: '1800x' }});
+    };
+  </style>
+  {% else %}
+  <style type="text/css">
+    .banner-section-home.banner-section-home-{{section.id}} {
+      background-image: url('//cdn.shopify.com/s/files/1/0004/5829/3310/files/glow-min-sk-update.jpg');
+    };
+  </style>
+{% endif %}
+
+{% if section.settings.banner_1_bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+      .banner-section-home.banner-section-home-{{section.id}} {
+       background-image: url({{ section.settings.banner_1_bg_image_mobile | img_url: '1200x' }});
+     };
+
+    }
+  </style>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Image Banner 1",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_1_bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_1_bg_image_mobile",
+        "label": "Mobile Background Image"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-1-heading",
+        "label": "Main Heading",
+        "default": "Give Your Retail a Real #GlowUP"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-1-label",
+        "label": "Product Label",
+        "default": "Bikini Brightening Serum"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-1-sub-heading",
+        "label": "Sub Heading",
+        "default": "Get our latest creation and let this luxurious oil serum do its work on your hyperpigmentation and scarring"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-1-btn-text",
+        "label": "Button Text",
+        "default": "SHOP NOW"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_btn",
+        "label": "Hide Banner Button"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_new_badge",
+        "label": "Hide New Badge"
+      },
+      
+      {
+        "type": "url",
+        "id": "banner-section-1-btn-link",
+        "label": "Button Link"
+      },
+      {
+        "type":      "color",
+        "id":        "banner-section-1-btn-color",
+        "label":     "Button Color",
+        "default":   "#000000"
+      },
+      {
+          "type": "radio",
+          "id": "text_placement",
+          "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+          ],
+          "default":   "right",
+          "label": "Text Placement"
+      },
+      {
+          "type": "radio",
+          "id": "text_align",
+          "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+          ],
+          "default": "center",
+          "label": "Text Align"
+      },
+      {
+        "type": "url",
+        "id": "whole_banner_url",
+        "label": "Whole Banner URL"
+      }
+      
+  ]
+}
+{% endschema %}
+

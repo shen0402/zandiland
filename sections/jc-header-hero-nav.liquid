@@ -1,0 +1,45 @@
+<div class="nav-wrapper">
+  <div class="nav-top-bar">
+    <div class="container-large">
+      <div class="nav-top-flex-row">
+        <div class="nav-top-flex-col"><a href="https://www.facebook.com/zandikproducts/" target="_blank" class="nav-top-social-link w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/FB-Icon-black_1FB-Icon-black.png" alt="Facebook" class="nav-top-social-img"></a><a href="https://www.instagram.com/zandikproducts/" target="_blank" class="nav-top-social-link w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Instagram-Icon-black_1Instagram-Icon-black.png" alt="Instagram" class="nav-top-social-img"></a></div>
+        <div class="nav-top-flex-col">
+          <a href="/account" class="nav-top-meta-link w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Account-Icon_1Account-Icon.png" alt="Account" class="nav-top-meta-img nav-top-meta-img-alt"></a>
+          <a href="/cart" class="nav-top-meta-link nav-top-meta-link-cart w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Cart-Icon-Black_1Cart-Icon-Black.png" alt="Cart" class="nav-top-meta-img">
+            <div class="nav-cart-text">{{ cart.item_count }}</div>
+          </a>
+        </div>
+      </div>
+      <div class="nav-menu-flex-row">
+        <div class="nav-menu-flex-col">
+          <a href="/"  class="nav-menu-link w-inline-block">
+            <div>Home</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="nav-menu-link-img"></a>
+          <div data-hover="1" data-delay="0" class="nav-dropdown w-dropdown">
+            <div class="nav-dropdown-toggle w-dropdown-toggle">
+              <div>Products</div>
+              <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>
+              <a href="/pages/bundles" class="nav-dropdown-overlay-link w-inline-block"></a>
+            </div>
+            <nav class="nav-dropdown-menu w-dropdown-list"><a href="/collections/all-products" class="nav-dropdown-link w-dropdown-link">Shop All</a><a href="/pages/bundles" class="nav-dropdown-link w-dropdown-link">Bundles</a></nav>
+          </div>
+          <a href="/pages/marketing-materials" class="nav-menu-link w-inline-block">
+            <div>Marketing Library</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="nav-menu-link-img"></a>
+        </div><a href="/" class="nav-logo-link w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/ZK_Professional_SubLogo-min.png" alt="Zandi K Professional" class="nav-logo-img"></a>
+        <div class="nav-menu-flex-col">
+          <a href="/pages/auto-shipments" class="nav-menu-link w-inline-block">
+            <div>Auto Shipments</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="nav-menu-link-img"></a>
+          <a href="/blogs/insider-info" class="nav-menu-link w-inline-block">
+            <div>Insider Info</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="nav-menu-link-img"></a>
+          <a href="/pages/frequently-asked-questions" class="nav-menu-link w-inline-block">
+            <div>FAQs</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="nav-menu-link-img"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Navigation"
+}
+{% endschema %}

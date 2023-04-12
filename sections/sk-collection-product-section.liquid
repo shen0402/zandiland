@@ -1,0 +1,89 @@
+<div class="mid-wrapper-collection">
+  <div class="container-large less-padding">
+    <div class="menu-row-collection" data-ix="fadeindown">
+      <div class="menu-col-collection">
+        <a href="/collections/all-products" class="menu-link-collection w-inline-block">
+          <div>Shop All</div>
+        </a>
+      </div>
+      <div class="menu-bullet-collection">•</div>
+      <div class="menu-col-collection">
+        <a href="https://zandilandprofessional.com/pages/bundles " class="menu-link-collection w-inline-block">
+          <div>BUNDLES</div>
+        </a>
+      </div>
+      
+      <div class="menu-bullet-collection">•</div>
+      <div class="menu-col-collection">
+        <a href="/collections/exfoliation" class="menu-link-collection w-inline-block">
+          <div>Exfoliation</div>
+        </a>
+      </div>
+      <div class="menu-bullet-collection">•</div>
+      <div class="menu-col-collection">
+        <a href="/collections/hydration" class="menu-link-collection w-inline-block">
+          <div>Hydration</div>
+        </a>
+      </div>
+      <div class="menu-bullet-collection">•</div>
+      <div class="menu-col-collection">
+        <a href="/collections/serums" class="menu-link-collection w-inline-block">
+          <div>Serums</div>
+        </a>
+      </div>
+      <div class="menu-bullet-collection">•</div>
+      <div class="menu-col-collection">
+        <a href="/collections/back-bar" class="menu-link-collection w-inline-block">
+          <div>Back Bar</div>
+        </a>
+      </div>
+      <div class="menu-bullet-collection">•</div>
+      <div class="menu-col-collection">
+        <a href="/collections/clothing" class="menu-link-collection w-inline-block">
+          <div>Clothing</div>
+        </a>
+      </div>
+    </div>
+
+    {% if collection.products_count > 0 %}
+
+      {% paginate collection.products by 12 %}
+
+
+          <div class="flex-row-collection" data-ix="fadeinright">
+            {% for product in collection.products %}
+               
+              {% render 'sk-product-loop', product: product %}
+
+            {% endfor %}   
+
+
+            
+
+          </div>
+
+        {% if paginate.pages > 1 %}
+          {% include 'pagination' %}
+        {% endif %}
+      {% endpaginate %}
+
+    {% else %}
+
+      <div class="collection-page-empty-wrapper">
+        <p class="collection-page-empty-text">There are no products in this collection</p>
+      </div>
+
+    {% endif %}
+
+    
+
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Product Section"
+}
+{% endschema %}
+

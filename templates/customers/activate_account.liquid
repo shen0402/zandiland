@@ -1,0 +1,24 @@
+<div class="hero-wrapper-login hero-wrapper-login-activate">
+  <div class="hero-content-wrapper-login">
+    <div class="hero-container-login">
+
+      <div class="hero-content-inner-login hero-content-inner-activate">
+
+        <div class="hero-logo-wrapper-login"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/zk-professional-logo-b-min.png" loading="lazy" alt="Zandi K Professional" class="hero-logo-img-login"></div>
+
+        <div class="form-block-login w-form">
+          {% form 'activate_customer_password' %}
+          <input type="hidden" name="return_to" value="/" />
+            {{ form.errors | default_errors }}
+            <h1 class="hero-heading-login">Activate Your Account</h1>
+            <input type="password" value="" class="form-input-login w-input" name="customer[password]" id="CustomerPassword" placeholder="password">
+            <input type="password" value="" class="form-input-login w-input" name="customer[password_confirmation]" id="CustomerPasswordConfirmation" placeholder="confirm password">
+            <div class="form-btn-wrapper-login"><input type="submit" value="Create Account" data-wait="Please wait..." class="form-btn-login w-button"></div>
+          {% endform %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

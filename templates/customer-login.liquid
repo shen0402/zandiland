@@ -1,0 +1,54 @@
+<div class="hero-wrapper-login">
+  <div class="hero-content-wrapper-login">
+    <div class="hero-container-login">
+      <div class="hero-content-inner-login">
+        <div class="hero-logo-wrapper-login"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/zk-professional-logo-b-min.png" loading="lazy" alt="Zandi K Professional" class="hero-logo-img-login"></div>
+        <div class="form-block-login w-form">
+
+           {% form 'customer_login' %}
+           {{ form.errors | default_errors }}
+           <h1 class="hero-heading-login">Professional Login</h1><input type="email" class="form-input-login w-input" maxlength="256" name="customer[email]" placeholder="Email" id="email" required=""><input type="password" class="form-input-login form-input-login-no-margin w-input" maxlength="256" name="customer[password]" placeholder="Password" id="customerPassword" required="">
+           <div class="form-forgot-link-holder">
+             <a href="https://zandilandprofessional.com/account/login?recover" class="form-forgot-pw-link w-inline-block" data-ix="show-pw-form">
+               <div>Forgot Your Password?</div>
+             </a>
+           </div>
+           <div class="form-btn-wrapper-login"><input type="submit" value="Login" data-wait="Please wait..." class="form-btn-login w-button"></div>
+           <div class="form-bottom-wrapper-login">
+             <div class="form-bottom-text-login">DON&#x27;T HAVE A LOGIN YET?</div>
+             <a href="/" class="form-bottom-flex-link-login w-inline-block">
+               <div>Apply Now</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="form-bottom-flex-img-login"></a>
+           </div>
+           {% endform %}   
+
+        </div>
+        <div class="form-block-forgot-pw w-form">
+
+          {% form 'recover_customer_password' %}
+          {{ form.errors | default_errors }}
+            <div class="form-heading-forgot-pw">Enter your email address and we will send you an email with instructions on how to reset your password.</div><input type="email" class="form-input-login w-input" maxlength="256" name="email"  placeholder="Email" id="RecoverEmail" required="">
+            <div class="form-btn-wrapper-login"><input type="submit" value="Submit" data-wait="Please wait..." class="form-btn-login w-button"></div>
+            <div class="form-cancel-wrapper-login">
+              <a href="#" class="form-cancel-link-login w-inline-block" data-ix="hide-pw-form">
+                <div>Cancel</div>
+              </a>
+            </div>
+            {% if form.posted_successfully? %} <script> window.location = "https://zandilandprofessional.com/pages/password-reset-success"; </script> 
+            {% endif %}
+          {% endform %}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bar-cta-login">
+    <div class="container-large">
+      <div class="bar-cta-flex-row">
+        <h2 class="bar-cta-heading">PARTNER WITH US</h2>
+        <a href="https://partners.zandik.com/" class="bar-cta-flex-link w-inline-block" target="_blank">
+          <div>Join our Affiliate Program</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min-new.png" alt="Arrow" class="bar-cta-flex-img"></a>
+      </div>
+    </div>
+  </div>
+</div>

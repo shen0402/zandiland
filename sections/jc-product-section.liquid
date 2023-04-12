@@ -1,0 +1,261 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign compare_at_price = current_variant.compare_at_price -%}
+{%- assign price = current_variant.price -%}
+{% assign subHeading = product.metafields.subHeading.heading %}
+{% assign shortDescription = product.metafields.shortDescription.description %}
+{% assign productIngredients = product.metafields.productIngredients.ingredients %}
+{% assign productMsrp = product.metafields.productMsrp.msrp %}
+{% assign proTips = product.metafields.proTips.tips %}
+{% assign marketingMaterial = product.metafields.marketingMaterial.material %}
+{% assign normalQuantity = product.metafields.normalQuantity.quantity %}
+{% assign customQuantity = product.metafields.customQuantity.quantity %}
+
+
+
+{% assign is_available = current_variant.available %}
+{% if is_available == true %}
+  {% assign cart_btn_text = 'Add to Cart' %}
+  {% assign cart_disabled = '' %}
+  {% else %}
+  {% assign cart_btn_text = 'Sold Out' %}
+  {% assign cart_disabled = 'disabled="disabled"' %}
+{% endif %}
+
+
+{% if product.type == 'Gift Card' or product.images.size < 2 %}
+  {% assign jc_arrow_visibility = 'product-page-slider-arrow-hide' %}
+{% endif %}
+
+
+<div class="hero-wrapper-product">
+  <div class="container-large">
+    <div class="product-wrapper">
+      <div class="outer-row-product w-row">
+        <div class="outer-col-left-productt w-col w-col-7">
+          <div class="slider-wrapper-product">
+            <div class="heading-wrapper-product-mobile">
+              <div class="product-heading">{{product.title}}</div>
+              {% if subHeading %}
+                <div class="sub-heading-product">{{subHeading}}</div>
+              {% endif %}
+              
+            </div>
+            <div data-duration-in="300" data-duration-out="100" class="tabs-image-section-product w-tabs">
+
+              <div class="tabs-content-image-section-product w-tab-content">
+                {% for image in product.images %}
+                  <div data-w-tab="Tab {{ forloop.index }}" class="w-tab-pane {% if forloop.first == true %}w--tab-active{% endif %}">
+                    <div class="tab-content-inner-image-section-product"><img src="{{ image | img_url: '1000x' }}" alt="{{product.title}}" class="tab-product-img-product"></div>
+                  </div>
+                {% endfor %}
+              </div>
+
+              <div class="tabs-menu-image-section-product w-tab-menu">
+                {% for image in product.images %}
+                  <a data-w-tab="Tab {{ forloop.index }}" class="tabs-menu-link-image-section w-inline-block w-tab-link {% if forloop.first == true %}w--current{% endif %}" >
+                    <div class="tab-menu-bg-img-product" style="background-image: url({{ image | img_url: '250x' }});">
+                      
+                    </div>
+                  </a>
+                {% endfor %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="outer-col-right-product w-col w-col-5">
+          <div class="col-inner-product">
+            <div class="heading-wrapper-product">
+              <h1 class="product-heading">{{product.title}}</h1>
+              {% if subHeading %}
+                <h2 class="sub-heading-product">{{subHeading}}</h2>
+              {% endif %}
+            </div>
+            <div class="price-text-wrapper-product">
+               {% if is_available == true %}
+                 {% if compare_at_price > price  %}
+                  <div class="price-text-product">
+                   <span style="text-decoration: line-through">{{compare_at_price | money }}</span> <span id="price">{{current_variant.price | money }}</span>
+                  </div>
+                  {% else %}
+                 <div class="price-text-product" id="price">
+                {{current_variant.price | money }}
+                 </div>
+                 {% endif %}
+              {% else %}
+                <div class="price-text-product"><span style="text-decoration: line-through;">{{current_variant.price | money }}</span> Sold Out</div>
+              {% endif %}
+              {% if productMsrp %}
+                <div class="price-text-product-alt">{{productMsrp}}</div>
+              {% endif %}
+              
+            </div>
+
+            {% if shortDescription %}
+              <div class="product-description">{{shortDescription}}</div>
+            {% endif %}
+
+            <div class="form-block-product w-form">
+
+              {% form "product", product %}
+                <div class="form-inputs-wrapper-product">
+                  
+                  <div class="form-flex-col-product">
+                    {% if product.variants.size > 1 %}
+                      {% if product.options[0] %}
+                        {% assign used = '' %}
+                      <div class="product-options-flex-row">
+                        <label for="select-one" class="product-options-label">{{ product.options[0] }}</label>
+                        <div class="select-style">
+                          <select id='select-one' class="form-select-product w-select">
+                            {% for variant in product.variants %}
+                              {% unless used contains variant.option1 %}
+                                <option value="{{ variant.option1 }}">{{ variant.option1 }}</option>
+                                {% capture used %}{{ used }} {{ variant.option1 }}{% endcapture %}
+                              {% endunless %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+                      {% endif %}
+                      {% if product.options[1] %}
+                        {% assign used = '' %}
+                      <div class="product-options-flex-row">
+                        <label for="select-one" class="product-options-label">{{ product.options[1] }}</label>
+                        <div class="select-style">
+                          <select id='select-two' class="form-select-product w-select">
+                            {% for variant in product.variants %}
+                              {% unless used contains variant.option2 %}
+                                <option value="{{ variant.option2 }}">{{ variant.option2 }}</option>
+                                {% capture used %}{{ used }} {{ variant.option2 }}{% endcapture %}
+                              {% endunless %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                      {% endif %}
+                      {% if product.options[2] %}
+                        {% assign used = '' %}
+                      <div class="product-options-flex-row">
+                        <label for="select-one" class="product-options-label">{{ product.options[2] }}</label>
+                        <div class="select-style">
+                          <select id='select-three' class="form-select-product w-select">
+                            {% for variant in product.variants %}
+                              {% unless used contains variant.option3 %}
+                                <option value="{{ variant.option3 }}">{{ variant.option3 }}</option>
+                                {% capture used %}{{ used }} {{ variant.option3 }}{% endcapture %}
+                              {% endunless %}
+                            {% endfor %}
+                          </select>
+                       </div>
+                     </div>
+                      {% endif %}
+                    {% endif %}
+                    <input type="hidden"name="id" id="product-select" value="{{ product.variants.first.id }}" />
+                    <div class="product-options-flex-row">
+                      
+
+                      {% if customQuantity == 1 %}
+                        <div class="product-options-label">Quantity (must order in multiples of 6)</div>
+                        <input type="number" class="form-input-product w-input" value="6" min="6" step="6" name="quantity" id="Quantity">
+                        {% else %}
+                        <div class="product-options-label">Quantity</div>
+                        <input type="number" class="form-input-product w-input" value="1" min="1" name="quantity" id="Quantity">
+                      {% endif %}
+
+                        {% comment %}
+                          {% if marketingMaterial == 1 or normalQuantity == 1 %}
+                            <div class="product-options-label">Quantity</div>
+                            <input type="number" class="form-input-product w-input" value="1" min="1" name="quantity" id="Quantity">
+                            {% else %}
+                            <div class="product-options-label">Quantity (must order in multiples of 6)</div>
+                            <input type="number" class="form-input-product w-input" value="6" min="6" step="6" name="quantity" id="field-2">
+                          {% endif %}
+                        {% endcomment %}
+                      </div>
+                  </div>
+
+                </div> <!-- form-inputs-wrapper-product -->
+                <div class="ro_widget"></div>
+                <div class="form-btn-wrapper-product">
+
+                  {% comment %}
+                    <div class="form-btn-flex-col-product"><a href="#" class="form-btn-product-alt w-button">Add To Autoship</a></div>
+                    {% endcomment %}
+                    <div class="form-btn-flex-col-product form-btn-flex-col-product-alt">
+                      
+                      <input type="submit" value="{{cart_btn_text}}" data-wait="Please wait..." class="form-btn-product w-button addtocart {% unless is_available == true %}form-btn-product-hide{% endunless %}" id="jc-add-to-cart-btn">
+                      
+                      <input type="" value="{{cart_btn_text}}" data-wait="Please wait..." class="form-btn-product w-button {% if is_available == true %}form-btn-product-hide{% endif %}" id="jc-add-to-cart-btn-disabled" disabled="disabled">
+                      
+                      
+                  </div>
+                  </div>
+              {% endform %}
+
+  
+            </div> <!-- form-block-product -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% unless marketingMaterial == 1 %}
+
+<div class="tab-section-product">
+  <div data-duration-in="300" data-duration-out="100" class="tabs-product w-tabs">
+    <div class="tabs-menu-product w-tab-menu">
+      <a data-w-tab="Tab 1" class="tab-menu-link-product w-inline-block w-tab-link w--current">
+        <div>DESCRIPTION</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="tab-menu-link-img-product"></a>
+      <a data-w-tab="Tab 2" class="tab-menu-link-product tab-menu-link-product-border w-inline-block w-tab-link">
+        <div>INGREDIENTS</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="tab-menu-link-img-product"></a>
+      <a data-w-tab="Tab 3" class="tab-menu-link-product w-inline-block w-tab-link">
+        <div>Protips</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/underline-b-min.png" alt="Border" class="tab-menu-link-img-product"></a>
+    </div>
+    <div class="w-tab-content">
+      <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+        <div class="tab-inner-product">
+          <div class="tab-container-product">
+            <div class="tab-description-product w-richtext">
+              {{product.description}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-w-tab="Tab 2" class="w-tab-pane">
+        <div class="tab-inner-product">
+          <div class="tab-container-product">
+            <div class="tab-description-product w-richtext">
+              <p>{{productIngredients}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-w-tab="Tab 3" class="w-tab-pane">
+        <div class="tab-inner-product">
+          <div class="tab-container-product">
+            <div class="tab-description-product w-richtext">
+              {% if proTips %}
+                {{proTips}}
+             {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+
+
+
+{% schema %}
+{
+  "name": "Product Page"
+}
+{% endschema %}

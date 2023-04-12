@@ -1,0 +1,132 @@
+{% comment %}
+  <h1 class="mid-heading-collection">{{section.settings.heading_text}}</h1>
+{% endcomment %}
+
+<div class="menu-row-collection" data-ix="fadeindown">
+  <div class="menu-col-collection">
+    <a href="/collections/all-products" class="menu-link-collection w-inline-block">
+      <div>Shop All</div>
+    </a>
+  </div>
+  <div class="menu-bullet-collection">•</div>
+  <div class="menu-col-collection">
+    <a href="https://zandilandprofessional.com/pages/bundles " class="menu-link-collection w-inline-block  w--current">
+      <div>BUNDLES</div>
+    </a>
+  </div>
+
+  <div class="menu-bullet-collection">•</div>
+  <div class="menu-col-collection">
+    <a href="/collections/exfoliation" class="menu-link-collection w-inline-block">
+      <div>Exfoliation</div>
+    </a>
+  </div>
+  <div class="menu-bullet-collection">•</div>
+  <div class="menu-col-collection">
+    <a href="/collections/hydration" class="menu-link-collection w-inline-block">
+      <div>Hydration</div>
+    </a>
+  </div>
+  <div class="menu-bullet-collection">•</div>
+  <div class="menu-col-collection">
+    <a href="/collections/serums" class="menu-link-collection w-inline-block">
+      <div>Serums</div>
+    </a>
+  </div>
+  <div class="menu-bullet-collection">•</div>
+  <div class="menu-col-collection">
+    <a href="/collections/back-bar" class="menu-link-collection w-inline-block">
+      <div>Back Bar</div>
+    </a>
+  </div>
+  <div class="menu-bullet-collection">•</div>
+  <div class="menu-col-collection">
+    <a href="/collections/clothing" class="menu-link-collection w-inline-block">
+      <div>Clothing</div>
+    </a>
+  </div>
+</div>
+
+<div class="flex-row-bundles-page">
+  {% for block in section.blocks %}
+    <div class="flex-col-bundles-page">
+      <div class="flex-col-inner-collection">
+        <div class="flex-col-top-wrapper-collection">
+          <div class="flex-col-img-wrapper-collection">
+            <img
+              src="{{ block.settings.bundle_image | img_url: '800x' }}"
+              alt="{{block.settings.bundle_image.alt}}"
+              class="flex-col-img-bundle-page"
+
+            ><a href="{{block.settings.bundle_url}}" class="flex-col-overlay-link-collection w-inline-block"></a>
+          </div>
+          <h3 class="flex-col-heading-collection">{{ block.settings.bundle_name }}</h3>
+          <p class="flex-col-sub-heading-collection-bundle">
+            {{ block.settings.bundle_sub_heading }}
+          </p>
+          <div class="flex-col-price-text-collection">{{ block.settings.bundle_price }}</div>
+        </div>
+
+        <div class="flex-col-btn-wrapper-collection">
+          <a href="{{block.settings.bundle_url}}" class="btn-transparent w-button">
+            {{- block.settings.bundle_btn_text -}}
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Bundles Section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "default": "Bundles",
+      "label": "Heading Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Bundle",
+      "settings": [
+        {
+          "label": "Bundle Name",
+          "id": "bundle_name",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Image",
+          "id": "bundle_image",
+          "type": "image_picker"
+        },
+        {
+          "label": "Bundle Secondary Heading",
+          "id": "bundle_sub_heading",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Price",
+          "id": "bundle_price",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Button Text",
+          "id": "bundle_btn_text",
+          "default": "LEARN MORE",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Button Link",
+          "id": "bundle_url",
+          "type": "url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

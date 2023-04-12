@@ -1,0 +1,41 @@
+
+<div class="hero-wrapper-marketing">
+  <div class="hero-content-container-marketing">
+    <div class="hero-content-wrapper-marketing">
+      <h2 class="hero-heading-marketing">Zandi K Professional library</h2>
+      {%- comment -%}
+        <h1 class="hero-sub-heading-marketing">library</h1>
+      {%- endcomment -%}
+    </div>
+  </div>
+</div>
+<div class="tabs-section-marketing">
+  <div data-duration-in="300" data-duration-out="100" class="tabs-marketing w-tabs">
+    <div class="tabs-menu-markting w-tab-menu">
+      <a data-w-tab="Tab 1" class="tab-menu-link-marketing w-inline-block w-tab-link w--current">
+        <div>Digital Resources</div><img src="https://cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-p-min.png?v=1652482662" alt="Underline" class="tab-menu-link-img-marketing"></a>
+      <a data-w-tab="Tab 2" class="tab-menu-link-marketing tab-menu-link-marketing-border w-inline-block w-tab-link">
+        <div>Print Resources</div><img src="https://cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-p-min.png?v=1652482662" alt="Underline" class="tab-menu-link-img-marketing"></a>
+      <a data-w-tab="Tab 3" class="tab-menu-link-marketing w-inline-block w-tab-link">
+        <div>Affiliate Resources</div><img src="https://cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-p-min.png?v=1652482662" alt="Underline" class="tab-menu-link-img-marketing"></a>
+    </div>
+    <div class="w-tab-content">
+      <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+
+        {% section 'jc-library-digital-resources' %}
+
+      </div> <!-- w-tab-pane -->
+      <div data-w-tab="Tab 2" class="w-tab-pane">
+
+        {% section 'jc-library-print-resources' %}
+
+      </div> <!-- w-tab-pane -->
+      <div data-w-tab="Tab 3" class="w-tab-pane">
+
+        {% section 'jc-library-affiliate-resources' %}
+
+      </div> <!-- w-tab-pane -->
+    </div>
+  </div>
+</div>
+{% section 'jc-cta-section-marketing' %}

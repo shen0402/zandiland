@@ -1,0 +1,87 @@
+<div class="hero-wrapper-auto hero-wrapper-auto-{{section.id}}">
+  <div class="hero-content-container-auto w-clearfix">
+    <div class="hero-content-wrapper-auto {% if section.settings.text_placement == 'right' %}hero-content-inner-float-right{% elsif section.settings.text_placement == 'center' %}hero-content-inner-float-center{% else %}hero-content-inner-float-left{% endif %} {% if section.settings.text_align == 'right' %}hero-content-inner-align-right{% elsif section.settings.text_placement == 'center' %}hero-content-inner-align-center{% else %}hero-content-inner-align-left{% endif %}">
+      <h1 class="hero-main-heading-auto autoship" style="color: {{section.settings.font_color}};">{{section.settings.heading_text}}</h1>
+      <h2 class="hero-sub-heading-auto" style="color: {{section.settings.font_color}};">{{section.settings.sub_heading_text}}</h2>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.bg_image %}
+  <style type="text/css">
+    .hero-wrapper-auto.hero-wrapper-auto-{{section.id}} {
+      background-image: url({{ section.settings.bg_image | img_url: '1800x' }});
+    }
+  </style>
+{% endif %}
+
+{% if section.settings.bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+     .hero-wrapper-auto.hero-wrapper-auto-{{section.id}} {
+       background-image: url({{ section.settings.bg_image_mobile | img_url: '1200x' }});
+     }
+
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero Section" ,
+  "settings": [
+  	  {
+  	     "type": "image_picker",
+  	     "id": "bg_image",
+  	     "label": "Background Image"
+  	  },
+      {
+         "type": "image_picker",
+         "id": "bg_image_mobile",
+         "label": "Mobile Background Image"
+      },
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "auto ship",
+         "label": "Heading"
+      },
+
+      {
+         "type": "text",
+         "id": "sub_heading_text",
+         "default": "Program",
+         "label": "Secondaary Heading"
+      },
+      {
+         "type":      "color",
+         "id":        "font_color",
+         "label":     "Font Color",
+         "default":   "#000000"
+      },
+      {
+         "type": "radio",
+         "id": "text_placement",
+         "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+         ],
+         "default":   "right",
+         "label": "Font Placement"
+      },
+      {
+         "type": "radio",
+         "id": "text_align",
+         "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+         ],
+         "default":   "right",
+         "label": "Text Align"
+      }
+  ]
+}
+{% endschema %}

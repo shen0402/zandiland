@@ -1,0 +1,39 @@
+<div class="bottom-section-faq">
+  <div class="bottom-content-wrapper-faq">
+    <h3 class="bottom-heading-faq">{{section.settings.heading_text}}</h3>
+    <p class="bottom-text-faq">{{section.settings.sub_heading_text}}</p>
+    <div class="bottom-btn-wrapper-faq"><a href="{{section.settings.btn_url}}" class="btn-main w-button" target="_blank">{{section.settings.btn_text}}</a></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA Section" ,
+  "settings": [
+  	  	
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "HAVE GENERAL QUESTIONS?",
+         "label": "Heading"
+      },
+      {
+         "type": "text",
+         "id": "sub_heading_text",
+         "default": "For questions about Zandi K Products, head over to our Zandi K Products FAQ page.",
+         "label": "Secondaary Heading"
+      },
+      {
+         "type": "text",
+         "id": "btn_text",
+         "default": "Zandi K Products FAQ",
+         "label": "Button Text"
+      },
+      {
+         "type": "url",
+         "id": "btn_url",
+         "label": "Button URL"
+      }
+  ]
+}
+{% endschema %}

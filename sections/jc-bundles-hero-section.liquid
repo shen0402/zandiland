@@ -1,0 +1,15 @@
+<div class="hero-wrapper-collection" {% if section.settings.bg_image %}style="background-image: url({{ section.settings.bg_image | img_url: '1600x' }});"{% endif %}></div>
+
+{% schema %}
+{
+  "name": "Hero Section" ,
+  "settings": [
+  	  {
+  	     "type": "image_picker",
+  	     "id": "bg_image",
+  	     "label": "Background Image"
+  	  }
+
+  ]
+}
+{% endschema %}

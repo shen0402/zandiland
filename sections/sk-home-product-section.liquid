@@ -1,0 +1,110 @@
+
+
+
+
+<div class="production-section-home">
+  <div class="product-slider-wrapper">
+    <div class="product-slider-container">
+      <div class="product-slider-flex-row">
+
+      	{% for product in collections.all-products.products limit:6 %}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign compare_at_price = current_variant.compare_at_price -%}
+          {%- assign price = current_variant.price -%}
+      		{% assign sub_heading = product.metafields.subHeading.heading %}
+      		<div class="product-slider-flex-col">
+      		  <div class="product-slider-flex-col-inner">
+      		  	<div>
+      		  		<div class="product-slider-img-wrapper">
+      		  		  <a href="{{product.url}}" class="product-slider-img-link w-inline-block"><img src="{{product.featured_image | img_url: '1000x' }}" loading="eager" alt="{{product.title}}" class="product-slider-main-img"></a>
+      		  		</div>
+      		  		<div class="product-slider-info-wrapper">
+      		  		  <h4 class="w-basic-heading product-slider-heading">
+      		  		    <a href="{{product.url}}" class="product-slider-heading-link">{{product.title}}</a>
+      		  		  </h4>
+      		  		  {% unless sub_heading == blank %}
+      		  		      <div class="product-slider-sub-heading">{{sub_heading}}</div>
+      		  		  {% endunless %}
+                  {% if compare_at_price > price  %}
+                    <div class="product-slider-price-text"><span style="text-decoration: line-through;">{{ compare_at_price | money }}</span> {{price | money }}</div>
+                  {% else %}
+                    <div class="product-slider-price-text">{{price | money }}</div>
+                  {% endif %}
+      		  		</div>
+      		  	</div>
+      		    
+
+      		    <div class="product-slider-btn-wrapper">
+
+                <a href="{{product.url}}" class="btn-main w-button">Shop Now</a>
+                {% comment %}
+      		      {% form "product", product %}
+               
+                {% assign sk_custom_quantity_step = true %}
+
+                  {% if product.id == 7630561935572 %}
+                    {% assign sk_custom_quantity_step = false %}
+                  {% endif %}
+
+                  {% for collection in product.collections %}
+
+                    {% if collection.id == 401408950484 or
+                    collection.id == 401408917716 or
+                    collection.id == 215816077374 or 
+                    collection.id == 30592172094
+                     %}
+                        {% assign sk_custom_quantity_step = false %}
+                    {% endif %}
+                  {% endfor %}
+
+               
+
+                  {% assign is_available = product.available %}
+
+                  {% if is_available == true %}
+                      {% assign cart_btn_text = 'Add To Cart' %}
+                      {% assign cart_disabled = '' %}
+                    {% else %}
+                      {% assign cart_btn_text = 'Sold Out' %}
+                      {% assign cart_disabled = 'disabled="disabled"' %}
+                  {% endif %}
+
+                  {% if sk_custom_quantity_step == true %}
+                      <input type="number" class="form-quantity-input-product w-input" maxlength="256" name="quantity" value="6" min="6" step="6" id="Quantity" required="" style="display: none;">
+                    {% else %}
+                      <input type="number" class="form-quantity-input-product w-input" maxlength="256" name="quantity" value="1" min="1" pattern="[0-9]*" id="Quantity" required="" style="display: none;">
+                  {% endif %}
+                  
+
+                  <select name="id" class="jc-product-input-hide" style="display: none;">
+                    {% for variant in product.variants %}
+                      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}  value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                    {% endfor %}
+                  </select>
+
+                  <button class="btn-main btn-main-sm sk-collection-btn w-button" type="submit" {{cart_disabled}} >
+                    {{cart_btn_text}}
+                  </button>
+
+                {% endform %}  
+                {% endcomment %}
+      		    </div>
+      		  </div>
+      		</div>
+      	{% endfor %}
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Product Section"
+}
+{% endschema %}
+
+

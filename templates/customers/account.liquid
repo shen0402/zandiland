@@ -1,0 +1,76 @@
+
+  <div class="hero-wrapper-account">
+    <div class="content-holder-account">
+      <div class="heading-wrapper-account">
+        <h1 class="sub-heading-account">Welcome Back, {{customer.first_name}}!</h1>
+        <div class="heading-btn-wrapper-account">
+          <a href="/account/logout" class="btn-main btn-main-sm heading-btn-account w-button">Log Out</a>
+          <a href="account/login?recover" class="btn-main btn-main-sm  heading-btn-account w-button">Reset Password</a>
+        </div>
+      </div>
+      <div class="account-order-section">
+        <div class="flex-row-heading-account">
+          <div class="flex-col-account">
+            <div class="flex-col-heading-text-account">Order Date</div>
+          </div>
+          <div class="flex-col-account">
+            <div class="flex-col-heading-text-account">Status</div>
+          </div>
+          <div class="flex-col-account">
+            <div class="flex-col-heading-text-account">Price</div>
+          </div>
+          <div class="flex-col-account">
+            <div class="flex-col-heading-text-account">Order Number</div>
+          </div>
+        </div>
+
+        {% paginate customer.orders by 20 %}  
+          {% if customer.orders.size != 0 %}
+            {% for order in customer.orders %}
+              {% assign reorder_url = "" %}
+                  {% for line_item in order.line_items %}
+                    {% capture reorder_url %}{{ reorder_url | append: line_item.variant_id | append: ':' | append: line_item.quantity | append: ',' }}{% endcapture %}
+                {% endfor %}
+              <div class="flex-row-account">
+                <div class="flex-col-account">
+                  <div class="flex-col-text-account">{{ order.created_at | date: format: 'date' }}</div>
+                </div>
+                <div class="flex-col-account">
+                  <div class="flex-col-text-account">{{order.fulfillment_status}}</div>
+                </div>
+                <div class="flex-col-account">
+                  <div class="flex-col-text-account">{{ order.total_price | money }}</div>
+                </div>
+                <div class="flex-col-account flex-col-account-last">
+                  <div class="flex-col-text-account flex-col-text-account-last"><a href="{{order.customer_url}}" class="flex-col-account-link">{{ order.name }}</a></div>
+                  <a href="{{ '/cart/' | append: reorder_url }}" class="reorder-link-account w-inline-block">
+                    <div>Reorder</div>
+                  </a>
+                </div>
+                <a href="{{order.customer_url}}" class="flex-overlay-link-account w-inline-block">
+                  <div>&gt;</div>
+                </a>
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="jc-account-page-empty-wrapper">
+              <p class="jc-account-page-empty-text">You haven't placed any orders yet</p>
+            </div>
+          {% endif %}
+          {% if paginate.pages > 1 %}
+            {% include 'pagination' %}
+          {% endif %}
+          {% endpaginate %}
+
+        
+
+
+
+      </div>
+      <div class="bottom-wrapper-account">
+        <div class="bottom-text-account">Can’t find your order? Reach out to us <a href="mailto:orders@zandilandbeauty.com" class="bottom-text-account-link">HERE</a>.</div>
+      </div>
+      <div class="btn-wrapper-account"><a href="/tools/checkout/api/manage/subscription/app" class="btn-main btn-main-sm w-button">Manage Auto Shipments</a></div>
+    </div>
+  </div>
+  

@@ -1,0 +1,1465 @@
+{
+  "current": {
+    "color_text": "#3a3a3a",
+    "color_body_text": "#333232",
+    "color_sale_text": "#ea0606",
+    "color_button": "#3a3a3a",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3a3a3a",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#cccccc",
+    "color_text_field": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#685858",
+    "image_overlay_opacity": 40,
+    "color_borders": "#ebebeb",
+    "color_body_bg": "#ffffff",
+    "type_header_font": "helvetica_n7",
+    "type_header_base_size": 26,
+    "type_base_font": "helvetica_n4",
+    "type_base_size": 15,
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "share_image": "shopify:\/\/shop_images\/zl_pro-opengraph-min.jpg",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "shopify:\/\/shop_images\/favicon-zandiland-cat.png",
+    "enable_ajax": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Zandi_Land_Professional_Brand_Identity_FINAL_Transparent_-03.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#fa94f8",
+    "checkout_button_color": "#fa94f8",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "align_logo": "left",
+          "logo": "",
+          "logo_max_width": 100,
+          "main_linklist": "main-menu",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#3a3a3a",
+          "color_text": "#ffffff"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "footer-1": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Newsletter"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1"
+        ],
+        "settings": {
+          "show_payment_icons": true,
+          "color_footer_bg": "#f6f6f6",
+          "color_footer_text": "#333232",
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "jc-header-fixed-nav-modal": {
+        "type": "jc-header-fixed-nav-modal",
+        "settings": {
+        }
+      },
+      "jc-header-fixed-nav": {
+        "type": "jc-header-fixed-nav",
+        "settings": {
+        }
+      },
+      "jc-header-hero-nav": {
+        "type": "jc-header-hero-nav",
+        "settings": {
+        }
+      },
+      "jc-footer": {
+        "type": "jc-footer",
+        "settings": {
+        }
+      },
+      "cart-template-original": {
+        "type": "cart-template-original",
+        "settings": {
+          "cart_ajax_enable": false,
+          "cart_notes_enable": false
+        }
+      },
+      "jc-library-digital-resources": {
+        "type": "jc-library-digital-resources",
+        "blocks": {
+          "1601653909799": {
+            "type": "text",
+            "settings": {
+              "resource_name": "Zandi Land Pro Marketing Library",
+              "resource_type": "product_images",
+              "resource_file_type": "image",
+              "resource_url": "https:\/\/www.lingoapp.com\/104776\/k\/dzmqAm",
+              "resource_image": "shopify:\/\/shop_images\/Screen_Shot_2023-01-30_at_6.40.08_PM.png"
+            }
+          }
+        },
+        "block_order": [
+          "1601653909799"
+        ],
+        "settings": {
+          "heading_text": "Digital Resources",
+          "heading_paragraph": "Looking for something to use on your website or social media? Look no further than our curated collection full of gorgeous, high quality images ready for your use!"
+        }
+      },
+      "jc-library-print-resources": {
+        "type": "jc-library-print-resources",
+        "blocks": {
+          "1601654133969": {
+            "type": "text",
+            "settings": {
+              "resource_name": "",
+              "resource_type": "informational",
+              "resource_file_type": "pdf",
+              "resource_url": "https:\/\/www.lingoapp.com\/104776\/k\/dzmqAm"
+            }
+          }
+        },
+        "block_order": [
+          "1601654133969"
+        ],
+        "settings": {
+          "heading_text": "Print Resources",
+          "heading_paragraph": "We know that great branding helps sell products! If you are looking for something to print out for your clientele, take a stop here and download whatever strikes your fancy. Your local printer will be able to turn these files into magical collateral to sell yourself and our products!"
+        }
+      },
+      "jc-library-affiliate-resources": {
+        "type": "jc-library-affiliate-resources",
+        "blocks": {
+          "1601653410356": {
+            "type": "text",
+            "settings": {
+              "resource_name": "Zandi Land Marketing Library",
+              "resource_type": "instagram_facebook_posts",
+              "resource_file_type": "image",
+              "resource_url": "https:\/\/www.lingoapp.com\/104776\/k\/dzmqAm",
+              "resource_image": "shopify:\/\/shop_images\/Screen_Shot_2023-01-30_at_6.40.08_PM.png"
+            }
+          }
+        },
+        "block_order": [
+          "1601653410356"
+        ],
+        "settings": {
+          "heading_text": "Affiliate Resources",
+          "heading_paragraph": "Sell Zandi K Products right from your phone or computer and we’ll take care of the rest! By joining our affiliate program, you can earn commissions right from your website or social media and we will ship our products to your customers. Download these great graphics to promote your affiliate sales."
+        }
+      },
+      "jc-cta-section-marketing": {
+        "type": "jc-cta-section-marketing",
+        "settings": {
+          "heading_text": "LOOKING FOR IN-STORE MARKETING MATERIALS?",
+          "link_text": "Work smarter not harder for your sales. We got your marketing covered! View our physical materials available for sale here.",
+          "link_url": "shopify:\/\/products\/marketing-materials",
+          "bg_image": "shopify:\/\/shop_images\/DJP_1454-Edit_.5x.jpg"
+        }
+      },
+      "jc-professionals-section": {
+        "type": "jc-professionals-section",
+        "blocks": {
+          "fbd7fa2c-751d-4edc-ae10-a9cf03df1997": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-19_.5x.png",
+              "icon_heading": "ingredients",
+              "icon_content": "<p>We've got the good stuff on deck! Our products are all formulated in house with safety, quality and effectiveness in mind. Our no gunk squeeze tubes make sure your products stay fresh and bacteria free right up to the last drop. And our products are vegan, cruelty free, paraben free, diversely formulated for all skin needs and <em>affordable <\/em>because we are on a mission to make quality products accessible to all women! Learn more about our products and ingredients <a href=\"\/collections\/all-products\" title=\"All Products\">here.<\/a> <\/p>"
+            }
+          },
+          "bec05df8-a5a4-41e1-ac23-459f4143c299": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-24_.5x.png",
+              "icon_heading": "for pros, by pros",
+              "icon_content": "<p>As industry professionals and service providers, our products were created because we wanted to sell something we believed in! And because we have been exactly where you are, we always create our products with the client and waxer in mind!<\/p>"
+            }
+          },
+          "2da20bbf-c935-4230-9ca4-8c83be6aaafa": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-7_.5x.png",
+              "icon_heading": "we make it easy to make money",
+              "icon_content": "<p>We provide great margins so that you can see your profit grow on each transaction. Our Professional pricing always offers margins of 50% or more, with tons of ways to save even more! Once you get your account set up you will have access to all of this pricing, introductory specials, and Pro exclusive back bar products. Plus you will gain access to our affiliate program so you can make money without breaking a sweat! <\/p>"
+            }
+          },
+          "b4fd1a55-4905-4550-88a2-ceb7c0980c59": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-18_.5x.png",
+              "icon_heading": "Your retail ride or die",
+              "icon_content": "<p>Hopefully it doesn’t come to that. But we are here to support your success! Your Pro account includes 24\/7 access to your password protected, professional only site where you can shop, download marketing material, view your account and even set up auto shipments. We make it easy for you to reach us for anything you need, whether its via email, text or web chat. <\/p>"
+            }
+          },
+          "e7cca7b6-e763-4f17-a55d-0cc9dd4c45d5": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-25_.5x.png",
+              "icon_heading": "in it to win it",
+              "icon_content": "<p>As a wholesale partner, you will always be featured on our <a href=\"https:\/\/zandik.com\/pages\/store-locator\">online retail locator<\/a> so new customers can find your business! And we have an amazing online social community where we will always shout out our brand partners. Check out our Instagram <a href=\"https:\/\/www.instagram.com\/zandikproducts\/\">@zandikproducts<\/a>.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "fbd7fa2c-751d-4edc-ae10-a9cf03df1997",
+          "bec05df8-a5a4-41e1-ac23-459f4143c299",
+          "2da20bbf-c935-4230-9ca4-8c83be6aaafa",
+          "b4fd1a55-4905-4550-88a2-ceb7c0980c59",
+          "e7cca7b6-e763-4f17-a55d-0cc9dd4c45d5"
+        ],
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/5M0A4101-Edit_2_1.jpg",
+          "font_color": "#ffffff",
+          "text_placement": "center",
+          "text_align": "center",
+          "hero_heading": "BECOME A ZANDI LAND RETAIL PARTNER",
+          "wholesale_heading": "BECOME A ZANDILAND RETAIL PARTNER",
+          "sub_hero_btn_text": "Log in here",
+          "sub_hero_btn_url": "https:\/\/zandikprofessional.com\/account\/login",
+          "icon_section_heading": "SO, WHY PARTNER WITH US?",
+          "icon_section_heading_text": "<p>As a professional, you know that the right products make for happy repeat clients that will go out of their way to refer your business! Our products will help do that for you! Let's make this a game-changer for your clients and your business.<\/p>",
+          "form_heading": "wholesale application form",
+          "form_sub_heading": "(All Wholesale accounts will require a Resale ID number and Tax ID number be provided for verification before initial order).",
+          "cta_heading": "want to try our products?",
+          "cta_content": "<p>We have full and travel sizes available for you to sample on our retail website at <a href=\"https:\/\/zandilandbeauty.com\/\" target=\"_blank\" title=\"https:\/\/zandilandbeauty.com\/\">www.zandilandbeauty.com<\/a>. If you aren’t ready to sign up for a professional account just yet, but have more questions feel free to reach out via email at <a href=\"mailto:orders@zandilandprofessional.com\" title=\"mailto:orders@zandilandprofessional.com\">orders@zandilandbeauty.com<\/a>. <\/p>",
+          "cta_image": "shopify:\/\/shop_images\/DJP_1634_.75x.jpg"
+        }
+      },
+      "jc-auto-hero-section": {
+        "type": "jc-auto-hero-section",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Short_Email_Header_Image_700_x_300_px_10_x_4_in_1.png",
+          "heading_text": "auto ship",
+          "sub_heading_text": "Program",
+          "font_color": "#000000",
+          "text_placement": "right",
+          "text_align": "right"
+        }
+      },
+      "jc-auto-sub-hero-section": {
+        "type": "jc-auto-sub-hero-section",
+        "settings": {
+          "heading_text": "LOOKING TO UPDATE YOUR PREFERENCES?",
+          "link_text": "Manage your Auto Shipments",
+          "link_url": "https:\/\/zandikprofessional.com\/account"
+        }
+      },
+      "jc-auto-icon-section": {
+        "type": "jc-auto-icon-section",
+        "blocks": {
+          "8555bf31-779c-41eb-8f75-e788fa8ea6cd": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-49_.5x.png",
+              "icon_heading": "YOU’RE IN CHARGE OF YOUR DELIVERY SCHEDULE",
+              "icon_content": "<p>Skip, pause, or cancel your Zandi Land shipments at any time by signing into your account and choosing ‘MANAGE AUTO SHIPMENTS’.<\/p>"
+            }
+          },
+          "a98ec95e-ec34-4aa9-9a31-0a80c8320df8": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-12_.5x.png",
+              "icon_heading": "YOUR PRODUCTS WILL BE THERE WHEN YOU NEED THEM",
+              "icon_content": "<p>Your auto ship order will continue to be placed (depending on your chosen preference) based on the date you placed the initial order. Now only if everything was this dependable, huh?!<\/p>"
+            }
+          },
+          "b8f12572-a8d2-40dc-9032-eeb43d6da05a": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-51_.5x.png",
+              "icon_heading": "NEVER RUN OUT OF RETAIL AGAIN",
+              "icon_content": "<p>Period. Only thing left is to start thinking of what you’re gonna do with all that extra time on your hands!<\/p>"
+            }
+          },
+          "ac93a309-e375-4a6f-8144-780dc6c79a64": {
+            "type": "text",
+            "settings": {
+              "icon_image": "shopify:\/\/shop_images\/zandi-land-icon-set-52_.5x.png",
+              "icon_heading": "FREE SHIPPING",
+              "icon_content": "<p>Enjoy free shipping on ALL autoship orders after the first order.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "8555bf31-779c-41eb-8f75-e788fa8ea6cd",
+          "a98ec95e-ec34-4aa9-9a31-0a80c8320df8",
+          "b8f12572-a8d2-40dc-9032-eeb43d6da05a",
+          "ac93a309-e375-4a6f-8144-780dc6c79a64"
+        ],
+        "settings": {
+          "heading_text": "HOW IT WORKS",
+          "sub_heading_text": "Ready to eliminate something from your to-do list? Let us set up your orders on a regular schedule for you. Select the 'Auto Shipments' button on any applicable product page then choose how often you want that good-good delivered directly to your doorstep!"
+        }
+      },
+      "jc-auto-faq-section": {
+        "type": "jc-auto-faq-section",
+        "blocks": {
+          "c43a61c6-c00c-4f09-be65-b2913c769b1f": {
+            "type": "text",
+            "settings": {
+              "question": "Why should I choose the Auto Shipments option?",
+              "answer": "<p>We know that between all the business responsibilities, continuing industry education, and client services, you still have a life! Why not take something off your plate with this no strings attached option so that you can enjoy more of it! Regardless of how frequently or how much you order, Auto Shipments can easily be customized to your unique needs. Unless you love busy work, it’s a no brainer babe!<\/p>"
+            }
+          },
+          "41dc36a2-ac8a-41ee-bafd-d89dcdddfff4": {
+            "type": "text",
+            "settings": {
+              "question": "How do I sign up for an Auto Shipment?",
+              "answer": "<p>Select the ‘Auto Shipments’ button on any applicable product page then choose how often you want that good-good delivered directly to your doorstep!<\/p>"
+            }
+          },
+          "d4c921de-a465-4fd4-9383-5d856fc98776": {
+            "type": "text",
+            "settings": {
+              "question": "How do I view, edit, pause or cancel my Zandi Land Auto Shipment?",
+              "answer": "<p>Skip, pause, or cancel your Zandi Land Professional shipments at any time by signing into your account and choosing ‘MANAGE AUTO SHIPMENTS’.<\/p>"
+            }
+          },
+          "88e0a13a-fbd6-4ffe-80ee-bbabf12475e3": {
+            "type": "text",
+            "settings": {
+              "question": "How long does it take my product to ship?",
+              "answer": "<p>Products generally ship 2-3 day shipping after the date your order is generated. Once the package is in the carriers hands, they're responsible. We will always do our best to help resolve any shipping issues, but we have to defer to the carriers once they have the packages.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "c43a61c6-c00c-4f09-be65-b2913c769b1f",
+          "41dc36a2-ac8a-41ee-bafd-d89dcdddfff4",
+          "d4c921de-a465-4fd4-9383-5d856fc98776",
+          "88e0a13a-fbd6-4ffe-80ee-bbabf12475e3"
+        ],
+        "settings": {
+        }
+      },
+      "jc-faq-hero-section": {
+        "type": "jc-faq-hero-section",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Short_Email_Header_Image_700_x_300_px_10_x_4_in_1.png",
+          "heading_text": "Frequently Asked Questions",
+          "align_hero_text": "0px 0px 0px auto",
+          "sub_heading_text": "questions",
+          "font_color": "#000000",
+          "text_align": "right"
+        }
+      },
+      "jc-faq-pro-tips": {
+        "type": "jc-faq-pro-tips",
+        "blocks": {
+          "41945c11-5c36-4ddd-9125-ea66d959ee87": {
+            "type": "text",
+            "settings": {
+              "question": "Use our Deck Polish as a finishing touch on every single wax service!",
+              "answer": "<p>Deck Polish is great as a finisher for waxing because it removes any wax residue, calms and cools the skin, reduces after-wax redness, and closes the pores down so that yucky bacteria can’t get in. Plus it smells great and is a good way for you to start your sales pitch! Back Bar size is available to purchase now!<\/p>"
+            }
+          },
+          "91bafe9c-1b54-4fea-954c-5be23945c491": {
+            "type": "text",
+            "settings": {
+              "question": "Our products work better as a pair!",
+              "answer": "<p>Keeping your clients skin looking and feeling fabulous between appointments requires two things - Exfoliation and Hydration! Exfoliation without hydration will leave the skin feeling parched and can cause dead skin cells to slough off and clog up those hair follicles. The natural ingredients in our Deck Polish not only hydrate and illuminate the skin, they also treat and prevent bacteria that cause ingrown hairs with a 1, 2 punch - killing existing bacteria and closing down pores so it has no chance of getting back in! Each of your clients will want to take home one of our Deck Scrubs and one of our Deck Polishes to keep that kitty pretty and ready for their next wax appointment. If they have additional skin needs like scarring and hyperpigmentation where they wax, they may also want to take home our Deck Glow Bikini Brightening Serum.<\/p>"
+            }
+          },
+          "f0dc669f-043f-41ec-90d1-8ee7ce3fbc67": {
+            "type": "text",
+            "settings": {
+              "question": "Discreetly offer each of your guests a Kitty Wipe on the table before each service.",
+              "answer": "<p>Still using baby wipes in your room? Level up with individually wrapped Kitty Wipes made specifically for the task at hand. Your guests can freshen with our PH balanced aloe, chamomile, and cucumber freshening wipes if they want, or take it for the road! It’s a great way to introduce this great product to your guests. Back Bar bags of 100 available <a href=\"\/products\/kitty-wipes-100ct-back-bar-bag\" title=\"Kitty Wipes Back Bar Bag (100 ct)\">here<\/a><\/p>"
+            }
+          },
+          "de201e50-3979-4dc9-b3da-bf4e24988cf0": {
+            "type": "text",
+            "settings": {
+              "question": "Make sure to use our pricing cards to display with your products!",
+              "answer": "<p>Did you know that customers are more likely to purchase a product if they know how much it costs? That’s why we not only offer lots of digital pricing and marketing options in our marketing library, but also have a kit you can buy with all of your pricing materials already printed. You can scoop those up <a href=\"https:\/\/zandikprofessional.com\/products\/marketing-materials\"><span style=\"text-decoration:underline\">here<\/span><\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "41945c11-5c36-4ddd-9125-ea66d959ee87",
+          "91bafe9c-1b54-4fea-954c-5be23945c491",
+          "f0dc669f-043f-41ec-90d1-8ee7ce3fbc67",
+          "de201e50-3979-4dc9-b3da-bf4e24988cf0"
+        ],
+        "settings": {
+        }
+      },
+      "jc-faq-pricing": {
+        "type": "jc-faq-pricing",
+        "blocks": {
+          "aaa291fa-b105-49bc-a032-72a1eb82f776": {
+            "type": "text",
+            "settings": {
+              "question": "Why do I have to purchase in multiples of 6?",
+              "answer": "<p>Let’s keep the bottom line AT the bottom. In order to offer you the best pricing possible, we keep our products in these multiples. Plus you can save even more on some products with special case pricing! <\/p>"
+            }
+          },
+          "28716db3-a632-43f0-9427-a5bbf2c85e1e": {
+            "type": "text",
+            "settings": {
+              "question": "Why do I have to purchase a minimum of 6 of any of the products?",
+              "answer": "<p>We want to keep our Professional wholesale pricing strictly for legitimate retailers. We want to make sure that not just anyone with a cosmetology license can scoop up our products at your great wholesale prices.<\/p>"
+            }
+          },
+          "d94ff5e2-b6ce-4bd2-a0c7-c2b7af312417": {
+            "type": "text",
+            "settings": {
+              "question": "Do you ever offer free shipping?",
+              "answer": "<p>We do have free shipping specials from time to time. Make sure you follow us on <a href=\"https:\/\/www.instagram.com\/zandikproducts\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/zandikproducts\/\">The Gram <\/a>and keep an eye out for all of the sweet stuff we post there. And remember, <strong>ALL<\/strong> Autoship orders receive free shipping!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "aaa291fa-b105-49bc-a032-72a1eb82f776",
+          "28716db3-a632-43f0-9427-a5bbf2c85e1e",
+          "d94ff5e2-b6ce-4bd2-a0c7-c2b7af312417"
+        ],
+        "settings": {
+        }
+      },
+      "jc-faq-shipping-returns": {
+        "type": "jc-faq-shipping-returns",
+        "blocks": {
+          "feba21e2-131b-47c9-85af-62662f8db1b0": {
+            "type": "text",
+            "settings": {
+              "question": "When will my order be shipped?",
+              "answer": "<p>Orders placed before 11am ET receive same business day shipping! Orders placed after that are shipped the next business day. If you need it sooner make sure to use our express shipping options at check out!<\/p>"
+            }
+          },
+          "f8afd819-1e37-4482-ba98-6554bc865882": {
+            "type": "text",
+            "settings": {
+              "question": "How long does shipping take?",
+              "answer": "<p>All Continental US orders receive standard 2-3 day shipping, depending on your location. <\/p>"
+            }
+          },
+          "cbac5b15-4b14-4867-a064-d8f58590989c": {
+            "type": "text",
+            "settings": {
+              "question": "What should I do if my order says it has been delivered but I don’t see it?",
+              "answer": "<p>First, check with coworkers, neighbors, and family members! Many times one of them will have your package. Second, wait until the end of business day. Carriers can often mark a product as “delivered” prior to the actual delivery being made (we know, very annoying!) And finally, reach out to your local <a href=\"https:\/\/www.usps.com\/help\/missing-mail.htm\"><span style=\"text-decoration:underline\">USPS<\/span><\/a> or <a href=\"https:\/\/www.ups.com\/us\/en\/support\/tracking-support.page\"><span style=\"text-decoration:underline\">UPS<\/span><\/a> office to have them help you locate it using your tracking number. If neither of those work out, contact us <a href=\"https:\/\/zandikprofessional.com\/pages\/contact\">here<\/a>. Once those babies leave our warehouse with a shipping carrier, we have little control of your shipment, but we will do what we can to help troubleshoot with you.<\/p>"
+            }
+          },
+          "9b647ade-9780-40ec-a7f9-c2faeb1d9cf3": {
+            "type": "text",
+            "settings": {
+              "question": "What if I need to make a return?",
+              "answer": "<p>We would like to think that when you start placing your Pro orders, you already know that you love our products and that we have answered all of your questions to help you place just the order that you need! But we could be wrong, so if the situation ever arises you can read our full return policy <a href=\"https:\/\/zandikprofessional.com\/pages\/refund-policy\">here<\/a><\/p>"
+            }
+          },
+          "31cc15f8-62e3-49c2-ab7f-48399ce75880": {
+            "type": "text",
+            "settings": {
+              "question": "What if I get damaged or defective products?",
+              "answer": "<p>We always try to take care in producing, storing and shipping our products, but the occasional rogue forklift or checked out delivery man can lay waste to the best intentions! So if you ever receive damaged goods email us at orders@zandilandprofessional.com ASAP and we will get those replaced faster than you can rip your next labia strip! A picture is worth a thousand words, so please send those in your email so our team can prevent this from happening in the future. <\/p>"
+            }
+          },
+          "c3a5af48-2b4c-4dbd-a51e-0044023ffe16": {
+            "type": "text",
+            "settings": {
+              "question": "What if I need to cancel an order?",
+              "answer": "<p>We get it. Mistakes happen. And we will always help out as much as we possibly can, however in order to give our customers the best possible experience we try to get orders out the door quickly and may not always be able to cancel your order before it ships. If your order has already shipped, it will not be able to be cancelled. In that case, please refer to our return policy <a href=\"https:\/\/zandikprofessional.com\/pages\/refund-policy\">here<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "feba21e2-131b-47c9-85af-62662f8db1b0",
+          "f8afd819-1e37-4482-ba98-6554bc865882",
+          "cbac5b15-4b14-4867-a064-d8f58590989c",
+          "9b647ade-9780-40ec-a7f9-c2faeb1d9cf3",
+          "31cc15f8-62e3-49c2-ab7f-48399ce75880",
+          "c3a5af48-2b4c-4dbd-a51e-0044023ffe16"
+        ],
+        "settings": {
+        }
+      },
+      "jc-faq-cta-section": {
+        "type": "jc-faq-cta-section",
+        "settings": {
+          "heading_text": "MORE QUESTIONS?",
+          "sub_heading_text": "Check out our FAQ page on our retail site for some additional info on Zandi Land Products!",
+          "btn_text": "Zandi Land Products FAQ",
+          "btn_url": "https:\/\/zandik.com\/pages\/frequently-asked-questions"
+        }
+      },
+      "jc-home-hero-section": {
+        "type": "jc-home-hero-section",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Zandi2020-744-Edit.jpg",
+          "opacity_level": 60,
+          "heading": "All Classic Black Packaging is",
+          "sub_heading": "30% off",
+          "heading_content": "<p>Save on Retail products (excludes Back Bar) in our classic black packaging. The NEW NEW Packaging will be available on May 15th. Get this discount until then 🥳<\/p>",
+          "button_text": "Shop the Sale",
+          "button_url": "shopify:\/\/collections\/all"
+        }
+      },
+      "jc-home-bundles-section": {
+        "type": "jc-home-bundles-section",
+        "blocks": {
+          "a5cbc205-9445-4928-992f-bb5eb004a2f1": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "Deck Scrub PURE",
+              "bundle_image": "shopify:\/\/shop_images\/Untitled_design_1_997c5f68-f4d5-4093-b663-7295b6a98d0d.png",
+              "bundle_sub_heading": "Our Best Selling Fragrance Free Formula",
+              "bundle_price": "Now $6.48",
+              "bundle_btn_text": "BUY NOW",
+              "bundle_url": "shopify:\/\/products\/deck-scrub-pure-118ml"
+            }
+          },
+          "55328f1c-1a37-4f0e-ad4c-978adf79f7b5": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "Deck polish original",
+              "bundle_image": "shopify:\/\/shop_images\/D29530CB-1B86-4029-BE07-21727D175B3A_1_105_c_a3869104-21db-44fb-b612-f36aa90ef288.jpg",
+              "bundle_sub_heading": "Daily Hydrating Bikini Balm",
+              "bundle_price": "Now $7.18",
+              "bundle_btn_text": "Buy Now",
+              "bundle_url": "shopify:\/\/products\/deck-polish-118ml"
+            }
+          },
+          "f69e8a99-5d51-49f4-8b8a-2d2b7f7ced5e": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "Deck Scrub Sensitive",
+              "bundle_image": "shopify:\/\/shop_images\/FCD285EC-A414-41A9-B561-6B60C9C9EA74_1_105_c_948780ef-7e43-4780-9d48-2e6e4f851144.jpg",
+              "bundle_sub_heading": "The perfect Scrub for our more gentle kitties!",
+              "bundle_price": "Now $6.48",
+              "bundle_btn_text": "BUY NOW",
+              "bundle_url": "shopify:\/\/products\/deck-scrub-sensitive-118ml"
+            }
+          }
+        },
+        "block_order": [
+          "a5cbc205-9445-4928-992f-bb5eb004a2f1",
+          "55328f1c-1a37-4f0e-ad4c-978adf79f7b5",
+          "f69e8a99-5d51-49f4-8b8a-2d2b7f7ced5e"
+        ],
+        "settings": {
+          "heading_text": "Shop Classic Black Packaging"
+        }
+      },
+      "jc-bundles-hero-section": {
+        "type": "jc-bundles-hero-section",
+        "settings": {
+        }
+      },
+      "jc-bundles-content-section": {
+        "type": "jc-bundles-content-section",
+        "blocks": {
+          "612a4242-6f37-4b06-890d-7807fe35afa7": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "The Curious Kitten",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_1_0de3b3f7-2524-4048-a3fb-fffbba3a4963.png",
+              "bundle_sub_heading": "A great introductory bundle to stock your shelves with just the necessities. Includes 6 of each full size Scrubs and Polishes and one Deck Glow.",
+              "bundle_price": "$332.50",
+              "bundle_btn_text": "SNAG BUNDLE",
+              "bundle_url": "shopify:\/\/pages\/curious-kitten-bundle"
+            }
+          },
+          "5209368a-72e2-44b5-8609-2b2f309a7882": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "THE PRETTY KITTY",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_2_0fbcbdf9-a460-43f3-9f4f-ce87f8d53bb7.png",
+              "bundle_sub_heading": "Our most popular bundle stocks your shelves with all our full size products AND our brightening serum. Everything you need to retail our 3 step kitty care system.",
+              "bundle_price": "$420.00",
+              "bundle_btn_text": "Snag bundle",
+              "bundle_url": "shopify:\/\/pages\/pretty-kitty-bundle"
+            }
+          },
+          "74a82451-6351-448f-8a04-883d9c49e842": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "THE PHAT CAT",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_3.png",
+              "bundle_sub_heading": "This bundle invites the whole product line to your business, including kitty wipes and back bar products. The Purr-fect way to step your retail game ALL THE WAY UP!",
+              "bundle_price": "$1,093.00",
+              "bundle_btn_text": "SNAG bundle",
+              "bundle_url": "shopify:\/\/pages\/phat-cat-bundle"
+            }
+          }
+        },
+        "block_order": [
+          "612a4242-6f37-4b06-890d-7807fe35afa7",
+          "5209368a-72e2-44b5-8609-2b2f309a7882",
+          "74a82451-6351-448f-8a04-883d9c49e842"
+        ],
+        "settings": {
+          "heading_text": "Bundles"
+        }
+      },
+      "jc-bar-cta-collection": {
+        "type": "jc-bar-cta-collection",
+        "settings": {
+          "heading_text": "WANT TO MARKET ONLINE?",
+          "link_text": "Download cool stuff from our marketing library",
+          "link_url": "shopify:\/\/pages\/marketing-materials"
+        }
+      },
+      "jc-product-section": {
+        "type": "jc-product-section",
+        "settings": {
+        }
+      },
+      "jc-product-bundles-section": {
+        "type": "jc-product-bundles-section",
+        "blocks": {
+          "29316b46-5bdd-4aaa-85c0-3987e6b28787": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "THE PRETTY KITTY",
+              "bundle_image": "shopify:\/\/shop_images\/Pretty-Kitty-Bundle-min_8e0e9097-7075-4c99-8f6c-e9ef42e30d34.jpg",
+              "bundle_sub_heading": "The Starter Bundle",
+              "bundle_price": "$345.00",
+              "bundle_btn_text": "BUY NOW",
+              "bundle_url": "shopify:\/\/pages\/pretty-kitty-bundle"
+            }
+          },
+          "7064d621-eb59-46c3-b584-3696169c7d10": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "THE PHAT CAT",
+              "bundle_image": "shopify:\/\/shop_images\/Phat-Cat-Bundle-min_5a7bed64-069f-4d01-b48d-23ad3ea2c157.jpg",
+              "bundle_sub_heading": "The Whole Bundle",
+              "bundle_price": "$801.50",
+              "bundle_btn_text": "BUY NOW",
+              "bundle_url": "shopify:\/\/pages\/phat-cat-bundle"
+            }
+          }
+        },
+        "block_order": [
+          "29316b46-5bdd-4aaa-85c0-3987e6b28787",
+          "7064d621-eb59-46c3-b584-3696169c7d10"
+        ],
+        "settings": {
+          "heading_text": "shop bundles"
+        }
+      },
+      "jc-home-affiliate-section": {
+        "type": "jc-home-affiliate-section",
+        "settings": {
+          "heading_text": "Sell Online",
+          "sub_heading_text": "<p>JOIN OUR<br\/>AFFILIATE PROGRAM<\/p>",
+          "btn_text": "Join Now",
+          "btn_url": "http:\/\/partners.zandik.com\/create-account"
+        }
+      },
+      "jc-bar-section-collection": {
+        "type": "jc-bar-section-collection",
+        "settings": {
+        }
+      },
+      "jc-home-sub-hero-section": {
+        "type": "jc-home-sub-hero-section",
+        "settings": {
+        }
+      },
+      "jc-header-announce-bar": {
+        "type": "jc-header-announce-bar",
+        "settings": {
+          "announce_text": "<p>SNAG 30% OFF ON ALL CLASSIC PACKAGING  WHILE IT LASTS! <\/p>"
+        }
+      },
+      "sk-top-link-section": {
+        "type": "sk-top-link-section",
+        "settings": {
+        }
+      },
+      "sk-header-alt": {
+        "type": "sk-header-alt",
+        "settings": {
+          "announce_text": "<p>START YOUR ZANDI LAND JOURNEY TODAY<\/p>"
+        }
+      },
+      "sk-footer-alt": {
+        "type": "sk-footer-alt",
+        "settings": {
+        }
+      },
+      "sk-header": {
+        "type": "sk-header",
+        "settings": {
+          "announce_text": "<p>FREE SHIPPING ON ORDERS $1000 OR MORE <\/p>"
+        }
+      },
+      "sk-home-hero-section": {
+        "type": "sk-home-hero-section",
+        "settings": {
+          "hero-main-heading": "YOUR OG RIDE OR DIE SCRUB IS BACK IN STOCK!",
+          "hero-main-sub-heading": "Get your shelves stocked and ready for wax season!",
+          "hero-main-btn-text": "SHOP OG SCRUB",
+          "hero-main-btn-url": "shopify:\/\/products\/deck-scrub-original-118ml",
+          "font_color": "#f8f8f8",
+          "btn_bg_color": "#fa94f8",
+          "text_placement": "right",
+          "text_align": "center",
+          "bg_image": "shopify:\/\/shop_images\/9.png",
+          "bg_image_mobile": "shopify:\/\/shop_images\/Mobile_Hero_or_email_-_375_x_600_1.png"
+        }
+      },
+      "sk-home-product-section": {
+        "type": "sk-home-product-section",
+        "settings": {
+        }
+      },
+      "sk-home-banner-section-1": {
+        "type": "sk-home-banner-section-1",
+        "settings": {
+          "banner_1_bg_image": "shopify:\/\/shop_images\/Desktop_Web_Hero_Size_1600_x_800_12.png",
+          "banner_1_bg_image_mobile": "shopify:\/\/shop_images\/Desktop_Web_Hero_Size_1600_x_800_12.png",
+          "banner-section-1-heading": "",
+          "banner-section-1-label": "",
+          "banner-section-1-sub-heading": "",
+          "banner-section-1-btn-text": "SHOP NOW",
+          "hide_btn": true,
+          "hide_new_badge": true,
+          "banner-section-1-btn-link": "shopify:\/\/products\/deck-scrub-original-118ml",
+          "banner-section-1-btn-color": "#000000",
+          "text_placement": "right",
+          "text_align": "right",
+          "whole_banner_url": "shopify:\/\/collections\/clothing"
+        }
+      },
+      "sk-home-banner-section-2": {
+        "type": "sk-home-banner-section-2",
+        "settings": {
+          "banner_2_bg_image_mobile": "shopify:\/\/shop_images\/Untitled_design_22.png",
+          "banner-section-2-heading": "NOT SURE WHERE TO START?",
+          "banner-section-2-sub-heading": "Check out our FAQs, chat with our chatbot or check out all of our Insider Info Blogs below!",
+          "banner-section-2-btn-text": "Insider Info",
+          "banner-section-2-btn-link": "shopify:\/\/blogs\/insider-info",
+          "text_placement": "left",
+          "text_align": "left"
+        }
+      },
+      "sk-home-banner-section-3": {
+        "type": "sk-home-banner-section-3",
+        "settings": {
+          "banner-section-3-heading": "PUT IT ON AUTO-PILOT WITH AUTOSHIP",
+          "banner-section-3-sub-heading": "WITH AUTO SHIP YOU GET TO SET IT AND FORGET IT WHILE YOU GET BUSY SNATCHING ALL THE HAIRS #KEEPYOURKITTYPRETTY",
+          "banner-section-3-btn-text": "Learn More",
+          "banner-section-3-btn-link": "shopify:\/\/pages\/auto-shipments"
+        }
+      },
+      "sk-ig-section": {
+        "type": "sk-ig-section",
+        "settings": {
+        }
+      },
+      "sk-cta-newsletter": {
+        "type": "sk-cta-newsletter",
+        "settings": {
+        }
+      },
+      "sk-footer": {
+        "type": "sk-footer",
+        "settings": {
+        }
+      },
+      "sk-collection-hero-section": {
+        "type": "sk-collection-hero-section",
+        "settings": {
+        }
+      },
+      "sk-collection-product-section": {
+        "type": "sk-collection-product-section",
+        "settings": {
+        }
+      },
+      "sk-blog-hero-section": {
+        "type": "sk-blog-hero-section",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/35A58D20-A2EC-4D96-97E3-341048C25674_1_105_c.jpg"
+        }
+      },
+      "sk-product-section": {
+        "type": "sk-product-section",
+        "settings": {
+          "testimonial_heading": "Get Your Glow On",
+          "quiz_heading_1": "NOT SURE WHERE TO START?",
+          "quiz_heading_2": "Click here for tips to sell Zandi  Land",
+          "quiz_heading_url": "shopify:\/\/blogs\/news\/get-your-sales-on-how-to-sell-your-shit"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_ajax_enable": false,
+          "cart_notes_enable": false
+        }
+      },
+      "sk-home-product-section-2": {
+        "type": "sk-home-product-section-2",
+        "blocks": {
+          "2ae4093b-e6d8-46e4-b2a1-f60fd1674965": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "Deck Scrub Original",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_1.png",
+              "bundle_sub_heading": "Post Wax Exfoliating Scrub",
+              "bundle_price": "$10.50",
+              "btn_text": "Learn More",
+              "btn_url": "shopify:\/\/products\/deck-scrub-original-118ml"
+            }
+          },
+          "1b71804e-9789-48d9-bf2b-089e4579cf5c": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "Deck Glow",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image.png",
+              "bundle_sub_heading": "Bikini Brightening Serum",
+              "bundle_price": "$17.50",
+              "btn_text": "Learn More",
+              "btn_url": "shopify:\/\/products\/deck-glow-1"
+            }
+          },
+          "cf306e85-17fe-4990-9c5c-0b0343a37e1a": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "Deck Polish Original",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_2.png",
+              "bundle_sub_heading": "Hydrating Bikini Balm",
+              "bundle_price": "$10.50",
+              "btn_text": "Learn More",
+              "btn_url": "shopify:\/\/products\/deck-polish-118ml"
+            }
+          }
+        },
+        "block_order": [
+          "2ae4093b-e6d8-46e4-b2a1-f60fd1674965",
+          "1b71804e-9789-48d9-bf2b-089e4579cf5c",
+          "cf306e85-17fe-4990-9c5c-0b0343a37e1a"
+        ],
+        "settings": {
+          "main_heading": "Products you need on your shelves"
+        }
+      },
+      "sk-home-product-section-slides": {
+        "type": "sk-home-product-section-slides",
+        "blocks": {
+          "572ff016-543b-4924-a83a-9c234ed69032": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "The Pretty Kitty",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_2_0fbcbdf9-a460-43f3-9f4f-ce87f8d53bb7.png",
+              "bundle_sub_heading": "Our most popular bundle stocks your shelves with all our full size products AND our brightening serum. Everything you need to retail our 3 step kitty care system.",
+              "bundle_price": "$420.00",
+              "btn_text": "Snag this bundle",
+              "btn_url": "shopify:\/\/pages\/pretty-kitty-bundle"
+            }
+          },
+          "d1707629-e223-49e6-8ba3-485eb8dcfe1d": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "The curious kitten",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_1_0de3b3f7-2524-4048-a3fb-fffbba3a4963.png",
+              "bundle_sub_heading": "A great introductory bundle to stock your shelves with just the necessities. Includes 6 of each full size Scrubs and Polishes and one Deck Glow.",
+              "bundle_price": "$332.50",
+              "btn_text": "Snag this Bundle",
+              "btn_url": "shopify:\/\/pages\/curious-kitten-bundle"
+            }
+          },
+          "8029a79b-156a-47ed-96a8-cc042d4c28e7": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "The Phat Cat",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_3.png",
+              "bundle_sub_heading": "This bundle invites the whole product line to your business, including kitty wipes and back bar products. The Purr-fect  way to step your retail game ALL THE WAY UP!",
+              "bundle_price": "1,093.00",
+              "btn_text": "Snag this bundle",
+              "btn_url": "shopify:\/\/pages\/phat-cat-bundle"
+            }
+          },
+          "cbe0bd95-9477-4181-862b-09a8cc30b8b9": {
+            "type": "text",
+            "settings": {
+              "bundle_name": "The (S)hero Bundle",
+              "bundle_image": "shopify:\/\/shop_images\/Mobile_Home_Page_Steps_Image_4.png",
+              "bundle_sub_heading": "Here to save the day, our She-ro bundle brings you just our OG products. It may be our smallest bundle, but it packs a punch.",
+              "bundle_price": "$189.00",
+              "btn_text": "Snag this bundle",
+              "btn_url": "shopify:\/\/pages\/shero-bundle"
+            }
+          }
+        },
+        "block_order": [
+          "572ff016-543b-4924-a83a-9c234ed69032",
+          "d1707629-e223-49e6-8ba3-485eb8dcfe1d",
+          "8029a79b-156a-47ed-96a8-cc042d4c28e7",
+          "cbe0bd95-9477-4181-862b-09a8cc30b8b9"
+        ],
+        "settings": {
+          "main_heading": "STOCK UP WITH BUNDLES"
+        }
+      },
+      "sk-home-banner-section-4": {
+        "type": "sk-home-banner-section-4",
+        "settings": {
+          "main_heading": "Get Your Glow On",
+          "sub_heading": "Get our latest creation and let this luxurious oil serum do its work on your hyperpigmentation and scarring",
+          "btn_text": "Shop Now",
+          "btn_url": ""
+        }
+      },
+      "sk-home-banner-section-5": {
+        "type": "sk-home-banner-section-5",
+        "settings": {
+          "bg_image_mobile": "shopify:\/\/shop_images\/Get-Glow-On-New_1200x_2c3fdd4f-19f7-4feb-bc56-d491fc211903.webp",
+          "main_heading": "Get Your Glow On",
+          "sub_heading": "Get our latest creation and let this luxurious oil serum do its work on your hyperpigmentation and scarring",
+          "btn_text": "Shop Now",
+          "btn_url": ""
+        }
+      },
+      "sk-home-banner-section-6": {
+        "type": "sk-home-banner-section-6",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/WHAT_S_ON_YOUR_WAX_TABLE_5.png",
+          "bg_image_mobile": "shopify:\/\/shop_images\/Add_a_subheading_10.png",
+          "main_heading": "PUT IT ON AUTO-PILOT WITH AUTOSHIP",
+          "heading_color_desktop": "#000000",
+          "heading_color_mobile": "#f8f8f8",
+          "body_color_desktop": "#000000",
+          "body_color_mobile": "#ffffff",
+          "sub_heading": "WITH AUTO SHIP YOU GET TO SET IT AND FORGET IT WHILE YOU GET BUSY SNATCHING ALL THE HAIRS #KEEPYOURKITTYPRETTY",
+          "btn_text": "LEARN MORE",
+          "btn_url": "shopify:\/\/pages\/auto-shipments"
+        }
+      },
+      "sk-home-banner-section-cms-align": {
+        "type": "sk-home-banner-section-cms-align",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Desktop_Web_Hero_Size_1600_x_800_2_1800x_b244b5ec-6c2a-4a50-8f55-d29059c4e7f3.webp",
+          "bg_image_mobile": "shopify:\/\/shop_images\/Copy_of_Mobile_Hero_-_375_x_450_7.png",
+          "banner-section-1-heading": "get your glow on",
+          "banner-section-1-color": "#000000",
+          "banner-section-1-label": "",
+          "banner-section-1-sub-heading": "Deck Glow is the solution for hyperpigmentation and scarring in any areas that they wax or shave. Add as a step in between exfoliating and hydrating. Also great to use as a treatment step in vajacial services.",
+          "banner-section-1-btn-text": "SHOP GLOW",
+          "hide_btn": false,
+          "banner-section-1-btn-link": "shopify:\/\/products\/deck-glow-1",
+          "banner-section-1-btn-color": "#000000",
+          "text_placement": "center",
+          "text_align": "center"
+        }
+      },
+      "sk-home-banner-section-cms-align-2": {
+        "type": "sk-home-banner-section-cms-align-2",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Desktop_Web_Hero_Size_1600_x_800_1.png",
+          "bg_image_mobile": "shopify:\/\/shop_images\/Copy_of_Mobile_Hero_-_375_x_450_7_c01650d6-48e5-49f6-add4-9fd9adadfa39.png",
+          "section_url": "shopify:\/\/pages\/marketing-materials",
+          "banner-section-1-heading": "",
+          "banner-section-1-color": "#ff0000",
+          "banner-section-1-label": "",
+          "banner-section-1-sub-heading": "",
+          "banner-section-1-btn-text": "",
+          "hide_btn": true,
+          "banner-section-1-btn-link": "https:\/\/partners.zandilandbeauty.com\/",
+          "banner-section-1-btn-color": "#000000",
+          "text_placement": "center",
+          "text_align": "center"
+        }
+      },
+      "sk-quiz-banner": {
+        "type": "sk-quiz-banner",
+        "settings": {
+          "quiz_heading_1": "Need Marketing Materials?",
+          "quiz_heading_2": "Check out our new Pro Library!",
+          "quiz_heading_url": "https:\/\/www.lingoapp.com\/104776\/k\/dzmqAm"
+        }
+      },
+      "sk-bundles-hero": {
+        "type": "sk-bundles-hero",
+        "settings": {
+          "main_heading": "Bundles",
+          "sub_heading": "Collection"
+        }
+      },
+      "sk-kitten-hero": {
+        "type": "sk-kitten-hero",
+        "settings": {
+          "main_heading": "The Curious Kitten Bundle"
+        }
+      },
+      "sk-s-hero": {
+        "type": "sk-s-hero",
+        "settings": {
+          "main_heading": "(S)HEro Bundle"
+        }
+      },
+      "sk-phat-cat-hero": {
+        "type": "sk-phat-cat-hero",
+        "settings": {
+          "main_heading": "The Phat Cat Bundle"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "10605408327587305396": {
+        "type": "shopify:\/\/apps\/easygift-auto-add-to-cart\/blocks\/app-embed\/0f7d4f74-1e89-4820-aec4-6564d7e535d2",
+        "disabled": false,
+        "settings": {
+          "version": "v3"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        },
+        "hero-1": {
+          "type": "hero",
+          "settings": {
+            "hero_size": "large",
+            "text_size": "large"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {
+          }
+        },
+        "feature-columns": {
+          "type": "feature-columns",
+          "blocks": {
+            "feature-columns-0": {
+              "type": "text_block",
+              "settings": {
+              }
+            },
+            "feature-columns-1": {
+              "type": "text_block",
+              "settings": {
+              }
+            },
+            "feature-columns-2": {
+              "type": "text_block",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "feature-columns-0",
+            "feature-columns-1",
+            "feature-columns-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": 4
+          }
+        },
+        "hero-2": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "quotes": {
+          "type": "quotes",
+          "blocks": {
+            "quotes-0": {
+              "type": "quote",
+              "settings": {
+              }
+            },
+            "quotes-1": {
+              "type": "quote",
+              "settings": {
+              }
+            },
+            "quotes-2": {
+              "type": "quote",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "quotes-0",
+            "quotes-1",
+            "quotes-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2"
+          ],
+          "settings": {
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "footer-1": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1"
+          ],
+          "settings": {
+            "show_payment_icons": true
+          }
+        }
+      },
+      "content_for_index": [
+        "hero-1",
+        "feature-row",
+        "feature-columns",
+        "collection",
+        "hero-2",
+        "quotes",
+        "image-bar"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "message": true,
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_vendor": false,
+            "show_share_buttons": true,
+            "media_size": "medium",
+            "enable_image_zoom": true,
+            "enable_video_looping": false
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {
+          }
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {
+          }
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {
+            "color_footer_bg": "#f8f8f8",
+            "color_footer_text": "#6d6d6d"
+          }
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

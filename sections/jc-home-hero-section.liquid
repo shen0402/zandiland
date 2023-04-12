@@ -1,0 +1,91 @@
+<div class="hero-wrapper" {% if section.settings.bg_image %}style="background-image: url({{ section.settings.bg_image | img_url: '1600x' }});"{% endif %}>
+  <div class="hero-mobile-overlay"></div>
+  <div class="hero-content-container w-clearfix">
+    <div class="hero-content-wrapper">
+      <h3 class="hero-content-top-heading">{{section.settings.heading}}</h3>
+      <h1 class="hero-main-heading">{{section.settings.sub_heading}}</h1>
+      <div class="hero-content-text">{{section.settings.heading_content}}</div>
+      <div class="hero-btn-wrapper"><a href="{{section.settings.button_url}}" class="btn-transparent w-button">{{section.settings.button_text}}</a></div>
+    </div>
+  </div>
+</div>
+
+
+<style type="text/css">
+
+  .hero-mobile-overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  left: 0%;
+  z-index: 1;
+  background-color: #fff;
+  opacity: {{section.settings.opacity_level | divided_by: 100.0 }};
+}
+  
+
+  @media screen and (max-width: 767px) { 
+
+    .hero-mobile-overlay {
+      display: block;
+     
+    }
+
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Hero Section" ,
+  "settings": [
+  	  {
+  	     "type": "image_picker",
+  	     "id": "bg_image",
+  	     "label": "Background Image"
+  	  },
+      {
+          "type": "range",
+          "id": "opacity_level",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Mobile Background Opacity",
+          "default": 50
+      },	
+      {
+         "type": "text",
+         "id": "heading",
+         "default": "New to Wholesale?",
+         "label": "Heading"
+      },
+      {
+         "type": "text",
+         "id": "sub_heading",
+         "default": "GET YOUR RETAIL ON",
+         "label": "Secondary Heading"
+      },
+      {
+         "type": "richtext",
+         "id": "heading_content",
+         "default": "<p>Welcome to your clientele’s new fave products! Don’t know where to start? Check out our bundles! Make sure to pick up your Marketing Materials at checkout - they practically do the heavy lifting for you! <em>Free with any bundle offer.</em></p>",
+         "label": "Hero Text"
+      },
+      {
+         "type": "text",
+         "id": "button_text",
+         "default": "Buy Now",
+         "label": "Button Text"
+      },
+      {
+         "type": "url",
+         "id": "button_url",
+         "label": "Button Link"
+      }
+
+  ]
+}
+{% endschema %}

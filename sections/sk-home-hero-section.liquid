@@ -1,0 +1,149 @@
+
+
+
+<div class="hero-wrapper hero-wrapper-{{section.id}}">
+  <div class="hero-content-wrapper">
+    <div class="hero-content-container">
+      <div class="hero-content-inner 
+          {% if section.settings.text_placement == 'right' %}
+            hero-content-inner-float-right
+          {% elsif section.settings.text_placement == 'center' %}
+            hero-content-inner-float-center
+          {% else %}
+            hero-content-inner-float-left
+          {% endif %} 
+
+          {% if section.settings.text_align == 'right' %}
+            hero-content-inner-align-right
+          {% elsif section.settings.text_align == 'center' %}
+            hero-content-inner-align-center
+          {% else %}
+            hero-content-inner-align-left
+          {% endif %}
+          " data-ix="fadeinleft">
+          
+        <div class="hero-heading-wrapper">
+          <h1 class="w-basic-heading hero-main-heading" id="hero-main-heading" style="color: {{section.settings.font_color}};">{{section.settings.hero-main-heading}}</h1>
+        </div>
+        <div class="hero-text-wrapper">
+          <p class="hero-text" id="hero-main-sub-heading" style="color: {{section.settings.font_color}};">{{section.settings.hero-main-sub-heading}}</p>
+        </div>
+        <div class="hero-btn-wrapper">
+          <a href="{{section.settings.hero-main-btn-url}}" class="btn-main w-button home" {%if section.settings.btn_bg_color%} style="background-color: {{section.settings.btn_bg_color}}" {%endif%} id="hero-main-btn-text">{{section.settings.hero-main-btn-text}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% if section.settings.font_hover_color %}
+  <style type="text/css">
+    .btn-main.home:hover {
+      color: {{section.settings.font_hover_color}};
+    }
+  </style>
+{% endif %}
+
+
+{% if section.settings.bg_image %}
+  <style type="text/css">
+    .hero-wrapper.hero-wrapper-{{section.id}} {
+      background-image: url({{ section.settings.bg_image | img_url: '1800x' }});
+    }
+  </style>
+{% endif %}
+
+{% if section.settings.bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+     .hero-wrapper.hero-wrapper-{{section.id}} {
+       background-image: url({{ section.settings.bg_image_mobile | img_url: '1200x' }});
+     }
+
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+      {
+        "type": "text",
+        "id": "hero-main-heading",
+        "label": "Main Hero Heading",
+        "default": "GET ROLLING ON YOUR RETAIL JOURNEY"
+      },
+      {
+        "type": "text",
+        "id": "hero-main-sub-heading",
+        "label": "Main Hero Sub Heading",
+        "default": "AS A ZANDI LAND PROFESSIONAL AND GET YOUR BAGS BABY!"
+      },
+      {
+        "type": "text",
+        "id": "hero-main-btn-text",
+        "label": "Main Hero Button Text",
+        "default": "SHOP ALL"
+      },
+      {
+        "type": "url",
+        "id": "hero-main-btn-url",
+        "label": "Main Hero Button URL"
+      },
+      {
+        "type":      "color",
+        "id":        "font_color",
+        "label":     "Font Color",
+        "default":   "#000000"
+      },
+            {
+        "type":      "color",
+        "id":        "font_hover_color",
+        "label":     "Font Hover Color",
+        "default":   "#000000"
+      },
+            {
+        "type":      "color",
+        "id":        "btn_bg_color",
+        "label":     "Button Background Color",
+        "default":   "#000000"
+      },
+      {
+          "type": "radio",
+          "id": "text_placement",
+          "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+          ],
+          "default":   "right",
+          "label": "Font Placement"
+      },
+      {
+          "type": "radio",
+          "id": "text_align",
+          "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+          ],
+          "default":   "right",
+          "label": "Text Align"
+      },
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image_mobile",
+          "label": "Mobile Background Image"
+        }
+  ]
+}
+{% endschema %}
+

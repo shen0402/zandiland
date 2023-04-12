@@ -1,0 +1,31 @@
+{% unless customer %}
+ {% section 'sk-header-alt' %}
+{% endunless %}
+
+
+<div class="hero-wrapper-article" {% if article.image %}style="background-image: url({{ article.image | img_url: '800x' }});"{% endif %}>
+ <div class="hero-overlay-article"></div> 
+</div>
+<div class="sub-hero-wrapper-article">
+  <div class="container-large">
+    <div class="date-text-article">{{ article.published_at | time_tag: format: 'date' }}</div>
+    <h1 class="sub-hero-heading-article">{{ article.title }}</h1>
+  </div>
+</div>
+<div class="page-wrapper-article">
+  <div class="container-article">
+    <div class= "meta-content-wrapper-article rte">
+      {{ article.content }}
+    </div>
+    <div class="btn-wrapper-article">
+      <a href="/blogs/insider-info" class="btn-main w-button">Back to All Articles</a>
+    </div>
+  </div>
+</div>
+
+{% unless customer %}
+
+ {% section 'sk-footer-alt' %}
+    
+{% endunless %}
+

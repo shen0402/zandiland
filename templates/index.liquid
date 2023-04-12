@@ -1,0 +1,99 @@
+
+
+
+{% section 'sk-home-hero-section' %} 
+{% comment %}
+{% section 'sk-home-product-section' %} 
+{% endcomment %}
+{% section 'sk-home-product-section-2' %}
+{% comment %}
+  {%section 'sk-home-banner-section-4'%} 
+{% endcomment %}
+{%section 'sk-home-banner-section-cms-align'%} 
+{% section 'sk-home-banner-section-1' %}
+
+
+
+
+
+{% comment %}
+  {% section 'sk-home-banner-section-2' %}
+{% endcomment %}
+
+{% section 'sk-home-product-section-slides' %}
+
+{% section 'sk-quiz-banner'%}
+
+{% comment %}
+{% section 'sk-home-bundles-section' %} 
+{% section 'sk-home-banner-section-3' %} 
+{%section 'sk-home-banner-section-5'%}
+{% endcomment %}
+{%section 'sk-home-banner-section-6'%}
+{%section 'sk-home-banner-section-cms-align-2'%} 
+{% section 'sk-ig-section' %} 
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.product-slider-flex-row').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      dots: false,
+      nextArrow: '<div class="sk-slick-arrow-wrapper"><img src="https://cdn.shopify.com/s/files/1/1242/8658/files/arrow-right-sk-update.png" class="sk-slick-arrow-img"></div>',
+      prevArrow: '<div class="sk-slick-arrow-wrapper sk-slick-arrow-wrapper-prev"><img src="https://cdn.shopify.com/s/files/1/1242/8658/files/arrow-left-sk-update.png" class="sk-slick-arrow-img"></div>',
+      responsive: [{
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }]
+    });
+  });
+</script>
+
+
+{% comment %}
+{% section 'jc-home-hero-section' %}
+{% section 'jc-home-sub-hero-section' %}
+{% section 'jc-home-bundles-section' %}
+{% section 'jc-home-affiliate-section' %}
+
+
+<div class="blog-section">
+  <div class="container-mid">
+    <h3 class="blog-section-heading">the latest insider info</h3>
+
+    {% if blogs.insider-info.articles_count > 0 %}
+        <div class="flex-row-blog">
+          {% for article in blogs.insider-info.articles limit:2 %}
+            <div class="flex-col-blog">
+            <div class="flex-col-inner-blog">
+              <div class="img-block-blog" {% if article.image %}style="background-image: url({{ article.image | img_url: '800x' }});"{% endif %}><div class="date-text-blog">{{ article.published_at | time_tag: format: 'date' }}</div></div>
+              <div class="bottom-col-wrapper-blog">
+                <h4 class="col-heading-blog">{{ article.title | escape }}</h4>
+                <div class="bottom-col-flex-row-blog">
+                  <div class="col-btn-wrapper-blog">
+                    <a href="{{article.url}}" class="col-btn-blog w-inline-block">
+                      <div>Read Article</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" alt="Blue Arrow" class="col-btn-img-blog"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+      </div>
+    {% else %}
+      <div class="blog-page-empty-wrapper">
+        <p class="blog-page-empty-text">There are no published blog posts yet</p>
+      </div>
+    {% endif %}
+      
+
+  </div>
+</div>
+{% endcomment %}

@@ -1,0 +1,71 @@
+<div class="mid-heading-wrapper-auto">
+  <h3 class="mid-heading-auto">{{section.settings.heading_text}}</h3>
+  <p class="mid-heading-text-auto">{{section.settings.sub_heading_text}}</p>
+</div>
+
+<div class="mid-content-holder-auto">
+	{% for block in section.blocks %}
+		<div class="mid-content-block-auto">
+		  <div class="mid-flex-row-outer-auto">
+		    <div class="mid-flex-col-auto-1"><img src="{{ block.settings.icon_image | img_url: '250x' }}" alt="{{block.settings.icon_image.alt}}" class="mid-flex-col-img-auto">
+		      <h4 class="mid-flex-col-heading-auto">{{block.settings.icon_heading}}</h4>
+		    </div>
+		    <div class="mid-flex-col-auto-2">
+		      <div class="mid-flex-col-text-auto">{{block.settings.icon_content}}</div>
+		    </div>
+		  </div>
+		</div>
+	{% endfor %}
+  
+
+
+</div> <!-- -->
+
+
+{% schema %}
+{
+  "name": "Icon Section" ,
+  "max_blocks": 5,
+  "settings": [
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "HOW IT WORKS",
+         "label": "Heading Text"
+      },
+      {
+         "type": "textarea",
+         "id": "sub_heading_text",
+         "default": "Ready to eliminate something from your to-do list? Let us set up your orders on a regular schedule for you. Select the 'Auto Shipments' button on any applicable product page then choose how often you want that good-good delivered directly to your doorstep!",
+         "label": "Heading Paragraph"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Icon Block",
+      "settings": [
+        {
+          "label": "Icon Image",
+          "id": "icon_image",
+          "type": "image_picker"
+        },
+        {
+          "label": "Icon Heading",
+          "id": "icon_heading",
+          "type": "text"
+        },
+        {
+          "label": "Icon Content",
+          "id": "icon_content",
+          "type": "richtext"
+        }
+      
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+

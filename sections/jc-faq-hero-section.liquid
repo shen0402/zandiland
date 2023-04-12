@@ -1,0 +1,85 @@
+<div class="hero-wrapper-faq hero-wrapper-faq-{{section.id}}">
+  <div class="hero-content-container-faq w-clearfix">
+    <div style="margin: {{section.settings.align_hero_text}}" class="hero-content-wrapper-faq">
+      <h1 class="hero-heading-faq" style="text-align: {{section.settings.text_align}}" style="color: {{section.settings.font_color}};">{{section.settings.heading_text}}</h1>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.bg_image %}
+  <style type="text/css">
+    .hero-wrapper-faq.hero-wrapper-faq-{{section.id}} {
+      background-image: url({{ section.settings.bg_image | img_url: '1800x' }});
+    }
+  </style>
+{% endif %}
+
+{% if section.settings.bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+     .hero-wrapper-faq.hero-wrapper-faq-{{section.id}} {
+       background-image: url({{ section.settings.bg_image_mobile | img_url: '1200x' }});
+     }
+
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero Section" ,
+  "settings": [
+  	  {
+  	     "type": "image_picker",
+  	     "id": "bg_image",
+  	     "label": "Background Image"
+  	  },	
+      {
+         "type": "image_picker",
+         "id": "bg_image_mobile",
+         "label": "Mobile Background Image"
+      },
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "Frequently Asked",
+         "label": "Heading"
+      },
+      {
+        "type": "radio",
+        "id": "align_hero_text",
+        "options": [
+           { "value": "0px 0px 0px auto", "label": "Right"},
+           { "value": "0px auto", "label": "Centered"},
+           { "value": "auto 0px 0px 0px", "label": "Left"}
+        ],
+        "default": "0px 0px 0px auto",
+        "label": "Hero Text Placement"
+     },
+      {
+         "type": "text",
+         "id": "sub_heading_text",
+         "default": "questions",
+         "label": "Secondaary Heading"
+      },
+      {
+         "type":      "color",
+         "id":        "font_color",
+         "label":     "Font Color",
+         "default":   "#000000"
+      },
+      {
+         "type": "radio",
+         "id": "text_align",
+         "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+         ],
+         "default": "right",
+         "label": "Text Align"
+      }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,84 @@
+
+<div class="img-bg-section-home">
+  <div class="img-bg-content-wrapper">
+    <div class="img-bg-flex-row">
+      <div class="img-bg-flex-col">
+        <div class="img-bg-heading-wrapper">
+          <h3 class="w-basic-heading section-heading">{{section.settings.banner-section-3-heading}}</h3>
+        </div>
+      </div>
+      <div class="img-bg-flex-col img-bg-flex-col-alt">
+        <div class="img-bg-heading-wrapper">
+          <p class="img-bg-text">{{section.settings.banner-section-3-sub-heading}}</p>
+          <div class="img-bg-btn-wrapper">
+            <a href="{{section.settings.banner-section-3-btn-link}}" class="btn-main w-button">{{section.settings.banner-section-3-btn-text}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="img-bg-overlay"></div>
+</div>
+
+{% if section.settings.banner_3_bg_image %}
+  <style type="text/css">
+    .img-bg-section-home {
+      background-image: url({{section.settings.banner_3_bg_image|img_url:'1800x'}});
+    };
+  </style>
+{% endif %}
+
+{% if section.settings.banner_3_bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+      .img-bg-section-home {
+      background-image: url({{ section.settings.banner_3_bg_image_mobile | img_url: '1200x' }});
+    };
+
+    }
+  </style>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Image Banner 3",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_3_bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_3_bg_image_mobile",
+        "label": "Mobile Background Image"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-3-heading",
+        "label": "Main Heading",
+        "default": "PUT IT ON AUTO-PILOT WITH AUTOSHIP"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-3-sub-heading",
+        "label": "Sub Heading",
+        "default": "WITH AUTO SHIP YOU GET TO SET IT AND FORGET IT WHILE YOU GET BUSY SNATCHING ALL THE HAIRS #KEEPYOURKITTYPRETTY"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-3-btn-text",
+        "label": "Button Text",
+        "default": "Learn More"
+      },
+      {
+        "type": "url",
+        "id": "banner-section-3-btn-link",
+        "label": "Button link"
+      }
+  ]
+}
+{% endschema %}
+

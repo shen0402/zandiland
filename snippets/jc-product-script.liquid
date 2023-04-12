@@ -1,0 +1,127 @@
+<script>
+
+	$('.product-form-radio-input').on('change', function() {
+
+		{% if product.options[0] %}
+			var opt1_field = $('#ProductSelect-option-0').find('.product-form-radio-input:checked');	
+			var opt1 = opt1_field.val();
+			
+		{% endif %}
+
+		{% if product.options[1] %}
+			var opt2_field = $('#ProductSelect-option-1').find('.product-form-radio-input:checked');	
+			var opt2 = opt2_field.val();
+
+		{% endif %}
+
+		{% if product.options[2] %}
+			var opt3_field = $('#ProductSelect-option-2').find('.product-form-radio-input:checked');	
+			var opt3 = opt3_field.val();
+
+		{% endif %}
+		var id = '';
+		{% for v in product.variants %}
+		if(opt1=="{{ v.option1 }}"{% if product.options[1] %} && opt2=="{{ v.option2 }}"{% endif %}{% if product.options[2] %} && opt3=="{{ v.option3 }}"{% endif %}) {
+		    var id = {{ v.id }};
+		    var price = "{{ v.price | money }}";
+		    var compare_at_price = "{{ v.compare_at_price | money }}";
+		    var is_available =  {{v.available}};
+		    var variant_image = '';
+		    var variant_title = "{{v.title}}";
+		    {% if v.image.src != blank %}
+		    var variant_image = "{{ v.image | img_url: '800x' }}";
+		    {% endif %}
+		  }
+		{% endfor %}
+		if(id!='') {
+		  		
+		  document.getElementById('product-select').value = id;
+		  if (variant_image != '') {
+		  	$('.tab-link-product').each(function(i, obj) {
+		  	    var sk_variant_id = $(this).attr('sk-variant-id');
+	
+		  	    if (variant_image == sk_variant_id) {
+		  	    	$(this).click();
+		  	    } 
+		  	});
+
+		  }
+		  if (is_available == true) {
+		  
+		  	$('#price').html(price);
+		  	$('#compare-at-price').html(compare_at_price);
+		  	$('#sk-add-to-cart-btn').attr('value','Add to Cart');
+		  	$('#sk-add-to-cart-btn').removeAttr('disabled');
+		  } else {
+		  	$('#price').html('Sold Out');
+		  	$('#sk-add-to-cart-btn').attr('value','Sold Out');
+		  	$('#sk-add-to-cart-btn').attr('disabled','disabled');
+
+		  }
+		  
+		} else {
+		  document.getElementById('product-select').value = '';
+		  document.getElementById('price').innerHTML = 'Unavailable';
+		  console.log('second '+ is_available);
+		}
+
+	});	
+    
+  
+</script>
+
+<script>
+
+	$('.form-select-product').on('change', function() {
+
+		{% if product.options[0] %}var opt1 = document.getElementById('select-one').value;{% endif %}
+		{% if product.options[1] %}var opt2 = document.getElementById('select-two').value;{% endif %}
+		{% if product.options[2] %}var opt3 = document.getElementById('select-three').value;{% endif %}
+		var id = '';
+		{% for v in product.variants %}
+		if(opt1=="{{ v.option1 }}"{% if product.options[1] %} && opt2=="{{ v.option2 }}"{% endif %}{% if product.options[2] %} && opt3=="{{ v.option3 }}"{% endif %}) {
+		    var id = {{ v.id }};
+		    var price = "{{ v.price | money }}";
+		    var is_available =  {{v.available}};
+		    var variant_image = '';
+		    {% if v.image.src != blank %}
+		    var variant_image = "{{ v.image | img_url: '800x' }}";
+		    {% endif %}
+		  }
+		{% endfor %}
+		if(id!='') {
+		  		
+		  document.getElementById('product-select').value = id;
+		  if (variant_image != '') {
+		  	$('.product-page-slider').hide();
+		  	$('.product-page-variant-img').attr('src',variant_image);
+		  	$('.product-page-variant-img-holder').show();
+
+		  }
+		  if (is_available == true) {
+		  	document.getElementById('price').innerHTML = price;
+		  	$('#jc-add-to-cart-btn').attr('value','Add to Cart');
+		  	$('#jc-add-to-cart-btn').removeAttr('disabled');
+		  } else {
+		  	$('#price').html('Sold Out');
+		  	$('#jc-add-to-cart-btn').attr('value','Sold Out');
+		  	$('#jc-add-to-cart-btn').attr('disabled','disabled');
+
+		  }
+		  
+		} else {
+		  document.getElementById('product-select').value = '';
+		  document.getElementById('price').innerHTML = 'Unavailable';
+		  console.log('second '+ is_available);
+		}
+
+	});	
+    
+
+
+</script>
+ 
+
+
+
+

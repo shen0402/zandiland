@@ -1,0 +1,51 @@
+<div class="fixed-nav-section">
+  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+    <div class="nav-container w-container">
+      <div class="nav-flex-row-outer">
+        <div class="nav-meta-section">
+          <div class="nav-meta-flex-row">
+            <a href="/account/login" class="nav-meta-flex-link w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Account-New-solid.png" loading="lazy" alt="User" class="nav-meta-flex-img"></a>
+          </div>
+        </div>
+        <div class="nav-logo-wrapper-mobile">
+          <a href="/" class="nav-logo-link-mobile w-inline-block">
+            <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Curved_catlogo-BrightPink_1.png?v=1675189018" loading="lazy" alt="ZandiLand" class="nav-logo-img-mobile">
+          </a>
+        </div>
+        <nav role="navigation" class="nav-menu w-nav-menu">
+          <a href="/blogs/insider-info" class="nav-link w-nav-link">INSIDER INFO BlOG</a>
+          <a href="https://zandilandprofessional.com/account/login?recover" class="nav-link w-nav-link">LOGIN</a>
+        </nav>
+        <div class="menu-btn-wrapper">
+          <div class="menu-btn w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="announce-bar">
+    <div class="announce-container">
+      <a href="#202677107768060" class="announce-rte w-richtext">
+        {{section.settings.announce_text}}
+      </a>
+      {% comment %}
+      <div class="announce-close-btn" data-ix="announce-close"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/close-white-sk-update.png" loading="lazy" alt="Close" class="announce-close-img"></div>
+      {% endcomment %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Navigation",
+  "settings": [
+  {
+     "type": "richtext",
+     "id": "announce_text",
+     "default": "<p>FREE SHIPPING ON ALL ORDERS WITHIN U.S.</p>",
+     "label": "Announcement Text"
+  }
+]
+}
+{% endschema %}

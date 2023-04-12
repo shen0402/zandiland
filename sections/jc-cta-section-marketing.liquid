@@ -1,0 +1,51 @@
+<div class="cta-section-marketing">
+  <div class="container-mid">
+    <div class="cta-flex-row-marketing">
+      <div class="cta-flex-col-marketing">
+        <div class="cta-flex-col-inner-marketing">
+          <h3 class="cta-flex-col-heading-marketing">{{section.settings.heading_text}}</h3>
+          <a href="{{section.settings.link_url}}" class="cta-flex-link-marketing w-inline-block">
+            <div>{{section.settings.link_text}}</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="cta-flex-link-img-marketing"></a>
+        </div>
+      </div>
+      <div class="cta-flex-col-marketing">
+        {% if section.settings.bg_image %}
+          <img src="{{ section.settings.bg_image | img_url: '1200x' }}" loading="lazy" alt="{{section.settings.bg_image.alt}}" class="cta-flex-img-marketing">
+        {% else %}
+          <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/marketing-materials-min.jpg" loading="lazy" alt="Marketing Materials" srcset="//cdn.shopify.com/s/files/1/0004/5829/3310/files/marketing-materials-min-p-500.jpeg 500w, //cdn.shopify.com/s/files/1/0004/5829/3310/files/marketing-materials-min.jpg 700w" sizes="(max-width: 479px) 95vw, (max-width: 991px) 49vw, 400px" class="cta-flex-img-marketing">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA Marketing" ,
+  "settings": [ 
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "LOOKING FOR IN-STORE MARKETING MATERIALS?",
+         "label": "Heading Text"
+      },
+      {
+         "type": "text",
+         "id": "link_text",
+         "default": "Work smarter not harder for your sales. We got your marketing covered! View our physical materials available for sale here.",
+         "label": "Link Text"
+      },
+      {
+         "type": "url",
+         "id": "link_url",
+         "label": "Link URL"
+      },
+      {
+         "type": "image_picker",
+         "id": "bg_image",
+         "label": "Image"
+      }
+     
+  ]
+}
+{% endschema %}

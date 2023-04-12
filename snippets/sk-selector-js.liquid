@@ -1,0 +1,76 @@
+{%comment%}
+<script type="text/javascript">
+	$(document).ready(function() { 
+
+		function incrementDown() {
+
+		    $('.jc-js-quantity-selector').val( function(i, oldval) {
+		        return --oldval;
+		    });
+		}
+
+		function incrementUp() {
+
+		    $('.jc-js-quantity-selector').val( function(i, oldval) {
+		        return ++oldval;
+		    });
+		}
+
+
+		$("#jc-quantity-btn-down").click(function(){
+		  incrementDown();
+		});
+
+		$("#jc-quantity-btn-up").click(function(){
+		  incrementUp();
+		});
+
+ 	});
+
+</script>
+{%endcomment%}
+
+
+
+<script>
+  $(document).ready(function() { 
+
+
+     $("#jc-quantity-btn-down").click(function(){
+       $('#updates_large_{{ item.key }}').val( function(i, oldval) {
+           if (oldval < 2) {
+             return 1;
+           } else {
+             return --oldval;
+           }
+       });
+     });
+
+     $("#jc-quantity-btn-up").click(function(){
+       $('#updates_large_{{ item.key }}').val( function(i, oldval) {
+           return ++oldval;
+       });
+     });
+   });
+
+   /* ---- for nudging by 6 ---- */
+
+   $(document).ready(function() { 
+     $("#jc-quantity-btn-down-6").click(function(){
+       $('#updates_large').val( function(i, oldval) {
+           if (oldval < 7) {
+             return 6;
+           } else {
+            return parseInt(oldval) - 6;
+           }
+       });
+     });
+
+     $("#jc-quantity-btn-up-6").click(function(){
+       $('#updates_large').val( function(i, oldval) {
+           return parseInt(oldval) + 6;
+       });
+     });
+   });
+
+  </script>

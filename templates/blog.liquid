@@ -1,0 +1,66 @@
+{% unless customer %}
+ {% section 'sk-header-alt' %}
+{% endunless %}
+
+{% section 'sk-blog-hero-section' %}
+
+<div class="sub-hero-bar-blog">
+  <h1 class="sub-hero-heading-blog">STAY UP TO DATE WITH THE LATEST TIPS FROM Zandiland</h1>
+</div>
+<div class="mid-wrapper-blog">
+  <div class="container-mid">
+
+    {% if blog.articles_count > 0 %}
+
+      {% paginate blog.articles by 12 %}
+      <div class="flex-row-blog">
+
+        {% for article in blog.articles %}
+          <div class="flex-col-blog">
+            <div class="flex-col-inner-blog">
+              <div class="img-block-blog" {% if article.image %}style="background-image: url({{ article.image | img_url: '800x' }});"{% endif %}><div class="date-text-blog">{{ article.published_at | time_tag: format: 'date' }}</div></div>
+              <div class="bottom-col-wrapper-blog">
+                <a href="{{article.url}}" class="col-btn-blog w-inline-block">
+                <h4 class="col-heading-blog">{{ article.title | escape }}</h4>
+                <a>
+                <div class="bottom-col-flex-row-blog">
+                  <div class="col-btn-wrapper-blog">
+                    <a href="{{article.url}}" class="col-btn-blog w-inline-block">
+                      <div>Read Article</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min-new.png" alt="Arrow" class="col-btn-img-blog"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+
+      </div> <!-- flex-row-blog -->
+
+        {% if paginate.pages > 1 %}
+          {% include 'pagination' %}
+        {% endif %}
+      {% endpaginate %}
+
+    {% else %}
+      <div class="blog-page-empty-wrapper">
+        <p class="blog-page-empty-text">There are no published blog posts yet</p>
+      </div>
+    {% endif %}  
+
+   
+
+  </div>
+</div>
+
+{% unless customer %}
+   {% section 'sk-footer-alt' %}
+{% endunless %}
+
+<style type="text/css">
+  @media (min-width:992px) {
+      .flex-col-blog:nth-child(even) {
+        padding-top:60px;
+      }
+    }
+</style>

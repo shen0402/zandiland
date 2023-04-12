@@ -1,0 +1,79 @@
+<div class="product-row-section">
+  <div class="container-small">
+    <h3 class="product-row-section-heading">{{section.settings.heading_text}}</h3>
+    <div class="product-section-row">
+
+      {% for block in section.blocks %}
+        <div class="product-section-col">
+          <div class="product-section-col-inner">
+            <div class="product-section-col-top-wrapper">
+              <div class="product-section-col-img-wrapper"><img src="{{ block.settings.bundle_image | img_url: '800x' }}" alt="{{block.settings.bundle_image.alt}}" class="product-section-col-img"><a href="{{block.settings.bundle_url}}" class="product-section-overlay-link w-inline-block"></a></div>
+              <h4 class="product-section-col-heading">{{block.settings.bundle_name}}</h4>
+              <div class="product-section-col-bottom-wrapper">
+                <h5 class="product-section-col-sub-heading">{{block.settings.bundle_sub_heading}}</h5>
+                <div class="product-col-section-price-text">{{block.settings.bundle_price}}</div>
+              </div>
+            </div>
+            <div class="product-col-section-btn-wrapper"><a href="{{block.settings.bundle_url}}" class="btn-transparent w-button">{{block.settings.bundle_btn_text}}</a></div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bundles Section" ,
+  "max_blocks": 2,
+  "settings": [
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "shop bundles",
+         "label": "Heading Text"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Bundle",
+      "settings": [
+        {
+          "label": "Bundle Name",
+          "id": "bundle_name",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Image",
+          "id": "bundle_image",
+          "type": "image_picker"
+        },
+        {
+          "label": "Bundle Secondary Heading",
+          "id": "bundle_sub_heading",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Price",
+          "id": "bundle_price",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Button Text",
+          "id": "bundle_btn_text",
+          "default": "BUY NOW",
+          "type": "text"
+        },
+        {
+          "label": "Bundle Button Link",
+          "id": "bundle_url",
+          "type": "url"
+        }
+
+      ]
+    }
+  ]
+}
+{% endschema %}

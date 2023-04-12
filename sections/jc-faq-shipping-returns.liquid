@@ -1,0 +1,53 @@
+<div class="tab-content-inner-faq">
+  <div class="tab-content-container-faq">
+
+    {% for block in section.blocks %}
+      <div class="tab-content-block-faq">
+        <div class="tab-content-heading-wrapper-faq" data-ix="faq-expand-page">
+          <h4 class="tab-content-heading-faq">{{block.settings.question}}</h4>
+          <div class="tab-content-img-wrapper-faq"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/plus-black_1plus-black.png" alt="Plus Black" class="tab-content-img-faq"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/plus-blue.png" alt="Plus Pink" class="tab-content-img-faq-active"></div>
+        </div>
+        <div class="tab-expand-wrapper-faq">
+          <div class="tab-expand-inner-faq">
+            <div class="tab-expand-text-faq">{{block.settings.answer}}</div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    
+
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shipping/Returns FAQs" ,
+
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Question/Answer",
+      "settings": [
+        
+        {
+          "label": "Question",
+          "id": "question",
+          "type": "text"
+        },
+        {
+           "label": "Answer",
+           "id": "answer", 
+           "type": "richtext"
+        }       
+
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+
+

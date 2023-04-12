@@ -1,0 +1,49 @@
+<div class="mid-faq-section-auto">
+  <h3 class="mid-heading-auto">FAQ&#x27;s</h3>
+
+  {% for block in section.blocks %}
+    <div class="content-block-faq">
+      <div class="content-heading-wrapper-faq" data-ix="faq-expand">
+        <h4 class="content-heading-faq">{{block.settings.question}}</h4>
+        <div class="content-img-wrapper-faq"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/plus-black_1plus-black.png" alt="Plus Black" class="content-img-faq"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/plus-blue.png" alt="Plus Pink" class="content-img-active-faq"></div>
+      </div>
+      <div class="expand-wrapper-faq">
+        <div class="expand-inner-faq">
+          <div class="expand-text-faq">{{block.settings.answer}}</div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+
+</div> <!-- mid-faq-section-auto -->
+
+
+{% schema %}
+{
+  "name": "FAQs Auto Shipment" ,
+
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Question/Answer",
+      "settings": [
+        
+        {
+          "label": "Question",
+          "id": "question",
+          "type": "text"
+        },
+        {
+           "label": "Answer",
+           "id": "answer", 
+           "type": "richtext"
+        }       
+
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+

@@ -1,0 +1,328 @@
+
+
+
+<div class="hero-wrapper-pro hero-wrapper-pro-{{section.id}}">
+  {%comment%}
+  <div class="hero-content-wrapper-pro {% if section.settings.text_placement == 'right' %}hero-content-inner-float-right{% elsif section.settings.text_placement == 'center' %}hero-content-inner-float-center{% else %}hero-content-inner-float-left{% endif %} {% if section.settings.text_align == 'right' %}hero-content-inner-align-right{% elsif section.settings.text_placement == 'center' %}hero-content-inner-align-center{% else %}hero-content-inner-align-left{% endif %}">
+    <div class="hero-heading-flex-row-pro">
+      <h1 class="hero-main-heading-internal" style="color: {{section.settings.font_color}};">{{section.settings.hero_heading}}</h1>
+    </div>
+    <div class="hero-btn-wrapper-pro">
+      <a id="hero-scroll-btn" href="#form-apply" class="btn-main w-button">Apply Now</a>
+    </div>
+  </div>
+  {%endcomment%}
+</div>
+
+<div class="bar-cta">
+  <div class="container-large">
+
+    {%comment%}
+    <div class="bar-cta-flex-row bar-cta-flex-row-landing-desktop">
+      <h2 class="bar-cta-heading">{{section.settings.sub_hero_heading}}</h2>
+      <a href="{{section.settings.sub_hero_btn_url}}" class="bar-cta-flex-link w-inline-block">
+        <div>{{section.settings.sub_hero_btn_text}} </div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min-new.png" alt="Arrow" class="bar-cta-flex-img"></a>
+    </div>
+    {%endcomment%}
+
+    <div class="bar-cta-flex-row bar-cta-flex-row-landing-mobile">
+      <h2 class="bar-cta-heading">{{section.settings.wholesale_heading}}</h2>
+      <a id="hero-scroll-btn" href="#form-apply" class="btn-main w-button light">
+        <div>{{section.settings.wholesale_btn}}Apply Now </div></a>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="bar-cta-landing-mobile">
+  <div class="container-large">
+
+    <div class="bar-cta-flex-row ">
+      <h2 class="bar-cta-heading">ALREADY HAVE AN ACCOUNT?</h2>
+      <a href="/account/login" class="bar-cta-flex-link w-inline-block dark">
+        <div>Login Here </div>
+        <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min-new.png" alt="Arrow" class="bar-cta-flex-img">
+      </a>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="mid-wrapper-pro">
+  <div class="mid-content-wrapper-pro">
+    <div class="mid-heading-wrapper-pro">
+      <h3 class="mid-heading-pro">{{section.settings.icon_section_heading}}</h3>
+      <div class="mid-heading-text-pro">{{section.settings.icon_section_heading_text}}</div>
+    </div>
+    <div class="mid-content-holder-pro">
+
+      {% for block in section.blocks %}
+        <div class="mid-content-block-pro">
+          <div class="mid-flex-row-outer-pro">
+            <div class="mid-flex-col-pro-1"><img src="{{ block.settings.icon_image | img_url: '250x' }}" alt="{{block.settings.icon_image.alt}}" class="mid-flex-col-img-pro">
+              <h4 class="mid-flex-col-heading-pro">{{block.settings.icon_heading}}</h4>
+            </div>
+            <div class="mid-flex-col-pro-2">
+              <div class="mid-flex-col-text-pro">{{block.settings.icon_content}}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+<div class="bar-section-pro">
+  <div class="container-large">
+    <h3 class="bar-heading-pro">{{section.settings.form_heading}}</h3>
+    <p class="bar-text-pro">{{section.settings.form_sub_heading}}</p>
+  </div>
+</div>
+<div class="form-section-pro" id="form-apply">
+  <div class="form-container-pro">
+    <div class="form-block-pro w-form">
+      <script type="text/javascript" src="https://form.jotform.com/jsform/202677107768060"></script>
+      
+    </div>
+  </div>
+</div>
+<div class="cta-container-pro">
+<div class="th_pb_section" id="th_product_bundle" data-id="{{ product.id }}"></div>
+<div id="th_pb_qty_bundle" class="th_pb_qty_bundle_cls" data-pid="{{ product.id }}"></div>
+</div>
+<div class="cta-section-pro">
+  <div class="cta-container-pro">
+    <div class="cta-flex-row-pro">
+      <div class="cta-flex-col-pro-1">
+        <h4 class="cta-heading-pro">{{section.settings.cta_heading}}</h4>
+        <div class="cta-text-pro cta-text-pro-margin">{{section.settings.cta_content}}</div>
+      </div>
+      {% if section.settings.cta_image %}
+        <div class="cta-flex-col-pro-2"><img src="{{ section.settings.cta_image | img_url: '800x' }}" alt="{{section.settings.cta_image.alt}}"></div>
+      {% else %}
+      <div class="cta-flex-col-pro-2"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/products-min.png" alt="Zandi K Products"></div>
+      {% endif %}
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+{% if section.settings.bg_image %}
+<style type="text/css">
+  .hero-wrapper-pro.hero-wrapper-pro-{{section.id}} {
+    background-image: url("{{ section.settings.bg_image | img_url: '1800x' }}");
+  }
+</style>
+{% endif %}
+
+
+{% if section.settings.bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+      .hero-wrapper-pro.hero-wrapper-pro-{{section.id}} {
+        background-image: url("{{ section.settings.bg_image_mobile | img_url: '1200x' }}");
+      }
+
+    }
+  </style>
+{% endif %}
+
+<style type="text/css">
+  @media screen and (min-width:767px) {
+      
+
+  }
+</style>
+
+
+<script type="text/javascript">
+
+  var nav_height = $('.fixed-nav-section').height();
+  $('#hero-scroll-btn').click(function()
+        {
+          $('html, body').animate({
+              scrollTop: $( $.attr(this, 'href') ).offset().top-nav_height
+          }, 1000);
+          return false;
+        });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() { 
+
+    var url = window.location.href;
+    if (url == 'https://zandikprofessional.com/?apply') {
+
+        var nav_height = $('.fixed-nav-section').height();
+
+         $('html, body').animate({
+          scrollTop: $('#form-apply').offset().top-nav_height
+        }, 1000);
+    }
+
+   });
+</script>
+
+
+{% schema %}
+{
+  "name": "Professionals Page" ,
+  "settings": [
+      {
+         "type": "header",
+         "content": "Hero Section"
+      },
+      {
+         "type": "image_picker",
+         "id": "bg_image",
+         "label": "Background Image"
+      },
+      {
+         "type": "image_picker",
+         "id": "bg_image_mobile",
+         "label": "Mobile Background Image"
+      },
+      {
+         "type":      "color",
+         "id":        "font_color",
+         "label":     "Hero Font Color",
+         "default":   "#000000"
+      },
+      {
+         "type": "radio",
+         "id": "text_placement",
+         "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+         ],
+         "default":   "right",
+         "label": "Font Placement"
+      },
+      {
+         "type": "radio",
+         "id": "text_align",
+         "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+         ],
+         "default":   "right",
+         "label": "Text Align"
+      },  
+      {
+         "type": "text",
+         "id": "hero_heading",
+         "default": "BECOME A ZANDI K RETAIL PARTNER",
+         "label": "Hero Heading"
+      },
+      {
+         "type": "header",
+         "content": "Black Bar Section"
+      },
+      {
+        "type": "text",
+        "id": "wholesale_heading",
+        "default": "BECOME A ZANDILAND RETAIL PARTNER",
+        "label": "Wholesale Heading"
+     },
+      {
+         "type": "text",
+         "id": "sub_hero_btn_text",
+         "default": "Log in here",
+         "label": "Black Bar Link Text"
+      },
+      {
+         "type": "url",
+         "id": "sub_hero_btn_url",
+         "label": "Black Bar Link URL"
+      },
+      {
+         "type": "header",
+         "content": "Icon Section",
+         "info": "To add/edit/remove Icon content blocks see the top under Content"
+      },
+      {
+         "type": "text",
+         "id": "icon_section_heading",
+         "default": "SO, WHY PARTNER WITH US?",
+         "label": "Icon Section Heading"
+      },
+      {
+         "type": "richtext",
+         "id": "icon_section_heading_text",
+         "default": "<p>As a professional, you know that the right products make for happy repeat clients that will go out of their way to refer your business! Our products will help do that for you! Let's make this a game-changer for your clients and your business.</p>",
+         "label": "Icon Section Heading Paragraph"
+      },
+      {
+         "type": "header",
+         "content": "Form Section"
+      },
+      {
+         "type": "text",
+         "id": "form_heading",
+         "default": "wholesale application form",
+         "label": "Form Section Heading"
+      },
+      {
+         "type": "text",
+         "id": "form_sub_heading",
+         "default": "(All Wholesale accounts will require a Resale ID number and Tax ID number be provided for verification before inital order).",
+         "label": "Form Section Secondary Heading"
+      },
+      {
+         "type": "header",
+         "content": "CTA Section"
+      },
+      {
+         "type": "text",
+         "id": "cta_heading",
+         "default": "want to try our products?",
+         "label": "CTA Heading"
+      },
+      {
+         "type": "richtext",
+         "id": "cta_content",
+         "label": "CTA Content"
+      },
+      {
+         "type": "image_picker",
+         "id": "cta_image",
+         "label": "CTA Image"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Icon Block",
+      "settings": [
+        {
+          "label": "Icon Image",
+          "id": "icon_image",
+          "type": "image_picker"
+        },
+        {
+          "label": "Icon Heading",
+          "id": "icon_heading",
+          "type": "text"
+        },
+        {
+           "type": "richtext",
+           "id": "icon_content",
+           "label": "Icon Content"
+        }
+
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+

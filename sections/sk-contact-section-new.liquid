@@ -1,0 +1,73 @@
+{<div class="page-wrapper-contact">
+  <div class="page-container-contact">
+    <div class="contact-container" style="justify-content: {{section.settings.text_placement}};" >
+
+      {%comment%}
+      <div class="flex-col-outer-left-contact"></div>
+      {%endcomment%}
+
+      <div class="flex-col-outer-right-contact">
+        <div class="flex-col-inner-contact">
+          <div class="heading-wrapper-contact">
+            <h2 class="main-heading-contact" style="text-align: {{section.settings.text_align}};">WE WANT TO HEAR FROM YOU</h2>
+            <h1 class="sub-heading-contact" style="text-align: {{section.settings.text_align}};">contact us</h1>
+          </div>
+          <div class="mid-wrapper-contact">
+            <div class="link-wrapper-contact" style="justify-content: {{section.settings.text_align}};"><a href="tel:+17203094379" class="flex-link-contact w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/phone-min.png" loading="lazy" alt="Phone" class="flex-link-img-contact"><div>(720) 309-4379</div></a></div>
+            <div class="link-wrapper-contact" style="justify-content: {{section.settings.text_align}};"><a href="mailto:orders@zandilandbeauty.com" class="flex-link-contact w-inline-block"><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/mail-min.png" loading="lazy" alt="Mail" class="flex-link-img-contact"><div>orders@zandilandbeauty.com</div></a></div>
+          </div>
+
+          <div class="form-block-contact w-form">
+
+            {% form 'contact', id:"Contact-Form" %}
+            {% if form.posted_successfully? %}
+              <div class="jc-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+            {% else %}
+            <input type="hidden" name="contact[form-name]" value="General Contact Form">
+            <input style="text-align: {{section.settings.text_align}};"  type="text" class="form-input-contact w-input" maxlength="256" name="contact[Your-Name]" placeholder="Your Name" id="name" required="">
+            <input style="text-align: {{section.settings.text_align}};"  type="email" class="form-input-contact w-input" maxlength="256" name="contact[Email]" placeholder="Your Email" id="email" required="">
+            <input style="text-align: {{section.settings.text_align}};"  type="text" class="form-input-contact w-input" maxlength="256" name="contact[Company-Name]" placeholder="Company Name" id="Company-Name" required="">
+              <div  class="form-input-wrapper-contact"><textarea placeholder="Your Message..." maxlength="5000" id="Message" name="contact[Message]" class="form-input-area-contact w-input"></textarea></div>
+              <div style="text-align: {{section.settings.text_align}};" class="btn-wrapper-contact"><input type="submit" value="Submit" data-wait="Please wait..." class="btn-main btn-main-sm sk-collection-btn w-button"></div>
+              {% endif %}
+            {% endform %}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>}
+
+{% schema %}
+{
+  "name": "Hero Section" ,
+  "settings": [
+      {
+         "type": "radio",
+         "id": "text_placement",
+         "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+         ],
+         "default":   "right",
+         "label": "Text Placement"
+      },
+      {
+         "type": "radio",
+         "id": "text_align",
+         "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+         ],
+         "default":   "center",
+         "label": "Text Align"
+      }
+  ]
+}
+{% endschema %}

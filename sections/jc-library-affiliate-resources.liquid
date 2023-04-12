@@ -1,0 +1,174 @@
+<div class="tab-content-inner-marketing">
+  <div class="tab-container-marketing">
+    <div class="tab-heading-wrapper-marketing">
+      <h3 class="tab-heading-marketing">Affiliate Resources</h3>
+      <p class="tab-heading-text-marketing">Sell Zandi K Products right from your phone or computer and we’ll take care of the rest! By joining our affiliate program, you can earn commissions right from your website or social media and we will ship our products to your customers. Download these great graphics to promote your affiliate sales.</p>
+    </div>
+    <div class="flex-row-outer-marketing">
+      <div class="flex-col-outer-marketing">
+        <div class="content-block-marketing">
+          <h4 class="content-block-heading-marketing">Instagram/Facebook Posts</h4>
+
+
+          {% for block in section.blocks %}
+            {% if block.settings.resource_type == 'instagram_facebook_posts' %}
+
+            <div class="flex-row-wrapper-marketing">
+
+              <div class="flex-row-marketing">
+                <div class="flex-img-wrapper-marketing">
+                  {% if block.settings.resource_file_type == 'image' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                  {% elsif block.settings.resource_file_type == 'zip' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/zip-min.png" loading="lazy" alt="Zip" class="flex-img-marketing">
+                  {% elsif block.settings.resource_file_type == 'pdf' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/pdf-min.png" loading="lazy" alt="PDF" class="flex-img-marketing">
+                  {% else %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                  {% endif %}
+                </div>
+                <div class="flex-col-marketing">
+                  <h5 class="flex-col-heading-marketing">{{block.settings.resource_name}}</h5>
+                  <a href="{{block.settings.resource_url}}" class="flex-link-marketing w-inline-block" target="_blank">
+                    <div>Download</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="flex-link-img-marketing"></a>
+                </div>
+              </div>
+
+                {% if block.settings.resource_image %}
+                <div class="flex-row-img-block-wrapper-marketing">
+                  <a class="banner-img-link-marketing" href="{{block.settings.resource_url}}" target="_blank">
+                  <div class="banner-img-wrapper-marketing" style="background-image: url({{ block.settings.resource_image | img_url: '800x' }});"></div>
+                  </a>
+                </div>
+              {% endif %}
+
+            </div>
+              
+            {% endif %}
+          {% endfor %}
+
+
+        </div>
+
+        <div class="content-block-marketing">
+          <h4 class="content-block-heading-marketing">Instagram/Facebook Stories</h4>
+
+           {% for block in section.blocks %}
+             {% if block.settings.resource_type == 'instagram_facebook_story' %}
+
+               <div class="flex-row-wrapper-marketing">
+
+                  <div class="flex-row-marketing">
+                    <div class="flex-img-wrapper-marketing">
+                      {% if block.settings.resource_file_type == 'image' %}
+                        <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                      {% elsif block.settings.resource_file_type == 'zip' %}
+                        <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/zip-min.png" loading="lazy" alt="Zip" class="flex-img-marketing">
+                      {% elsif block.settings.resource_file_type == 'pdf' %}
+                        <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/pdf-min.png" loading="lazy" alt="PDF" class="flex-img-marketing">
+                      {% else %}
+                        <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                      {% endif %}
+                    </div>
+                    <div class="flex-col-marketing">
+                      <h5 class="flex-col-heading-marketing">{{block.settings.resource_name}}</h5>
+                      <a href="{{block.settings.resource_url}}" class="flex-link-marketing w-inline-block" target="_blank">
+                        <div>Download</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="flex-link-img-marketing"></a>
+                    </div>
+                  </div>
+
+                    {% if block.settings.resource_image %}
+                    <div class="flex-row-img-block-wrapper-marketing">
+                      <a class="banner-img-link-marketing" href="{{block.settings.resource_url}}" target="_blank">
+                      <div class="banner-img-wrapper-marketing" style="background-image: url({{ block.settings.resource_image | img_url: '800x' }});"></div>
+                      </a>
+                    </div>
+                  {% endif %}
+
+
+               </div>
+               
+             {% endif %}
+           {% endfor %} 
+
+
+        </div>
+
+      </div>
+      <div class="flex-col-outer-marketing">
+
+        <div class="content-block-marketing">
+          <h4 class="content-block-heading-marketing">Product Pictures</h4>
+          <h5 class="flex-col-heading-marketing">Coming Soon!</h5>
+         
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Affiliate Resources" ,
+  "settings": [
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "Affiliate Resources",
+         "label": "Heading Text"
+      },
+      {
+         "type": "textarea",
+         "id": "heading_paragraph",
+         "default": "Sell Zandi K Products right from your phone or computer and we’ll take care of the rest! By joining our affiliate program, you can earn commissions right from your website or social media and we will ship our products to your customers. Download these great graphics to promote your affiliate sales.",
+         "label": "Heading Paragraph"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Resource",
+      "settings": [
+        {
+          "label": "Resource Name",
+          "id": "resource_name",
+          "type": "text"
+        },
+        {
+           "type": "radio",
+           "id": "resource_type",
+           "label": "Resource Type",
+           "options": [
+             { "value": "instagram_facebook_posts", "label": "Instagram/Facebook Posts" },
+             { "value": "instagram_facebook_story", "label": "Instagram/Facebook Story" },
+             { "value": "product_pictures", "label": "Product Pictures" }
+           ]
+        },
+        {
+           "type": "radio",
+           "id": "resource_file_type",
+           "label": "File Type",
+           "options": [
+             { "value": "image", "label": "Image" },
+             { "value": "pdf", "label": "PDF" },
+             { "value": "zip", "label": "Zip File" }
+           ]
+        },
+        {
+          "label": "URL To File",
+          "id": "resource_url",
+          "type": "url"
+        },
+        {
+          "label": "Image",
+          "id": "resource_image",
+          "type": "image_picker"
+        }
+
+      ]
+    }
+  ]
+}
+{% endschema %}

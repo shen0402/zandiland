@@ -1,0 +1,46 @@
+<div class="banner-section-home" {% if section.settings.bg_image %}style="background-image: url({{ section.settings.bg_image | img_url: '1200x' }});"{% endif %}>
+  <div class="container-small">
+    <div class="banner-section-content-wrapper">
+      <h4 class="banner-cta-heading">{{section.settings.heading_text}}</h4>
+      <div class="banner-cta-sub-heading">{{section.settings.sub_heading_text}}</div>
+      <div class="banner-cta-btn-wrapper"><a href="{{section.settings.btn_url}}" target="_blank" class="banner-cta-btn w-button">{{section.settings.btn_text}}</a></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Affiliate Section" ,
+  "settings": [
+	  {
+	     "type": "text",
+	     "id": "heading_text",
+	     "default": "Sell Online",
+	     "label": "Heading"
+	  },
+	  {
+	     "type": "richtext",
+	     "id": "sub_heading_text",
+	     "default": "<p>JOIN OUR<br>AFFILIATE PROGRAM</p>",
+	     "label": "Secondaary Heading"
+	  },
+	  {
+	     "type": "text",
+	     "id": "btn_text",
+	     "default": "Join Now",
+	     "label": "Button Text"
+	  },
+	  {
+	     "type": "url",
+	     "id": "btn_url",
+	     "label": "Button URL"
+	  },
+  	  {
+  	     "type": "image_picker",
+  	     "id": "bg_image",
+  	     "label": "Background Image"
+  	  }
+      
+  ]
+}
+{% endschema %}

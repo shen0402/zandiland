@@ -1,0 +1,170 @@
+
+
+<div class="banner-section-home-sk alt banner-section-home-sk-{{section.id}}">
+    <div class="banner-content-wrapper flex">
+  
+      
+      <div class="banner-img-left less-margin mobile">
+        <h3 class="section-heading center less-margin">{{section.settings.main_heading}}</h3>
+        <img class="banner-img-mobile" src="{{ section.settings.bg_image_mobile | img_url: '1200x' }}">
+      </div>
+  
+  
+      <div class="banner-container-home-sm full">
+        <div class="banner-content-inner-alt full" data-ix="fadeinleft">
+          <div class="inner-flex">
+            <div class="inner-flex-left mobile-100">
+              <div class="banner-heading-wrapper">
+                <h3 class="section-heading center desktop cms-color">{{section.settings.main_heading}}</h3>
+              </div>
+            </div>
+
+            <div class="inner-flex-right">
+              <div class="banner-text-wrapper">
+                <p class="banner-text white cms-color">{{section.settings.sub_heading}}</p>
+              </div>
+
+              <div class="banner-btn-wrapper left">
+                <a href="{{section.settings.btn_url}}" class="btn-main-sk w-button round mobile-white">{{section.settings.btn_text}}</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.heading_color_desktop %}
+    <style type="text/css">
+        .section-heading.center.desktop.cms-color {
+         color: {{section.settings.heading_color_desktop}};
+       };
+    </style>
+  {% endif %}
+
+  {% if section.settings.heading_color_mobile %}
+    <style type="text/css">
+      @media screen and (max-width: 479px) { 
+  
+        .section-heading.center.desktop.cms-color {
+         color: {{section.settings.heading_color_mobile}};
+       };
+      }
+    </style>
+  {% endif %}
+
+  {% if section.settings.body_color_desktop %}
+    <style type="text/css">
+        .banner-text.white.cms-color {
+         color: {{section.settings.body_color_desktop}};
+       };
+    </style>
+  {% endif %}
+
+  {% if section.settings.body_color_mobile %}
+    <style type="text/css">
+      @media screen and (max-width: 479px) { 
+  
+        .banner-text.white.cms-color {
+         color: {{section.settings.body_color_mobile}};
+       };
+      }
+    </style>
+  {% endif %}
+  
+  
+  {% if section.settings.bg_image %}
+    <style type="text/css">
+      .banner-section-home-sk.banner-section-home-sk-{{section.id}} {
+        background-image: url({{ section.settings.bg_image | img_url: '1800x' }});
+        background-position: 50% 50%;
+      }
+    </style>
+  {% endif %}
+  
+  {% if section.settings.bg_image_mobile %}
+    <style type="text/css">
+     
+  
+       .banner-img-mobile {
+         background-image: url({{ section.settings.bg_image_mobile | img_url: '1200x' }});
+         background-position: 50% 50%;
+       }
+  
+      
+    </style>
+  {% endif %}
+
+  
+  
+  
+  {% schema %}
+  {
+    "name": "Image Banner 1",
+    "settings": [
+        {
+           "type": "image_picker",
+           "id": "bg_image",
+           "label": "Background Image"
+        },
+        {
+           "type": "image_picker",
+           "id": "bg_image_mobile",
+           "label": "Mobile Background Image"
+        },
+        {
+           "type": "text",
+           "id": "main_heading",
+           "label": "Main Heading",
+           "default": "Get Your Glow On"
+        },
+        {
+          "type": "color",
+          "id": "heading_color_desktop",
+          "label": "Main Heading Color Desktop",
+          "default": "#000"
+       },
+       {
+        "type": "color",
+        "id": "heading_color_mobile",
+        "label": "Main Heading Color Mobile",
+        "default": "#000"
+     },
+     {
+      "type": "color",
+      "id": "body_color_desktop",
+      "label": "Body Color Desktop",
+      "default": "#000"
+   },
+   {
+    "type": "color",
+    "id": "body_color_mobile",
+    "label": "Body Color Mobile",
+    "default": "#000"
+ },
+        
+        {
+           "type": "textarea",
+           "id": "sub_heading",
+           "label": "Secondary Heading",
+           "default": "Get our latest creation and let this luxurious oil serum do its work on your hyperpigmentation and scarring"
+        },
+        {
+           "type": "text",
+           "id": "btn_text",
+           "label": "Button Text",
+           "default": "Shop Now"
+        },
+        {
+           "type": "url",
+           "id": "btn_url",
+           "label": "Button URL"
+        }
+  
+    ]
+  }
+  {% endschema %}
+  
+  
+  

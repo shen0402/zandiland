@@ -1,0 +1,107 @@
+
+<div class="banner-section-home-alt">
+  <div class="banner-content-wrapper">
+    <div class="banner-container-home" style="justify-content: {{section.settings.text_placement}};">
+      <div class="banner-content-inner-alt" style="text-align: {{section.settings.text_align}};" data-ix="fadeinright">
+        <div class="banner-heading-wrapper">
+          <h3 class="w-basic-heading section-heading">{{section.settings.banner-section-2-heading}}</h3>
+        </div>
+        <div class="banner-text-wrapper no-margin">
+          <p class="banner-text">{{section.settings.banner-section-2-sub-heading}}<br></p>
+        </div>
+        <div class="banner-btn-wrapper">
+          <a href="{{section.settings.banner-section-2-btn-link}}" class="btn-main w-button">{{section.settings.banner-section-2-btn-text}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/faq-cactus-min-sk-update.png" loading="eager" alt="" class="banner-bg-img home">
+</div>
+
+{% if section.settings.banner_2_bg_image %}
+  <style type="text/css">
+    img.banner-bg-img {
+      content:url({{ section.settings.banner_2_bg_image | img_url: '1800x' }});
+    };
+  </style>
+{% endif %}
+
+{% if section.settings.banner_2_bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+      img.banner-bg-img {
+      content:url({{ section.settings.banner_2_bg_image_mobile | img_url: '1800x' }});
+    };
+
+  };
+  </style>
+{% endif %}
+
+
+
+
+{% schema %}
+{
+  "name": "Image Banner 2",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_2_bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_2_bg_image_mobile",
+        "label": "Mobile Background Image"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-2-heading",
+        "label": "Main Heading",
+        "default": "NOT SURE WHERE TO START?"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-2-sub-heading",
+        "label": "Sub Heading",
+        "default": "Check out our FAQs, chat with our chatbot or check out all of our Insider Info Blogs below!"
+      },
+      {
+        "type": "text",
+        "id": "banner-section-2-btn-text",
+        "label": "Button Text",
+        "default": "Insider Info"
+      },
+      {
+        "type": "url",
+        "id": "banner-section-2-btn-link",
+        "label": "Button Link"
+      },
+      {
+          "type": "radio",
+          "id": "text_placement",
+          "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+          ],
+          "default":   "right",
+          "label": "Text Placement"
+      },
+      {
+          "type": "radio",
+          "id": "text_align",
+          "options": [
+            { "value": "center", "label": "Center"},
+            { "value": "left", "label": "Left"},
+            { "value": "right", "label": "Right"}
+          ],
+          "default": "center",
+          "label": "Text Align"
+      }
+  ]
+}
+{% endschema %}
+
+

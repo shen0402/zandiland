@@ -1,0 +1,96 @@
+
+
+<div class="banner-section-home-sk alt banner-section-home-sk-{{section.id}}">
+    <div class="banner-content-wrapper flex">
+  
+      
+      <div class="banner-img-left mobile">
+        <h3 class="section-heading center mobile">{{section.settings.main_heading}}</h3>
+        <img class="banner-img-mobile" src="{{ section.settings.bg_image_mobile | img_url: '1200x' }}">
+      </div>
+  
+  
+      <div class="banner-container-home-sm">
+        <div class="banner-content-inner-alt" data-ix="fadeinleft">
+          <div class="banner-heading-wrapper">
+            <h3 class="section-heading center desktop">{{section.settings.main_heading}}</h3>
+          </div>
+          <div class="banner-text-wrapper">
+            <p class="banner-text center">{{section.settings.sub_heading}}</p>
+          </div>
+          <div class="banner-btn-wrapper center">
+            <a href="{{section.settings.btn_url}}" class="btn-main-sk w-button round">{{section.settings.btn_text}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  {% if section.settings.bg_image %}
+    <style type="text/css">
+      .banner-section-home-sk.banner-section-home-sk-{{section.id}} {
+        background-image: url({{ section.settings.bg_image | img_url: '1800x' }});
+        background-position: 50% 50%;
+      }
+    </style>
+  {% endif %}
+  
+  {% if section.settings.bg_image_mobile %}
+    <style type="text/css">
+     
+  
+       .banner-img-mobile {
+         background-image: url({{ section.settings.bg_image_mobile | img_url: '1200x' }});
+         background-position: 50% 50%;
+       }
+  
+      
+    </style>
+  {% endif %}
+  
+  
+  {% schema %}
+  {
+    "name": "Image Banner 1",
+    "settings": [
+        {
+           "type": "image_picker",
+           "id": "bg_image",
+           "label": "Background Image"
+        },
+        {
+           "type": "image_picker",
+           "id": "bg_image_mobile",
+           "label": "Mobile Background Image"
+        },
+        {
+           "type": "text",
+           "id": "main_heading",
+           "label": "Main Heading",
+           "default": "Get Your Glow On"
+        },
+        {
+           "type": "textarea",
+           "id": "sub_heading",
+           "label": "Secondary Heading",
+           "default": "Get our latest creation and let this luxurious oil serum do its work on your hyperpigmentation and scarring"
+        },
+        {
+           "type": "text",
+           "id": "btn_text",
+           "label": "Button Text",
+           "default": "Shop Now"
+        },
+        {
+           "type": "url",
+           "id": "btn_url",
+           "label": "Button URL"
+        }
+  
+    ]
+  }
+  {% endschema %}
+  
+  
+  

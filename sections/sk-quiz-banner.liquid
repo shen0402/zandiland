@@ -1,0 +1,37 @@
+<div class="bar-link-section-product">
+    <div class="container-mid">
+      <div class="bar-link-product">
+        <div class="sub-hero-link-flex-row" data-ix="fadeinup">
+          <h4 class="w-basic-heading sub-hero-link-heading">{{section.settings.quiz_heading_1}}</h4>
+          <a href="{{section.settings.quiz_heading_url}}" class="sub-hero-link-block w-inline-block">
+            <div>{{section.settings.quiz_heading_2}}</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% schema %}
+{
+  "name": "Quiz Banner",
+  "settings": [  
+      {
+         "type": "text",
+         "id": "quiz_heading_1",
+         "default": "NOT SURE WHAT YOU NEED?",
+         "label": "Quiz Heading 1"
+      },
+      {
+         "type": "text",
+         "id": "quiz_heading_2",
+         "default": "take the #prettykitty skin quiz",
+         "label": "Quiz Heading 2"
+      },
+      {
+         "type": "url",
+         "id": "quiz_heading_url",
+         "label": "Quiz Heading Link"
+      }
+  ]
+}
+{% endschema %}

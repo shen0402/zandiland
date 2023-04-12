@@ -1,0 +1,21 @@
+<div class="sub-hero-wrapper-bundles">
+	<div class="container-large">
+		<div class="sub-hero-flex-row-collection">
+		  <h1 class="sub-hero-heading-bundles">{{section.settings.main_heading}}</h1>
+		</div>
+	</div>
+   </div>
+
+{% schema %}
+{
+  "name": "Bundles Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_heading",
+      "default": "The Pretty Kitty Bundle",
+      "label": "Heading Text"
+    }
+  ]
+}
+{% endschema %}

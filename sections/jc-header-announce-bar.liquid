@@ -1,0 +1,26 @@
+
+
+
+<div class="fixed-nav-announce-bar">
+  <div class="fixed-nav-announce-text">
+    {{section.settings.announce_text}}
+  </div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+      {
+         "type": "richtext",
+         "id": "announce_text",
+         "default": "<p>BACK TO <a href='https://zandik.com/'>ZANDI K PRODUCTS</a></p>",
+         "label": "Announcement Bar"
+      }
+
+  ]
+}
+{% endschema %}

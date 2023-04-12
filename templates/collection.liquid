@@ -1,0 +1,119 @@
+
+
+{% section 'sk-collection-hero-section' %} 
+{% section 'sk-collection-product-section' %} 
+
+
+
+{% comment %}
+  <div class="hero-wrapper-collection" {% if collection.image %}style="background-image: url({{ collection.image | img_url: '1600x' }});"{% endif %}></div>
+  <div class="sub-hero-wrapper-collection">
+    <div class="container-large">
+
+    	
+    	{% if collection.id == 215815913534 %}
+    		<div class="sub-hero-flex-row-collection">
+    		  <a href="/collections/all-products" class="sub-hero-flex-link-collection w-inline-block">
+    		    <div>All Products</div>
+    		  </a>
+    		  <a href="/pages/bundles" class="sub-hero-flex-link-collection sub-hero-flex-link-collection-middle w-inline-block">
+    		    <div>Bundles</div>
+    		  </a>
+    		  <a href="/collections/swag" class="sub-hero-flex-link-collection w-inline-block">
+    		    <div>Swag</div>
+    		  </a>
+    		</div>
+    	
+    		{% elsif collection.id == 215816077374 %}
+    		<div class="sub-hero-flex-row-collection">
+    		  <a href="/collections/all-products" class="sub-hero-flex-link-collection w-inline-block">
+    		    <div>All Products</div>
+    		  </a>
+    		  <a href="/pages/bundles" class="sub-hero-flex-link-collection sub-hero-flex-link-collection-middle w-inline-block">
+    		    <div>Bundles</div>
+    		  </a>
+    		  <a href="/collections/back-bar" class="sub-hero-flex-link-collection w-inline-block">
+    		    <div>Back Bar</div>
+    		  </a>
+    		</div>
+    		{% else %}
+    		<div class="sub-hero-flex-row-collection">
+    		  <a href="/pages/bundles" class="sub-hero-flex-link-collection w-inline-block">
+    		    <div>Bundles</div>
+    		  </a>
+    		  <a href="/collections/back-bar"  class="sub-hero-flex-link-collection sub-hero-flex-link-collection-middle w-inline-block">
+    		    <div>Back Bar</div>
+    		  </a>
+    		  <a href="/collections/swag" class="sub-hero-flex-link-collection w-inline-block">
+    		    <div>Swag</div>
+    		  </a>
+    		</div>
+    	{% endif %}
+
+
+    </div>
+  </div>
+  <div class="mid-wrapper-collection">
+    <div class="container-large">
+      <h1 class="mid-heading-collection">{{collection.title}}</h1>
+
+      {% if collection.products_count > 0 %}
+
+            {% paginate collection.products by 12 %}
+            <div class="flex-row-collection">
+
+            	{% for product in collection.products %}
+      	      	{%- assign current_variant = product.selected_or_first_available_variant -%}
+      	      	{%- assign compare_at_price = current_variant.compare_at_price -%}
+      	      	{%- assign price = current_variant.price -%}
+      	      	{% assign subHeading = product.metafields.subHeading.heading %}
+
+      	      	 <div class="flex-col-collection-all">
+      	          <div class="flex-col-inner-collection">
+      	            <div class="flex-col-top-wrapper-collection">
+      	              <div class="flex-col-img-wrapper-collection">{% unless current_variant.available %}<div class="tag-wrapper">Sold Out</div>{% endunless %}<img src="{{ product.featured_image | img_url: '800x' }}" alt="{{product.title}}" class="flex-col-img-collection-all"><a href="{{product.url}}" class="flex-col-overlay-link-collection w-inline-block"></a></div>
+      	              <h4 class="flex-col-heading-collection">{{product.title}}</h4>
+      	              <div class="flex-col-bottom-wrapper-collection">
+      	              	{% if subHeading %}
+      	                	<h5 class="flex-col-sub-heading-collection">{{subHeading}}</h5>
+      	                {% endif %}
+      	                {% if compare_at_price > price  %}
+      	                	<div class="flex-col-price-text-collection"><span style="text-decoration: line-through;">{{ compare_at_price | money }}</span> {{price | money }}</div>
+      	                {% else %}
+      	                	<div class="flex-col-price-text-collection">{{price | money }}</div>
+      	                {% endif %}
+      	              </div>
+      	            </div>
+      	            <div class="flex-col-btn-wrapper-collection"><a href="{{product.url}}" class="btn-transparent w-button">Buy Now</a></div>
+      	          </div>
+              </div>
+
+            	{% endfor %}
+
+            </div> <!-- flex-row-collection -->
+
+            	{% if paginate.pages > 1 %}
+            		{% include 'pagination' %}
+            	{% endif %}
+            {% endpaginate %}
+
+
+      {% else %}
+      	<div class="collection-page-empty-wrapper">
+      		<p class="collection-page-empty-text">There are no products in this collection</p>
+      	</div>
+      {% endif %}
+
+      
+
+    </div>
+  </div>
+
+{% if collection.id == 215817617470 %}
+  {% section 'jc-bar-section-collection' %}
+{% endif %}
+
+{% section 'jc-bar-cta-collection' %}
+{% section 'jc-cta-section-marketing' %}
+  
+  {% endcomment %}

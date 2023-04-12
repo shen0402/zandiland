@@ -1,0 +1,1329 @@
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign compare_at_price = current_variant.compare_at_price -%}
+{%- assign price = current_variant.price -%}
+{% assign subHeading = product.metafields.subHeading.heading %}
+{% assign shortDescription = product.metafields.shortDescription.description %}
+{% assign productIngredients = product.metafields.productIngredients.ingredients %}
+{% assign productMsrp = product.metafields.productMsrp.msrp %}
+{% assign proTips = product.metafields.proTips.tips %}
+{% assign better_together = product.metafields.product_info.better_together %}
+{% assign marketingMaterial = product.metafields.marketingMaterial.material %}
+{% assign normalQuantity = product.metafields.normalQuantity.quantity %}
+{% assign customQuantity = product.metafields.customQuantity.quantity %}
+
+{% assign product_use = product.metafields.product_info.use %}
+
+{% assign step_text_1 = product.metafields.product_info.step_text_1 %}
+{% assign step_icon_1 = product.metafields.product_info.step_icon_1 %}
+{% assign step_text_2 = product.metafields.product_info.step_text_2 %}
+{% assign step_icon_2 = product.metafields.product_info.step_icon_2 %}
+{% assign step_text_3 = product.metafields.product_info.step_text_3 %}
+{% assign step_icon_3 = product.metafields.product_info.step_icon_3 %}
+
+{% assign step_heading_1 = product.metafields.product_info.step_heading_1 %}
+{% assign step_heading_color_1 = product.metafields.product_info.step_heading_color_1 %}
+{% assign step_heading_2 = product.metafields.product_info.step_heading_2 %}
+{% assign step_heading_color_2 = product.metafields.product_info.step_heading_color_2 %}
+{% assign step_heading_3 = product.metafields.product_info.step_heading_3 %}
+{% assign step_heading_color_3 = product.metafields.product_info.step_heading_color_3 %}
+
+
+{% assign step_main_image = product.metafields.product_info.step_main_image %}
+{% assign step_product_image = product.metafields.product_info.step_product_image %}
+
+{% assign tips_heading = product.metafields.product_info.tips_heading %}
+{% assign tips_content = product.metafields.product_info.tips_content %}
+{% assign tips_bg_image = product.metafields.product_info.tips_bg_image %}
+
+{% assign tips_video = product.metafields.product_info.tips_video %}
+
+
+{% assign testimonial_name_1 = product.metafields.product_info.testimonial_name_1 %}
+{% assign testimonial_social_text_1 = product.metafields.product_info.testimonial_social_text_1 %}
+{% assign testimonial_social_link_1 = product.metafields.product_info.testimonial_social_link_1 %}
+{% assign testimonial_image_1 = product.metafields.product_info.testimonial_image_1 %}
+{% assign testimonial_concerns_1 = product.metafields.product_info.testimonial_concerns_1 %}
+{% assign testimonial_age_1 = product.metafields.product_info.testimonial_age_1 %}
+{% assign testimonial_content_1 = product.metafields.product_info.testimonial_content_1 %}
+
+{% assign testimonial_name_2 = product.metafields.product_info.testimonial_name_2 %}
+{% assign testimonial_social_text_2 = product.metafields.product_info.testimonial_social_text_2 %}
+{% assign testimonial_social_link_2 = product.metafields.product_info.testimonial_social_link_2 %}
+{% assign testimonial_image_2 = product.metafields.product_info.testimonial_image_2 %}
+{% assign testimonial_concerns_2 = product.metafields.product_info.testimonial_concerns_2 %}
+{% assign testimonial_age_2 = product.metafields.product_info.testimonial_age_2 %}
+{% assign testimonial_content_2 = product.metafields.product_info.testimonial_content_2 %}
+
+{% assign testimonial_name_3 = product.metafields.product_info.testimonial_name_3 %}
+{% assign testimonial_social_text_3 = product.metafields.product_info.testimonial_social_text_3 %}
+{% assign testimonial_social_link_3 = product.metafields.product_info.testimonial_social_link_3 %}
+{% assign testimonial_image_3 = product.metafields.product_info.testimonial_image_3 %}
+{% assign testimonial_concerns_3 = product.metafields.product_info.testimonial_concerns_3 %}
+{% assign testimonial_age_3 = product.metafields.product_info.testimonial_age_3 %}
+{% assign testimonial_content_3 = product.metafields.product_info.testimonial_content_3 %}
+
+{% assign review_text = product.metafields.product_info.review_text %}
+
+{% assign main_product_id = product.id %}
+
+{% assign is_available = current_variant.available %}
+{% if is_available == true %}
+  {% assign cart_btn_text = 'Add To Cart' %}
+  {% assign cart_disabled = '' %}
+  {% else %}
+  {% assign cart_btn_text = 'Sold Out' %}
+  {% assign cart_disabled = 'disabled="disabled"' %}
+{% endif %}
+
+{% assign sk_show_tabs = true %}
+{% if product.type == 'Gift Card' or product.images.size < 2 %}
+  {% assign sk_show_tabs = false %}
+{% endif %}
+
+
+
+{%assign hide_sell_section = false %}
+
+  {%comment%}
+  
+  Deck Polish Back Bar Size - 6568316207166
+  Kitty Wipes Back Bar Bag (100 ct) - 1955274981438
+  Deck Products OG Sample Packs - 2118340214846
+  Deck Products PURE Sample Packs - 7766275227860
+  Zandi Land Kitty Crops - 7766283714772
+  New Marketing Materials '22 - 2078733500478
+
+  {%endcomment%}
+
+{% if product.id == 6568316207166 or
+product.id == 1955274981438 or
+product.id == 2118340214846 or
+product.id == 7766275227860 or
+product.id == 7766283714772 or
+product.id == 2078733500478 %}
+{% assign hide_sell_section = true %}
+{% endif %}
+
+
+<div class="hero-wrapper-product">
+
+
+
+
+
+{%comment%}
+  <div class="hero-container-product">
+    <div class="flex-row-outer-product">
+      <div class="flex-col-outer-product-1">
+
+
+
+        <div class="tabs-wrapper-product">
+          <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs-product w-tabs">
+            <div class="tabs-menu-product w-tab-menu {% unless sk_show_tabs == true %}tabs-menu-product-hide{% endunless %}">
+              {% for image in product.images %}
+
+                {% assign image_url = image | img_url: '800x' %}
+
+                {% unless product.has_only_default_variant %}
+                    {% for variant in product.variants %}
+
+                      {% assign jc_is_current_variant = false %}
+                
+
+                      {% if image_url == current_variant_img %}
+                        {% assign jc_is_current_variant = true  %}
+                      {% endif %}
+
+                    {% endfor %}
+
+                {% endunless %}
+                
+                {% if product.has_only_default_variant %}
+                  {% assign jc_is_current_variant = false %}
+                  {% if forloop.first == true %}
+                    {% assign jc_is_current_variant = true %}
+                  {% endif %}
+                {% endif %}
+
+                  <a data-w-tab="Tab {{ forloop.index }}" class="tab-link-product w-inline-block w-tab-link {% if jc_is_current_variant == true %}w--current{% endif %}" sk-variant-id="{{ image | img_url: '800x' }}">
+                    <div class="tab-link-inner-product">
+                      <img src="{{image | img_url: '512x' }}" loading="eager" alt="{{image.alt}}" class="tab-link-img-product">
+                    </div>
+                  </a>  
+              {% endfor %}
+            </div>
+            <div class="tabs-content-product w-tab-content">
+              {% for image in product.images %}
+
+              {% assign image_content = image %}
+
+              {% assign image_url = image_content | img_url: '800x' %}
+
+              {% unless product.has_only_default_variant %}
+
+                {% for variant in product.variants %}
+
+                  {% assign jc_is_current_variant = false %}
+                  {% assign all_variants_without_images = true %}
+
+                  {% if image_url == current_variant_img %}
+                    {% assign jc_is_current_variant = true  %}
+                    {% assign all_variants_without_images = false %}
+                  {% endif %}
+
+                {% endfor %}
+
+                {% if all_variants_without_images == true %}
+                  {% if forloop.first == true %}
+                    {% assign jc_is_current_variant = true %}
+                  {% endif %}
+                {% endif %}
+
+              {% endunless %}
+
+              {% if product.has_only_default_variant %}
+                {% assign jc_is_current_variant = false %}
+                {% if forloop.first == true %}
+                  {% assign jc_is_current_variant = true %}
+                {% endif %}
+              {% endif %}
+
+                <div data-w-tab="Tab {{ forloop.index }}" class="w-tab-pane {% if jc_is_current_variant == true %}w--tab-active{% endif %}">
+                  <div class="tab-img-inner-product"><img src="{{image | img_url: '1100x' }}" loading="eager" alt="{{image.alt}}" class="tab-img-product"></div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="heading-section-product-mobile">
+          <h1 class="w-basic-heading main-heading-product">{{product.title}}</h1>
+          {% unless subHeading == blank %}
+              <h2 class="w-basic-heading sub-heading-product">{{subHeading}}</h2>
+          {% endunless %}
+        </div>
+
+
+      </div>
+      <div class="flex-col-outer-product-2" data-ix="fadeinleft">
+        <div class="reviews-flex-row-product">
+           {% comment %}
+          <img src="//cdn.shopify.com/s/files/1/1242/8658/files/star5-min-sk-update.png" loading="lazy" alt="Review Stars" class="reviews-star-img-product">
+          <div class="reviews-heading-product">21 Reviews</div>
+         {% endcomment %}
+          {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
+        </div>
+        <div class="heading-section-product">
+          <h1 class="w-basic-heading main-heading-product">{{product.title}}</h1>
+          {% unless subHeading == blank %}
+          <h2 class="w-basic-heading sub-heading-product">{{subHeading}}</h2>
+          {% endunless %}
+        </div>
+        <div class="price-flex-row-product">
+           {% if is_available == true %}
+             {% if compare_at_price > price  %}
+              <div class="price-text-product">
+               <span id="compare-at-price" style="text-decoration: line-through">{{compare_at_price | money }}</span> <span id="price">{{current_variant.price | money }}</span>
+              </div>
+              {% else %}
+             <div class="price-text-product" id="price">
+            {{current_variant.price | money }}
+             </div>
+             {% endif %}
+          {% else %}
+            <div class="price-text-product"><span style="text-decoration: line-through;">{{current_variant.price | money }}</span> Sold Out</div>
+          {% endif %}
+
+        </div>
+         
+
+
+        <div class="form-block-product">
+          {% form "product", product %}
+            {% comment %}
+            <div class="form-option-flex-row-product">
+              <div class="form-option-flex-col-product">
+                <a href="#" class="form-option-btn-product w-button">50ml</a>
+              </div>
+              <div class="form-option-flex-col-product">
+                <a href="#" class="form-option-btn-product w-button">118ml</a>
+              </div>
+              <div class="form-option-flex-col-product">
+                <a href="#" class="form-option-btn-product w-button">118ml</a>
+              </div>
+              <div class="form-option-flex-col-product">
+                <a href="#" class="form-option-btn-product w-button">118ml</a>
+              </div>
+            </div>
+            {% endcomment %}
+
+            
+              {% unless product.has_only_default_variant or product.variants < 3 %}
+
+                {% for product_option in product.options_with_values %}
+
+                  <div class="product-options-flex-row">
+                      <label for="ProductSelect-option-{{ forloop.index0 }}" class="product-options-label {% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}">{{ product_option.name | escape }}</label>
+
+
+
+                      <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="{{ product_option.name | handleize }}" class="radio-section-product options-flex-row-product">
+                        {% assign option_index = forloop.index %}
+                        {% for value in product_option.values %}
+
+                          {% assign variant_label_state = true %}
+                          {% assign font_class = '' %}
+                          {% if product.options.size == 1 %}
+                            {% unless product.variants[forloop.index0].available  %}
+                              {% assign variant_label_state = false %}
+                              {% assign font_class = 'radio-button-label-product-plus-disabled' %}
+                            {% endunless %}
+                          {% endif %}
+
+
+                          <div class="radio-flex-row-product options-flex-col-product">
+
+                            <div class="options-flex-col-product-inner">
+                                
+                                <input type="radio"
+                                  {% if product_option.selected_value == value %} checked="checked"{% endif %} 
+                                  {% unless variant_label_state %} disabled="disabled"{% endunless %}
+                                  value="{{ value | escape }}"
+                                  data-index="option{{ option_index }}"
+                                  name="{{ product_option.name | handleize }}"
+                                  class="single-option-selector__radio product-form-radio-input {% unless variant_label_state %} disabled{% endunless %}"
+                                  id="ProductSelect-option-{{ product_option.name | handleize }}-{{ value | escape }}">
+                                  <label class="radio-button-label-product-plus options-btn-product {% unless variant_label_state %}options-btn-product-disabled{% endunless %} {% if product_option.selected_value == value %}options-btn-product-active{% endif %}" for="ProductSelect-option-{{product_option.name | handleize }}-{{ value | escape }}" {% unless variant_label_state %} class="disabled"{% endunless %}><span class="{{font_class}}">{{ value | escape }}</span></label>
+
+                            </div>
+                           
+                            </div>
+                          {% endfor %}
+                      </fieldset>
+
+
+                  </div>
+
+                {% endfor %}
+
+              {% endunless %}
+
+            <div class="rc-widget-injection-parent"></div>
+
+            <div class="ro_widget"></div>
+            <div class="btn-flex-row-product">
+
+              <div class="btn-flex-col-product">
+                <div class="qty-flex-row-product">
+                  <a href="#" class="qty-btn-product qty-btn-product-down w-inline-block">
+                    <div>–</div>
+                  </a>
+                  {% if sk_custom_quantity_step == true %}
+                       <input type="number" class="quantity-input-product w-input" maxlength="256" name="quantity" placeholder="6" id="Quantity" required="" value="6" min="6" step="6"> 
+                    {% else %}
+                      <input type="number" class="quantity-input-product w-input" maxlength="256" name="quantity" placeholder="1" id="Quantity" required="" value="1" min="1" step="1">
+                  {% endif %}
+                  
+                  <a href="#" class="qty-btn-product qty-btn-product-up w-inline-block">
+                    <div>+</div>
+                  </a>
+                </div>
+              </div>
+              
+              <input type="hidden"name="id" id="product-select" value="{{ current_variant.id }}" />
+              <div class="btn-flex-col-product">
+              	<input type="submit" value="{{cart_btn_text}}" data-wait="Please wait..." class="form-btn-product w-button" id="sk-add-to-cart-btn" {{cart_disabled}}>
+              </div>
+            </div>
+
+            {% if sk_custom_quantity_step == true %}
+              <div class="product-qty-disclaimer">Must purchase in quantities of 6</div>
+            {% endif %}
+            
+
+          {% endform %}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endcomment%}
+  
+  <div class="hero-container-product">
+    <div class="flex-row-outer-product">
+      <div class="flex-col-outer-product-1">
+        <div class="heading-section-product-mobile">
+          <h1 class="w-basic-heading main-heading-product">{{product.title}}</h1>
+          {% unless subHeading == blank %}
+              <h2 class="w-basic-heading sub-heading-product">{{subHeading}}</h2>
+          {% endunless %}
+        </div>
+        <div class="tabs-wrapper-product">
+          <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs-product w-tabs">
+            <div class="tabs-menu-product w-tab-menu {% unless sk_show_tabs == true %}tabs-menu-product-hide{% endunless %}">
+            	{% for image in product.images %}
+            			<a data-w-tab="Tab {{ forloop.index }}" class="tab-link-product w-inline-block w-tab-link {% if forloop.first == true %}w--current{% endif %}">
+            			  <div class="tab-link-inner-product">
+            			  	<img src="{{image | img_url: '512x' }}" loading="eager" alt="{{image.alt}}" class="tab-link-img-product">
+            			  </div>
+            			</a>	
+            	{% endfor %}
+            </div>
+            <div class="tabs-content-product w-tab-content">
+            	{% for image in product.images %}
+            		<div data-w-tab="Tab {{ forloop.index }}" class="w-tab-pane {% if forloop.first == true %}w--tab-active{% endif %}">
+            		  <div class="tab-img-inner-product"><img src="{{image | img_url: '1100x' }}" loading="eager" alt="{{image.alt}}" class="tab-img-product"></div>
+            		</div>
+            	{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-col-outer-product-2" data-ix="fadeinleft">
+        <div class="reviews-flex-row-product">
+          {% if review_text == blank %}
+              <div class="reviews-heading-product"><a href="#">Top Rated</a></div>
+            {% else %}
+              <div class="reviews-heading-product">{{review_text}}</div>
+          {% endif %}
+         
+          {% comment %}
+          <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/star5-min-sk-update.png" loading="lazy" alt="Review Stars" class="reviews-star-img-product">
+          {% endcomment %}
+        </div>
+        <div class="heading-section-product">
+          <h1 class="w-basic-heading main-heading-product">{{product.title}}</h1>
+          {% unless subHeading == blank %}
+          <h2 class="w-basic-heading sub-heading-product">{{subHeading}}</h2>
+          {% endunless %}
+        </div>
+        <div class="price-flex-row-product">
+           {% if is_available == true %}
+             {% if compare_at_price > price  %}
+              <div class="price-text-product">
+               <span style="text-decoration: line-through">{{compare_at_price | money }}</span> <span id="price">{{current_variant.price | money }}</span>
+              </div>
+              {% else %}
+             <div class="price-text-product" id="price">
+            {{current_variant.price | money }}
+             </div>
+             {% endif %}
+          {% else %}
+            <div class="price-text-product"><span style="text-decoration: line-through;">{{current_variant.price | money }}</span> Sold Out</div>
+          {% endif %}
+
+          {% if productMsrp %}
+            <div class="price-text-product-msrp">&nbsp;MSRP: {{productMsrp}}</div>
+          {% endif %}
+
+        </div>
+         
+
+
+        <div class="form-block-product">
+          {% form "product", product %}
+
+
+          {% comment %}
+           product 7630561935572 - deck glow
+           collection 401408950484 - clothing
+           collection 401408917716 - accessories
+           collection 215816077374 - swag
+           collection 30592172094 - shop package offers 
+          {% endcomment %}
+
+
+
+
+          {% assign sk_custom_quantity_step = true %}
+
+          {% if product.metafields.product_info.min_quantity_6 == false %}
+            {% assign sk_custom_quantity_step = false %}
+          {%endif%}
+
+          {%comment%}
+
+            {% if product.id == 7630561935572 or
+              product.id == 1955274981438 or
+              product.id == 6568316207166 or 
+              product.id == 7766283714772 %}
+              {% assign sk_custom_quantity_step = false %}
+            {% endif %}
+
+            {%endcomment%}
+
+            {% for collection in product.collections %}
+
+              {% if collection.id == 401408950484 or
+              collection.id == 401408917716 or
+              collection.id == 215816077374 or 
+              collection.id == 30592172094
+               %}
+                  {% assign sk_custom_quantity_step = false %}
+              {% endif %}
+            {% endfor %}
+
+          	{% comment %}
+            <div class="form-option-flex-row-product">
+              <div class="form-option-flex-col-product">
+                <a href="#" class="form-option-btn-product w-button">50ml</a>
+              </div>
+              <div class="form-option-flex-col-product form-option-flex-col-product-alt">
+                <a href="#" class="form-option-btn-product w-button">118ml</a>
+              </div>
+            </div>
+            {% endcomment %}
+
+
+
+            
+            {% if product.has_only_default_variant %}
+              {% assign jc_is_current_variant = false %}
+              {% if forloop.first == true %}
+                {% assign jc_is_current_variant = true %}
+              {% endif %}
+            {% endif %}
+
+            {%comment%}
+            {% i prodcut.variants > 1 %}
+              {%endcomment%}
+            {% unless product.has_only_default_variant %}
+
+              {% for product_option in product.options_with_values %}
+
+                <div class="product-options-flex-row">
+                    <label for="ProductSelect-option-{{ forloop.index0 }}" class="product-options-label {% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}">{{ product_option.name | escape }}</label>
+
+
+
+                    <fieldset id="ProductSelect-option-{{ forloop.index0 }}" name="{{ product_option.name | handleize }}" class="radio-section-product options-flex-row-product">
+                      {% assign option_index = forloop.index %}
+                      {% for value in product_option.values %}
+
+                        {% assign variant_label_state = true %}
+                        {% assign font_class = '' %}
+                        {% if product.options.size == 1 %}
+                          {% unless product.variants[forloop.index0].available  %}
+                            {% assign variant_label_state = false %}
+                            {% assign font_class = 'radio-button-label-product-plus-disabled' %}
+                          {% endunless %}
+                        {% endif %}
+
+
+                        <div class="radio-flex-row-product options-flex-col-product">
+
+                          <div class="options-flex-col-product-inner">
+                              
+                              <input type="radio"
+                                {% if product_option.selected_value == value %} checked="checked"{% endif %} 
+                                {% unless variant_label_state %} disabled="disabled"{% endunless %}
+                                value="{{ value | escape }}"
+                                data-index="option{{ option_index }}"
+                                name="{{ product_option.name | handleize }}"
+                                class="single-option-selector__radio product-form-radio-input {% unless variant_label_state %} disabled{% endunless %}"
+                                id="ProductSelect-option-{{ product_option.name | handleize }}-{{ value | escape }}">
+                                <label class="radio-button-label-product-plus options-btn-product {% unless variant_label_state %}options-btn-product-disabled{% endunless %} {% if product_option.selected_value == value %}options-btn-product-active{% endif %}" for="ProductSelect-option-{{product_option.name | handleize }}-{{ value | escape }}" {% unless variant_label_state %} class="disabled"{% endunless %}><span class="{{font_class}}">{{ value | escape }}</span></label>
+
+                          </div>
+                         
+                          </div>
+                        {% endfor %}
+                    </fieldset>
+
+
+                </div>
+
+              {% endfor %}
+
+            {% endunless %}
+            {%comment%}
+            {%endif%}
+            {%endcomment%}
+
+
+            <div class="ro_widget"></div>
+            <div class="btn-flex-row-product">
+              <div class="btn-flex-col-product">
+                <div class="qty-flex-row-product">
+                  <a href="#" class="qty-btn-product qty-btn-product-down w-inline-block">
+                    <div>–</div>
+                  </a>
+                  {% if sk_custom_quantity_step == true %}
+                       <input type="number" class="quantity-input-product w-input" maxlength="256" name="quantity" placeholder="6" id="Quantity" required="" value="6" min="6" step="6"> 
+                    {% else %}
+                      <input type="number" class="quantity-input-product w-input" maxlength="256" name="quantity" placeholder="1" id="Quantity" required="" value="1" min="1" step="1">
+                  {% endif %}
+                  
+                  <a href="#" class="qty-btn-product qty-btn-product-up w-inline-block">
+                    <div>+</div>
+                  </a>
+                </div>
+              </div>
+              <input type="hidden"name="id" id="product-select" value="{{ current_variant.id }}" />
+              <div class="btn-flex-col-product">
+              	<input type="submit" value="{{cart_btn_text}}" data-wait="Please wait..." class="form-btn-product w-button" id="sk-add-to-cart-btn" {{cart_disabled}}>
+              </div>
+            </div>
+
+            {% if sk_custom_quantity_step == true %}
+              <div class="product-qty-disclaimer">Must purchase in quantities of 6</div>
+            {% endif %}
+
+
+          {% endform %}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+</div>
+
+<div class="info-section-product">
+  <div class="container-large no-padding">
+
+    <div class="tab-description">
+      <div class="tab-description-inner-product">
+        <div class="tab-rte-product w-richtext">
+          {{product.description}}
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+<div class="info-section-product">
+
+
+
+
+
+  {% unless product.metafields.product_info.hide_dropdowns == true %}
+
+  <div class="container-large no-padding">
+
+
+      
+    
+    <div class="product-dropdown-toggle">
+      <div class="product-dropdown-title-wrapper">
+
+        <h3 class="product-dropdown-header" >Key Ingredients</h3>
+        <img src="https://cdn.shopify.com/s/files/1/1242/8658/files/arrow-left-sk-update.png?v=1652744848" class="product-nav-arrow">
+      </div>
+
+    <div class="product-dropdown-menu">
+      <div class="ingredient-wrapper">
+        <div class="ingredient-inner">
+
+          <div class="product-slider-flex-col">
+            <div class="product-slider-flex-col-inner">
+              <div>
+                <div class="product-slider-img-wrapper">
+                  <a href="#" class="product-slider-img-link w-inline-block"><img src="{{product.metafields.product_info.key_ingredient_1 | img_url: '1100x' }}" loading="eager" alt="{{product.metafields.product_info.ingredient_name}}" class="product-slider-main-img product">
+                    <img src="//cdn.shopify.com/s/files/1/1242/8658/files/product-bg-p-sk-update.png" loading="eager"  alt="Pink Background" class="product-slider-bg-img">
+                    <div class="product-slider-img-overlay"></div>
+                  </a>
+                </div>
+                <div class="product-slider-info-wrapper">
+                  <h4 class="product-slider-heading">
+                    <a href="#" class="product-slider-heading-link">{{product.metafields.product_info.ingredient_name_1}}</a>
+                  </h4>
+                  {% unless product.metafields.product_info.ingredient_sub_heading_1 == blank %}
+                  <div class="product-slider-sub-heading">{{product.metafields.product_info.ingredient_sub_heading_1}}</div>
+                  {% endunless %}
+                    
+                </div>
+              </div>
+
+            
+            </div>
+          </div>
+
+          <div class="product-slider-flex-col">
+            <div class="product-slider-flex-col-inner">
+              <div>
+                <div class="product-slider-img-wrapper">
+                  <a href="#" class="product-slider-img-link w-inline-block"><img src="{{product.metafields.product_info.key_ingredient_2 | img_url: '1100x' }}" loading="eager" alt="{{product.metafields.product_info.ingredient_name_2}}" class="product-slider-main-img product">
+                    <img src="//cdn.shopify.com/s/files/1/1242/8658/files/product-bg-p-sk-update.png" loading="eager"  alt="Pink Background" class="product-slider-bg-img">
+                    <div class="product-slider-img-overlay"></div>
+                  </a>
+                </div>
+                <div class="product-slider-info-wrapper">
+                  <h4 class="product-slider-heading">
+                    <a href="#" class="product-slider-heading-link">{{product.metafields.product_info.ingredient_name_2}}</a>
+                  </h4>
+                  {% unless product.metafields.product_info.ingredient_sub_heading_2 == blank %}
+                  <div class="product-slider-sub-heading">{{product.metafields.product_info.ingredient_sub_heading_2}}</div>
+                  {% endunless %}
+                    
+                </div>
+              </div>
+
+            
+            </div>
+          </div>
+
+          <div class="product-slider-flex-col">
+            <div class="product-slider-flex-col-inner">
+              <div>
+                <div class="product-slider-img-wrapper">
+                  <a href="#" class="product-slider-img-link w-inline-block"><img src="{{product.metafields.product_info.key_ingredient_3 | img_url: '1100x' }}" loading="eager" alt="{{product.metafields.product_info.ingredient_name_3}}" class="product-slider-main-img product">
+                    <img src="//cdn.shopify.com/s/files/1/1242/8658/files/product-bg-p-sk-update.png" loading="eager"  alt="Pink Background" class="product-slider-bg-img">
+                    <div class="product-slider-img-overlay"></div>
+                  </a>
+                </div>
+                <div class="product-slider-info-wrapper">
+                  <h4 class="product-slider-heading">
+                    <a href="#" class="product-slider-heading-link">{{product.metafields.product_info.ingredient_name_3}}</a>
+                  </h4>
+                  {% unless product.metafields.product_info.ingredient_sub_heading_3 == blank %}
+                  <div class="product-slider-sub-heading">{{product.metafields.product_info.ingredient_sub_heading_3}}</div>
+                  {% endunless %}
+                    
+                </div>
+              </div>
+
+            
+            </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="product-dropdown-toggle">
+      <div class="product-dropdown-title-wrapper">
+        <h3 class="product-dropdown-header" >All Ingredients</h3>
+        <img src="https://cdn.shopify.com/s/files/1/1242/8658/files/arrow-left-sk-update.png?v=1652744848" class="product-nav-arrow">
+      </div>
+      
+      <div class="product-dropdown-menu">
+        <div class="tab-description-inner-product-alt">
+          <div class="tab-rte-product w-richtext">
+            {{productIngredients}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    {% unless hide_sell_section %}
+    <div class="product-dropdown-toggle">
+      <div class="product-dropdown-title-wrapper">
+        <h3 class="product-dropdown-header" >HOW TO SELL</h3>
+        <img src="https://cdn.shopify.com/s/files/1/1242/8658/files/arrow-left-sk-update.png?v=1652744848" class="product-nav-arrow">
+      </div>
+      <div class="product-dropdown-menu">
+        <div class="tab-description-inner-product-alt">
+          <div class="tab-rte-product w-richtext">
+            {{better_together}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {%endunless%}
+
+
+  </div>
+
+{% endunless %}
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+
+
+{%comment%}  PRODUCT DETAIL TAB SECTION
+
+<div class="info-section-product">
+  <div class="container-large">
+    <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="info-tabs-product w-tabs">
+      <div class="info-tabs-menu-product w-tab-menu" data-ix="fadeindown">
+        <a data-w-tab="Tab 1" class="info-tab-menu-link-product w-inline-block w-tab-link w--current">
+          <div>Details</div>
+        </a>
+        <a data-w-tab="Tab 2" class="info-tab-menu-link-product w-inline-block w-tab-link">
+          <div class="info-tab-bullet-product">•</div>
+          <div>Use</div>
+        </a>
+        <a data-w-tab="Tab 3" class="info-tab-menu-link-product w-inline-block w-tab-link">
+          <div class="info-tab-bullet-product">•</div>
+          <div>Ingredients</div>
+          <div class="info-tab-bullet-product info-tab-bullet-product-alt">•</div>
+        </a>
+        <a data-w-tab="Tab 4" class="info-tab-menu-link-product w-inline-block w-tab-link">
+          <div>Better Together</div>
+        </a>
+      </div>
+      <div class="w-tab-content" data-ix="fadeinright">
+        <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+
+          <div class="info-tab-inner-product">
+            <div class="tab-description-wrapper-product">
+              <div class="tab-description-inner-product">
+                <div class="tab-rte-product w-richtext">
+                  {{product.description}}
+                </div>
+              </div>
+              <div class="tab-description-overlay-product"></div>
+            </div>
+            <a href="#" class="tab-expand-btn-product w-button" data-ix="tab-product-expand">Show More</a>
+          </div>
+
+        </div>
+        <div data-w-tab="Tab 2" class="w-tab-pane">
+          <div class="info-tab-inner-product">
+            <div class="tab-description-inner-product-alt">
+              <div class="tab-rte-product w-richtext">
+                {{product_use}}
+              </div>
+              <div class="tab-description-overlay-product"></div>
+            </div>
+            <a href="#" class="tab-expand-btn-product w-button" data-ix="tab-product-expand-2">Show More</a>
+          </div>
+        </div>
+        <div data-w-tab="Tab 3" class="w-tab-pane">
+          <div class="info-tab-inner-product">
+            <div class="tab-description-inner-product-alt">
+              <div class="tab-rte-product w-richtext">
+                {{productIngredients}}
+              </div>
+              <div class="tab-description-overlay-product"></div>
+            </div>
+            <a href="#" class="tab-expand-btn-product w-button" data-ix="tab-product-expand-2">Show More</a>
+          </div>
+        </div>
+        <div data-w-tab="Tab 4" class="w-tab-pane">
+          <div class="info-tab-inner-product">
+            <div class="tab-description-inner-product-alt">
+              <div class="tab-rte-product w-richtext">
+                {{better_together}}
+              </div>
+              <div class="tab-description-overlay-product"></div>
+            </div>
+            <a href="#" class="tab-expand-btn-product w-button" data-ix="tab-product-expand-2">Show More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%endcomment%}
+
+<div class="bar-link-section-product">
+  <div class="container-mid">
+    <div class="bar-link-product">
+      <div class="sub-hero-link-flex-row" data-ix="fadeinup">
+        <h4 class="w-basic-heading sub-hero-link-heading">{{section.settings.quiz_heading_1}}</h4>
+        <a href="{{section.settings.quiz_heading_url}}" class="sub-hero-link-block w-inline-block">
+          <div>{{section.settings.quiz_heading_2}}</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%comment%}
+
+<div class="step-section-product">
+  <div class="step-container-product">
+    <div class="step-img-wrapper-product">
+    {% unless step_text_1 == blank %}
+        <div class="step-box-1" data-ix="fadeinright">
+          <div class="step-box-inner">
+            <div class="step-box-content">
+              <h4 class="w-basic-heading step-box-heading" {% unless step_heading_color_1 == blank %}style="color:{{step_heading_color_1}};"{% endunless %}>{{step_heading_1}}</h4>
+              <div class="step-box-rte w-richtext">
+                {{step_text_1}}
+              </div>
+            </div>
+          </div>
+          {% if step_icon_1 %}
+          	<img src="{{step_icon_1 | img_url: '256x' }}" loading="lazy" alt="" class="step-box-img">
+          {% endif %}
+        </div>
+    {% endunless %}
+      
+
+      {% if step_main_image %}
+      		<img src="{{step_main_image | img_url: '1200x' }}" loading="eager" alt="" class="step-main-img-product">
+      {% endif %}
+      {% unless step_text_2 == blank %}
+      	<div class="step-box-2" data-ix="fadeinleft">
+      	  <div class="step-box-inner step-box-inner-2">
+      	    <div class="step-box-content">
+      	      <h4 class="w-basic-heading step-box-heading" {% unless step_heading_color_2 == blank %}style="color:{{step_heading_color_2}};"{% endunless %}>{{step_heading_2}}</h4>
+      	      <div class="step-box-rte w-richtext">
+      	       {{step_text_2}}
+      	      </div>
+      	    </div>
+      	  </div>
+      	  {% if step_icon_2 %}
+      	  	<img src="{{step_icon_2 | img_url: '256x' }}" loading="lazy" alt="" class="step-box-img step-box-img-2">
+      	  {% endif %}
+      	</div>
+      {% endunless %}
+      {% if step_product_image %}
+      	<img src="{{step_product_image | img_url: '800x' }}" loading="lazy" alt="Product" class="step-box-sub-img" data-ix="fadeinright">
+      {% endif %}
+      {% unless step_text_3 == blank %}
+      <div class="step-box-3" data-ix="fadeinleft">
+        <div class="step-box-inner step-box-inner-2">
+          <div class="step-box-content">
+            <h4 class="w-basic-heading step-box-heading" {% unless step_heading_color_3 == blank %}style="color:{{step_heading_color_3}};"{% endunless %}>{{step_heading_3}}</h4>
+            <div class="step-box-rte w-richtext">
+              {{step_text_3}}
+            </div>
+          </div>
+        </div>
+        {% if step_icon_3 %}
+        	<img src="{{step_icon_3 | img_url: '256x' }}" loading="lazy" alt="" class="step-box-img step-box-img-3">
+        {% endif %}
+      </div>
+      {% endunless %}
+      
+    </div>
+  </div>
+</div>
+
+{%endcomment%} 
+<div class="video-section-product">
+  <div class="video-flex-row-outer-product">
+    <div class="video-flex-col-product-1">
+      <div class="video-flex-col-inner-product" data-ix="fadeinright">
+        <div class="video-tag-heading-product">#kittycare</div>
+        {% unless tips_heading == blank %}
+            <div class="video-heading-wrapper-product">
+              <h3 class="w-basic-heading section-heading">{{tips_heading}}</h3>
+            </div>
+        {% endunless %}
+        {% unless tips_content == blank %}
+            <div class="video-rte-product w-richtext">
+              {{tips_content}}
+            </div>
+        {% endunless %}
+      </div>
+    </div>
+    <div class="video-flex-col-product-2">
+
+
+      {% unless tips_video == blank %}
+      
+      <div class="video-img-block-product no-img" style="position: relative;">
+
+
+        <video id="background-video" width="100%" height="100%" controls style="object-fit: cover;"">
+          <source src="{{ tips_video }}" type="video/mp4">
+        </video>
+        {%comment%}
+        {%endcomment%}
+      </div>
+
+
+
+      {%else%}
+
+      <div class="video-img-block-product" {% unless tips_bg_image == blank %}style="background-image: url({{ tips_bg_image | img_url: '1400x' }});"{% endunless %}>
+        <div class="video-overlay-product"></div>
+      </div>
+
+      {%endunless%}
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="testimonial-section-product">
+  <div class="container-xl">
+    <div class="testimonial-heading-wrapper-product" data-ix="fadeindown">
+      {% unless section.settings.testimonial_heading == blank %}
+          <h3 class="w-basic-heading section-heading white">{{section.settings.testimonial_heading}}</h3>
+      {% endunless %}
+    </div>
+    <div class="testimonial-flex-row" data-ix="fadeinright">
+    {% unless testimonial_name_1 == blank %}
+	    <div class="testimonial-flex-col">
+	      <div class="testimonial-flex-col-inner">
+	        <div class="testimonial-inner-flex-col">
+	          <div class="testimonial-img-block" {% if testimonial_image_1 %}style="background-image:url({{testimonial_image_1 | img_url: '800x' }});"{% endif %}></div>
+	        </div>
+	        <div class="testimonial-inner-flex-col testimonial-inner-flex-col-alt">
+	          <div class="testimonial-content-wrapper">
+	            <div class="testimonial-content-block">
+	              <div class="testimonial-text testimonial-text-heading">{{testimonial_name_1}}</div>
+	              {% unless testimonial_social_text_1 == blank %}
+	                  <div class="testimonial-social-section">
+	                    <a href="{{testimonial_social_link_1}}" class="testimonial-social-link w-inline-block">{% comment %}<img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/instagram-min-sk-update.png" loading="lazy" alt="Instagram" class="testimonial-social-img">{% endcomment %}
+	                      <div>{{testimonial_social_text_1}}</div>
+	                    </a>
+	                  </div>
+	              {% endunless %}
+	            </div>
+	            {% unless testimonial_concerns_1 == blank %}
+	               <div class="testimonial-content-block">
+	                 <div class="testimonial-text">
+	                 	<strong>Skin Concern: </strong>{{testimonial_concerns_1}}
+	                 </div>
+	               </div> 
+	            {% endunless %}
+	            {% unless testimonial_age_1 == blank %}
+	                <div class="testimonial-content-block">
+	                  <div class="testimonial-text"><strong>Age:</strong> {{testimonial_age_1 }}</div>
+	                </div>
+	            {% endunless %}
+	            {% unless testimonial_content_1 == blank %}
+	                <div class="testimonial-content-block ">
+	                  <div class="testimonial-text w-richtext">
+	                    {{testimonial_content_1}}
+	                  </div>
+	                </div>
+	            {% endunless %}
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+    {% endunless %} 
+
+        {% unless testimonial_name_2 == blank %}
+    	    <div class="testimonial-flex-col">
+    	      <div class="testimonial-flex-col-inner">
+    	        <div class="testimonial-inner-flex-col testimonial-inner-flex-col-mobile-last">
+    	          <div class="testimonial-img-block" {% if testimonial_image_2 %}style="background-image:url({{testimonial_image_2 | img_url: '800x' }});"{% endif %}></div>
+    	        </div>
+    	        <div class="testimonial-inner-flex-col testimonial-inner-flex-col-alt">
+    	          <div class="testimonial-content-wrapper">
+    	            <div class="testimonial-content-block">
+    	              <div class="testimonial-text testimonial-text-heading">{{testimonial_name_2}}</div>
+    	              {% unless testimonial_social_text_2 == blank %}
+    	                  <div class="testimonial-social-section">
+    	                    <a href="{{testimonial_social_link_2}}" class="testimonial-social-link w-inline-block">{% comment %}<img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/instagram-min-sk-update.png" loading="lazy" alt="Instagram" class="testimonial-social-img">{% endcomment %}
+    	                      <div>{{testimonial_social_text_2}}</div>
+    	                    </a>
+    	                  </div>
+    	              {% endunless %}
+    	            </div>
+    	            {% unless testimonial_concerns_2 == blank %}
+    	               <div class="testimonial-content-block">
+    	                 <div class="testimonial-text">
+    	                 	<strong>Skin Concern: </strong>{{testimonial_concerns_2}}
+    	                 </div>
+    	               </div> 
+    	            {% endunless %}
+    	            {% unless testimonial_age_2 == blank %}
+    	                <div class="testimonial-content-block">
+    	                  <div class="testimonial-text"><strong>Age:</strong> {{testimonial_age_2 }}</div>
+    	                </div>
+    	            {% endunless %}
+    	            {% unless testimonial_content_2 == blank %}
+    	                <div class="testimonial-content-block ">
+    	                  <div class="testimonial-text w-richtext">
+    	                    {{testimonial_content_2}}
+    	                  </div>
+    	                </div>
+    	            {% endunless %}
+    	          </div>
+    	        </div>
+    	      </div>
+    	    </div>
+        {% endunless %} 
+
+            {% unless testimonial_name_3 == blank %}
+        	    <div class="testimonial-flex-col">
+        	      <div class="testimonial-flex-col-inner">
+        	        <div class="testimonial-inner-flex-col">
+        	          <div class="testimonial-img-block" {% if testimonial_image_3 %}style="background-image:url({{testimonial_image_3 | img_url: '800x' }});"{% endif %}></div>
+        	        </div>
+        	        <div class="testimonial-inner-flex-col testimonial-inner-flex-col-alt">
+        	          <div class="testimonial-content-wrapper">
+        	            <div class="testimonial-content-block">
+        	              <div class="testimonial-text testimonial-text-heading">{{testimonial_name_3}}</div>
+        	              {% unless testimonial_social_text_3 == blank %}
+        	                  <div class="testimonial-social-section">
+        	                    <a href="{{testimonial_social_link_3}}" class="testimonial-social-link w-inline-block">{% comment %}<img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/instagram-min-sk-update.png" loading="lazy" alt="Instagram" class="testimonial-social-img">{% endcomment %}
+        	                      <div>{{testimonial_social_text_3}}</div>
+        	                    </a>
+        	                  </div>
+        	              {% endunless %}
+        	            </div>
+        	            {% unless testimonial_concerns_3 == blank %}
+        	               <div class="testimonial-content-block">
+        	                 <div class="testimonial-text">
+        	                 	<strong>Skin Concern: </strong>{{testimonial_concerns_3}}
+        	                 </div>
+        	               </div> 
+        	            {% endunless %}
+        	            {% unless testimonial_age_3 == blank %}
+        	                <div class="testimonial-content-block">
+        	                  <div class="testimonial-text"><strong>Age:</strong> {{testimonial_age_3 }}</div>
+        	                </div>
+        	            {% endunless %}
+        	            {% unless testimonial_content_3 == blank %}
+        	                <div class="testimonial-content-block ">
+        	                  <div class="testimonial-text w-richtext">
+        	                    {{testimonial_content_3}}
+        	                  </div>
+        	                </div>
+        	            {% endunless %}
+        	          </div>
+        	        </div>
+        	      </div>
+        	    </div>
+            {% endunless %} 	
+      
+    </div>
+  </div>
+</div>
+
+{% comment %}
+<div class="reviews-section-product">
+  <div class="container-large">
+    <div class="reviews-heading-wrapper-product" data-ix="fadeindown">
+      <h3 class="w-basic-heading section-heading">REVIEWS FROM YOU</h3>
+    </div>
+    <div class="reviews-placeholder">
+      <div>Reviews App Placeholder</div>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+{% comment %}
+<div class="link-bar-product">
+  <div class="link-bar-flex-row-product" data-ix="fadeinup">
+    <div class="link-bar-flex-col-product">
+      <h4 class="w-basic-heading link-bar-heading-product">Prefer to Buy In Person?</h4>
+    </div>
+    <div class="link-bar-flex-col-product-alt">
+      <a href="#" class="link-bar-link-product w-inline-block">
+        <div>FIND A ZANDILAND RETAILER NEAR YOU</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/chevron-thin-right_1chevron-thin-right-sk-update.png" loading="lazy" alt="Arrow Right" class="link-bar-flex-img-product">
+      </a>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+<div class="related-section-product">
+  <div class="container-large less-padding">
+    <div class="related-heading-wrapper-product" data-ix="fadeindown">
+      <h3 class="w-basic-heading section-heading">You Might Also Like</h3>
+    </div>
+    <div class="flex-row-collection" data-ix="fadeinright">
+
+
+      {% assign sk_counter = 0 %}
+
+      {% for product in collections.all-products.products %}
+
+        {% if sk_counter > 2 %}
+          {% break %} 
+        {% endif %}
+        {% unless product.id == main_product_id %}
+
+          {% render 'sk-product-loop', product: product %}
+          {% assign sk_counter = sk_counter | plus: 1 %}
+
+        {% endunless %}
+        
+
+      {% endfor %}  
+
+     
+
+    </div>
+  </div>
+</div>
+
+
+{% if sk_custom_quantity_step == true %}
+    
+      <script>
+      $(document).ready(function() { 
+        $('.qty-btn-product-down').click(function(e) {
+          e.preventDefault();
+          var current_input = $(this).siblings('.quantity-input-product');
+          current_input.val( function(i, oldval) {
+            var oldval_formatted = parseInt(oldval); 
+            if (oldval_formatted < 7) {
+              return 6;
+            }  else {
+              //return --oldval;
+              return oldval_formatted - 6;
+            }
+          });
+        });
+        $('.qty-btn-product-up').click(function(e) {
+          e.preventDefault();
+          var current_input = $(this).siblings('.quantity-input-product');
+          current_input.val( function(i, oldval) {
+           var oldval_formatted = parseInt(oldval); 
+           // return ++oldval;
+           return oldval_formatted + 6;
+          });
+        });
+      });
+    </script>
+
+  {% else %}
+
+      <script>
+      $(document).ready(function() { 
+        $('.qty-btn-product-down').click(function(e) {
+          e.preventDefault();
+          var current_input = $(this).siblings('.quantity-input-product');
+          current_input.val( function(i, oldval) {
+            if (oldval < 2) {
+              return 1;
+            }  else {
+              return --oldval;
+            }
+          });
+        });
+        $('.qty-btn-product-up').click(function(e) {
+          e.preventDefault();
+          var current_input = $(this).siblings('.quantity-input-product');
+          current_input.val( function(i, oldval) {
+            
+           return ++oldval;
+           
+          });
+        });
+      });
+    </script>
+
+{% endif %}
+
+
+
+
+
+<script>
+  $(document).ready(function() {
+      $(".product-dropdown-title-wrapper").on('click', 
+
+
+      function() {
+        
+        if ($(this).siblings(".product-dropdown-menu").hasClass('show')==true)
+        {
+          $(this).siblings(".product-dropdown-menu").removeClass("show");
+        }
+        else
+          $(this).siblings(".product-dropdown-menu").addClass("show");
+      },
+      
+      );
+  });
+
+
+
+
+  $(document).ready(function() {
+      $(".product-dropdown-title-wrapper").on('click', 
+
+
+      function() {
+        
+        if ($(this).children(".product-nav-arrow").hasClass('rotate')==false)
+        {
+          $(this).children(".product-nav-arrow").addClass("rotate");
+        }
+        else
+          $(this).children(".product-nav-arrow").removeClass("rotate");
+      },
+      );
+  });
+
+    </script>
+
+
+
+
+
+
+    {%assign nav_cart__quantity = cart.item_count %}
+
+<script>
+
+  
+  $('.form-btn-product').on('click', function(){
+    
+    const cart = document.getElementById("nav-cart-quantity");
+    let qty_to_add_string = document.querySelector('#Quantity');
+    let qty_to_add = parseFloat(qty_to_add_string.value);
+    let new_cart = {{nav_cart__quantity}} + qty_to_add;
+
+    
+    
+    console.log("clicked");
+    console.log(cart.innerHTML);
+    console.log(qty_to_add);
+
+    cart.innerHTML = new_cart
+
+    });
+    
+  </script>
+
+{% schema %}
+{
+  "name": "Product Page",
+  "settings": [  
+      {
+         "type": "text",
+         "id": "testimonial_heading",
+         "default": "Get Your Glow On",
+         "label": "Testimonial Heading"
+      },
+      {
+         "type": "text",
+         "id": "quiz_heading_1",
+         "default": "NOT SURE WHAT YOU NEED?",
+         "label": "Quiz Heading 1"
+      },
+      {
+         "type": "text",
+         "id": "quiz_heading_2",
+         "default": "take the #prettykitty skin quiz",
+         "label": "Quiz Heading 2"
+      },
+      {
+         "type": "url",
+         "id": "quiz_heading_url",
+         "label": "Quiz Heading Link"
+      }
+  ]
+}
+{% endschema %}
+
+

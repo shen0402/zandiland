@@ -1,0 +1,50 @@
+<div class="hero-wrapper-collection">
+
+  <div class="hero-content-wrapper-collection">
+    <div class="hero-container-collection">
+      <div class="hero-flex-row-collection">
+        <div class="hero-heading-col-collection" data-ix="fadeinright">
+          <h1 class="w-basic-heading hero-main-heading-collection">{{collection.title}}<br><span class="hero-heading-alt-collection">Collection</span></h1>
+        </div>
+        {% unless collection.description == blank %}
+            <div class="hero-content-col-collection" data-ix="fadeinleft">
+              <div class="hero-text-wrapper-collection">
+                <div class="hero-text-collection">
+                  {{collection.description}}
+                </div>
+              </div>
+            </div>
+        {% endunless %}
+      </div>
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+</div>
+
+
+
+{% if collection.image %}
+  <style type="text/css">
+    .hero-wrapper-collection {
+      background-image: url("{{ collection.image | img_url: '1800x' }}");
+    }
+  </style>
+{% endif %}
+
+{% if collection.metafields.my_fields.collection_mobile_image %}
+<style type="text/css">
+  @media screen and (max-width: 479px) {
+    .hero-wrapper-collection {
+      background-image: url("{{ collection.metafields.my_fields.collection_mobile_image | file_url }}");
+    };
+  }
+</style>
+
+{%endif%}
+
+
+{% schema %}
+{
+  "name": "Hero Section"
+}
+{% endschema %}

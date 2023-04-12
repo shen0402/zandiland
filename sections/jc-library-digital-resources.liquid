@@ -1,0 +1,228 @@
+<div class="tab-content-inner-marketing">
+  <div class="tab-container-marketing">
+    <div class="tab-heading-wrapper-marketing">
+      <h3 class="tab-heading-marketing">{{section.settings.heading_text}}</h3>
+      <p class="tab-heading-text-marketing">{{section.settings.heading_paragraph}}</p>
+    </div>
+    <div class="flex-row-outer-marketing">
+      <div class="flex-col-outer-marketing">
+        <div class="content-block-marketing">
+          <h4 class="content-block-heading-marketing">Instagram Posts</h4>
+
+
+          {% for block in section.blocks %}
+            {% if block.settings.resource_type == 'instagram_post' %}
+              <div class="flex-row-wrapper-marketing">
+
+                <div class="flex-row-marketing">
+                  <div class="flex-img-wrapper-marketing">
+                    {% if block.settings.resource_file_type == 'image' %}
+                      <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                    {% elsif block.settings.resource_file_type == 'zip' %}
+                      <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/zip-min.png" loading="lazy" alt="Zip" class="flex-img-marketing">
+                    {% elsif block.settings.resource_file_type == 'pdf' %}
+                      <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/pdf-min.png" loading="lazy" alt="PDF" class="flex-img-marketing">
+                    {% else %}
+                      <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                    {% endif %}
+                  </div>
+                  <div class="flex-col-marketing">
+                    <h5 class="flex-col-heading-marketing">{{block.settings.resource_name}}</h5>
+                    <a href="{{block.settings.resource_url}}" class="flex-link-marketing w-inline-block" target="_blank">
+                      <div>Download</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="flex-link-img-marketing"></a>
+                  </div>
+                </div> <!-- flex-row-marketing -->
+
+                  {% if block.settings.resource_image %}
+                  <div class="flex-row-img-block-wrapper-marketing">
+                    <a class="banner-img-link-marketing" href="{{block.settings.resource_url}}" target="_blank">
+                    <div class="banner-img-wrapper-marketing" style="background-image: url({{ block.settings.resource_image | img_url: '800x' }});"></div>
+                    </a>
+                  </div>
+                {% endif %}
+
+              </div> <!-- flex-row-wrapper-marketing -->
+              
+
+                
+
+            {% endif %}
+          {% endfor %}  
+          
+
+
+        </div>
+        <div class="content-block-marketing">
+          <h4 class="content-block-heading-marketing">Instagram Stories</h4>
+          <h5 class="flex-col-heading-marketing">Coming Soon!</h5>
+          
+          {% comment %}
+          {% for block in section.blocks %}
+            {% if block.settings.resource_type == 'instagram_story' %}
+              
+              <div class="flex-row-marketing">
+                <div class="flex-img-wrapper-marketing">
+                  {% if block.settings.resource_file_type == 'image' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                  {% elsif block.settings.resource_file_type == 'zip' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/pdf-min.png" loading="lazy" alt="Zip" class="flex-img-marketing">
+                  {% elsif block.settings.resource_file_type == 'pdf' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/zip-min.png" loading="lazy" alt="PDF" class="flex-img-marketing">
+                  {% else %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                  {% endif %}
+                </div>
+                <div class="flex-col-marketing">
+                  <h5 class="flex-col-heading-marketing">{{block.settings.resource_name}}</h5>
+                  <a href="{{block.settings.resource_url}}" class="flex-link-marketing w-inline-block" target="_blank">
+                    <div>Download</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="flex-link-img-marketing"></a>
+                </div>
+              </div>
+
+            {% endif %}
+          {% endfor %} 
+          {% endcomment %}
+        
+
+        </div>
+        <div class="content-block-marketing content-block-marketing-last">
+          <h4 class="content-block-heading-marketing">Product Images</h4>
+
+          {% for block in section.blocks %}
+            {% if block.settings.resource_type == 'product_images' %}
+
+            <div class="flex-row-wrapper-marketing">
+              <div class="flex-row-marketing">
+                <div class="flex-img-wrapper-marketing">
+                  {% if block.settings.resource_file_type == 'image' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                  {% elsif block.settings.resource_file_type == 'zip' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/zip-min.png" loading="lazy" alt="Zip" class="flex-img-marketing">
+                  {% elsif block.settings.resource_file_type == 'pdf' %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/pdf-min.png" loading="lazy" alt="PDF" class="flex-img-marketing">
+                  {% else %}
+                    <img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/Image-Icon-min.png" loading="lazy" alt="Image" class="flex-img-marketing">
+                  {% endif %}
+                </div>
+                <div class="flex-col-marketing">
+                  <h5 class="flex-col-heading-marketing">{{block.settings.resource_name}}</h5>
+                  <a href="{{block.settings.resource_url}}" class="flex-link-marketing w-inline-block" target="_blank">
+                    <div>Download</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="flex-link-img-marketing"></a>
+                </div>
+              </div>
+
+                {% if block.settings.resource_image %}
+                <div class="flex-row-img-block-wrapper-marketing">
+                  <a class="banner-img-link-marketing" href="{{block.settings.resource_url}}" target="_blank">
+                  <div class="banner-img-wrapper-marketing" style="background-image: url({{ block.settings.resource_image | img_url: '800x' }});"></div>
+                  </a>
+                </div>
+              {% endif %}
+
+
+            </div>
+
+              
+
+
+            {% endif %}
+          {% endfor %}  
+
+
+        </div>
+      </div>
+      <div class="flex-col-outer-marketing">
+        <h4 class="content-block-heading-marketing">WEB BANNERS</h4>
+
+        {% for block in section.blocks %}
+          {% if block.settings.resource_type == 'web_banner' %}
+
+            <div class="content-block-marketing content-block-marketing-margin-right">
+              <div class="content-block-heading-wrapper-marketing">
+                <div class="content-block-heading-text-marketing">{{block.settings.resource_name}}</div>
+                <div class="content-block-heading-breaker-marketing"></div>
+                <a href="{{block.settings.resource_url}}" class="flex-link-marketing w-inline-block" target="_blank">
+                  <div>Download</div><img src="//cdn.shopify.com/s/files/1/0004/5829/3310/files/arrow-b-min.png" loading="lazy" alt="Blue Arrow" class="flex-link-img-marketing"></a>
+              </div>
+                {% if block.settings.resource_image %}
+                <a class="banner-img-link-marketing" href="{{block.settings.resource_url}}" target="_blank">
+                <div class="banner-img-wrapper-marketing" style="background-image: url({{ block.settings.resource_image | img_url: '800x' }});"></div>
+                </a>
+              {% endif %}
+
+            </div>
+
+          {% endif %}
+        {% endfor %}   
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Digital Resources" ,
+  "settings": [
+      {
+         "type": "text",
+         "id": "heading_text",
+         "default": "Digital Resources",
+         "label": "Heading Text"
+      },
+      {
+         "type": "textarea",
+         "id": "heading_paragraph",
+         "default": "Looking for something to use on your website or social media? Look no further than our curated collection full of gorgeous, high quality images ready for your use!",
+         "label": "Heading Paragraph"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Resource",
+      "settings": [
+        {
+          "label": "Resource Name",
+          "id": "resource_name",
+          "type": "text"
+        },
+        {
+           "type": "radio",
+           "id": "resource_type",
+           "label": "Resource Type",
+           "options": [
+             { "value": "web_banner", "label": "Web Banner" },
+             { "value": "product_images", "label": "Product Images" },
+             { "value": "instagram_post", "label": "Instagram Post" },
+             { "value": "instagram_story", "label": "Instagram Story" }
+           ]
+        },
+        {
+           "type": "radio",
+           "id": "resource_file_type",
+           "label": "File Type",
+           "options": [
+             { "value": "image", "label": "Image" },
+             { "value": "pdf", "label": "PDF" },
+             { "value": "zip", "label": "Zip File" }
+           ]
+        },
+        {
+          "label": "URL To File",
+          "id": "resource_url",
+          "type": "url"
+        },
+        {
+          "label": "Image",
+          "id": "resource_image",
+          "type": "image_picker"
+        }
+
+      ]
+    }
+  ]
+}
+{% endschema %}

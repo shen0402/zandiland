@@ -1,0 +1,43 @@
+<div class="hero-wrapper-blog hero-wrapper-blog-{{section.id}}"></div>
+
+
+{% if section.settings.bg_image %}
+  <style type="text/css">
+    .hero-wrapper-blog.hero-wrapper-blog-{{section.id}} {
+      background-image: url({{ section.settings.bg_image | img_url: '1800x' }});
+    }
+  </style>
+{% endif %}
+
+{% if section.settings.bg_image_mobile %}
+  <style type="text/css">
+    @media screen and (max-width: 479px) { 
+
+     .hero-wrapper-blog.hero-wrapper-blog-{{section.id}} {
+       background-image: url({{ section.settings.bg_image_mobile | img_url: '1200x' }});
+       background-size: cover;
+     }
+
+    }
+  </style>
+
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Hero Section" ,
+  "settings": [
+  	  {
+  	     "type": "image_picker",
+  	     "id": "bg_image",
+  	     "label": "Background Image"
+  	  },
+      {
+         "type": "image_picker",
+         "id": "bg_image_mobile",
+         "label": "Mobile Background Image"
+      }
+  ]
+}
+{% endschema %}

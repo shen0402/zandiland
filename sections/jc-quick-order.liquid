@@ -1,0 +1,209 @@
+{{ 'custom-quick-order.css' | asset_url | stylesheet_tag }}
+<div class="jc-quick-cart-hero-wrapper">
+  <div class="jc-container-large">
+
+    <div class="jc-heading-wrapper jc-heading-wrapper-alt">
+      <h1 class="jc-hero-heading-collection-alt">{{ section.settings.title }}</h1>
+    </div>
+
+    <div class="jc-sub-heading-wrapper-quick-order">
+      {{ section.settings.text }}
+    </div>
+
+    <div class="jc-quick-cart-content-wrapper">
+      <div class="jc-quick-cart-section">
+
+
+        {% for block in section.blocks %}
+          {% assign collection = block.settings.collection %}
+          {% if collection %}
+            <div class="jc-quick-cart-content">
+              <div class="jc-quick-cart-heading-row">
+                <div class="jc-quick-cart-heading-col">
+                  <div class="jc-quick-cart-heading-text">
+                    <strong>{{ collection.title }}</strong>
+                  </div>
+                </div>
+                <div class="jc-quick-cart-heading-col jc-quick-cart-heading-col-2">
+                  <div class="jc-quick-cart-heading-text">
+                    <strong>Price</strong>
+                  </div>
+                </div>
+                <div class="jc-quick-cart-heading-col jc-quick-cart-heading-col-3">
+                  <div class="jc-quick-cart-heading-text">
+                    <strong>Quantity</strong>
+                  </div>
+                </div>
+                <div class="jc-quick-cart-heading-col jc-quick-cart-heading-col-4">
+                  <div class="jc-quick-cart-heading-text">
+                    <strong>Total</strong>
+                  </div>
+                </div>
+                <div class="jc-quick-cart-heading-col jc-quick-cart-heading-col-5">
+                  <div class="jc-quick-cart-heading-text">
+                    <strong>&nbsp;</strong>
+                  </div>
+                </div>
+              </div>
+
+              {% for product in collection.products %}
+                <form
+                  method="post"
+                  action="/cart/add"
+                  id="product_form_{{ collection.id }}"
+                  accept-charset="UTF-8"
+                  class="shopify-product-form"
+                  enctype="multipart/form-data">
+                  <input
+                    type="hidden"
+                    name="form_type"
+                    value="product">
+                  <input
+                    type="hidden"
+                    name="utf8"
+                    value="✓">
+                  <div class="jc-quick-cart-row">
+                    <div class="jc-quick-cart-col">
+                      <div class="jc-quick-cart-img-meta-wrapper">
+                        <div class="jc-quick-cart-img-wrapper">
+                          <a href="{{ product.url }}" class="jc-quick-cart-img-link w-inline-block"><img
+                              src="{{ product.featured_image | img_url: '100x' }}"
+                              alt="{{ product.featured_image.alt | default: product.title  }}"
+                              class="jc-quick-cart-img"></a>
+                        </div>
+                        <div class="jc-quick-cart-name-wrapper">
+                          <a href="{{ product.url }}" class="jc-quick-cart-name-link w-inline-block">
+                            <div>
+                              <strong>{{ product.title }}</strong>
+                            </div>
+                          </a>
+
+                          {% comment %}
+                          <div class="jc-quick-order-tester-text">
+                          <em>Free Tester w/ 6+ Units</em>
+                          </div>
+                          {% endcomment %}
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="jc-quick-cart-col jc-quick-cart-col-2">
+                      <div class="jc-quick-cart-col-text">
+                        <strong>$<span class="money-inner">23.00</span>
+                        </strong>
+                      </div>
+                    </div>
+                    <div class="jc-quick-cart-col jc-quick-cart-col-3">
+                      <div class="jc-product-quantity-wrapper">
+                        <a href="#" class="jc-quantity-btn w-inline-block jc-quantity-btn-down jc-quantity-btn-quick-order">
+                          <div class="jc-quantity-btn-breaker"></div>
+                        </a>
+                        <input
+                          type="number"
+                          id="Quantity"
+                          name="quantity"
+                          value="0"
+                          min="1"
+                          class="js-quantity-selector jc-js-quantity-selector">
+                        <a href="#" class="jc-quantity-btn w-inline-block jc-quantity-btn-up jc-quantity-btn-quick-order">
+                          <div class="jc-quantity-btn-breaker" style="background-color: rgb(0, 0, 0);"></div>
+                          <div class="jc-quantity-btn-breaker jc-quantity-btn-breaker-alt" style="background-color: rgb(0, 0, 0);"></div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="jc-quick-cart-col jc-quick-cart-col-4">
+                      <div class="jc-quick-cart-col-text">
+                        <strong>$<span class="money-inner-total">0.00</span>
+                        </strong>
+                      </div>
+                    </div>
+                    <div class="jc-quick-cart-col jc-quick-cart-col-5">
+                      <div class="jc-product-page-btn-wrapper-quick-order">
+                        <input
+                          class="btn-main btn-main-sm sk-collection-btn w-button"
+                          type="submit"
+                          value="Add To Cart">
+                      </div>
+                      <div class="jc-form-success-wrapper-quick">
+                        <p class="jc-form-success-text-quick">Items Successfully Added!</p>
+                      </div>
+                      <select name="id" class="{% if product.has_only_default_variant or product.variants.size ==1 %}jc-product-input-hide{% endif %} jc-product-select">
+                        {% for variant in product.variants %}
+                          <option selected="selected" value="{{ variant.id }}">{{ variant.title }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                </form>
+              {% endfor %}
+            </div>
+            <!-- quick cart content-->
+          {% endif %}
+        {% endfor %}
+
+        <div class="jc-quick-cart-bottom-wrapper w-clearfix">
+          <div class="jc-quick-cart-bottom-content-wrapper">
+
+            <div class="jc-quick-cart-bottom-flex-row">
+              <div>
+                <strong>Subtotal</strong>
+              </div>
+              <div class="jc-quick-cart-bottom-flex-col">
+                <strong>$<span id="jc-cart-price">0.00</span>&nbsp;USD</strong>
+              </div>
+            </div>
+            <div class="jc-quick-cart-bottom-text-wrapper">
+              <p class="jc-quick-cart-bottom-text jc-quick-cart-bottom-text-margin">
+                <em>Shipping calculated at checkout.</em>
+              </p>
+              <p class="jc-quick-cart-bottom-text-alt">
+                <strong>Minimum order amount $150.</strong>
+              </p>
+            </div>
+            <div class="jc-quick-cart-btn-wrapper">
+              <a href="/cart" class="jc-quick-cart-btn w-button tdf_cart_icon">View Cart</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- jc-quick-cart-section -->
+
+
+    </div>
+    <!-- jc-quick-cart-content-wrapper -->
+
+  </div>
+  <!-- jc-container-large -->
+</div>
+{% schema %}
+  {
+    "name": "Quick Order",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Quick Order"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p><em>Minimum order amount $150</em></p>"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -128,11 +128,6 @@
 
 // quick order
                 if ($addToCartForm.hasClass('quick-order-form')) {
-                  var price = $addToCartForm.data('product-price');
-                  var qty = $addToCartForm.find('.jc-js-quantity-selector').val();
-                  var item_total_price = price * qty / 100;
-                  item_total_price = item_total_price.toFixed(2);
-                  $addToCartForm.find('.money-inner-total').text(item_total_price);
                   var total_price = 0;
                   $('.money-inner-total').each(function() {
                     total_price = total_price + Number($(this).text());

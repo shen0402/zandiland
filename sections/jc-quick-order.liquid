@@ -1,9 +1,9 @@
-{{ 'custom-quick-order.css' | asset_url | stylesheet_tag }}
+{{ 'jc-quick-order.css' | asset_url | stylesheet_tag }}
 <div class="jc-quick-cart-hero-wrapper">
   <div class="jc-container-large">
 
     <div class="jc-heading-wrapper jc-heading-wrapper-alt">
-      <h1 class="jc-hero-heading-collection-alt">{{ section.settings.title }}</h1>
+      <h1 class="section-heading center black">{{ section.settings.heading }}</h1>
     </div>
 
     <div class="jc-sub-heading-wrapper-quick-order">
@@ -50,9 +50,11 @@
                 <form
                   method="post"
                   action="/cart/add"
-                  id="product_form_{{ collection.id }}"
+                  id="product_form_{{ product.id }}"
                   accept-charset="UTF-8"
-                  class="shopify-product-form"
+                  class="shopify-product-form quick-order-form"
+                  data-product-id="{{ product.id }}"
+                  data-product-price="{{ product.price }}"
                   enctype="multipart/form-data">
                   <input
                     type="hidden"
@@ -89,7 +91,7 @@
                     </div>
                     <div class="jc-quick-cart-col jc-quick-cart-col-2">
                       <div class="jc-quick-cart-col-text">
-                        <strong>$<span class="money-inner">23.00</span>
+                        <strong>{{ product.price | money }}</span>
                         </strong>
                       </div>
                     </div>
@@ -123,9 +125,6 @@
                           class="btn-main btn-main-sm sk-collection-btn w-button"
                           type="submit"
                           value="Add To Cart">
-                      </div>
-                      <div class="jc-form-success-wrapper-quick">
-                        <p class="jc-form-success-text-quick">Items Successfully Added!</p>
                       </div>
                       <select name="id" class="{% if product.has_only_default_variant or product.variants.size ==1 %}jc-product-input-hide{% endif %} jc-product-select">
                         {% for variant in product.variants %}
@@ -161,7 +160,7 @@
               </p>
             </div>
             <div class="jc-quick-cart-btn-wrapper">
-              <a href="/cart" class="jc-quick-cart-btn w-button tdf_cart_icon">View Cart</a>
+              <a href="/cart" class="btn-main btn-main-sm sk-collection-btn w-button">View Cart</a>
             </div>
           </div>
         </div>
@@ -176,6 +175,7 @@
   </div>
   <!-- jc-container-large -->
 </div>
+<script src="{{ 'jc-quick-order.js' | asset_url }}" type="text/javascript" defer="defer"></script>
 {% schema %}
   {
     "name": "Quick Order",

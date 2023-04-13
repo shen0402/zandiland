@@ -733,6 +733,7 @@
           "hero-main-btn-text": "SHOP OG SCRUB",
           "hero-main-btn-url": "shopify:\/\/products\/deck-scrub-original-118ml",
           "font_color": "#f8f8f8",
+          "font_hover_color": "#000000",
           "btn_bg_color": "#fa94f8",
           "text_placement": "right",
           "text_align": "center",
@@ -1035,6 +1036,31 @@
         "type": "sk-phat-cat-hero",
         "settings": {
           "main_heading": "The Phat Cat Bundle"
+        }
+      },
+      "jc-quick-order": {
+        "type": "jc-quick-order",
+        "blocks": {
+          "46a675e2-8e8f-42ce-9bd8-277cd66d7fa0": {
+            "type": "collection",
+            "settings": {
+              "collection": "clothing"
+            }
+          },
+          "3fdc8ba7-16c1-4401-b18f-0edc7cea50f9": {
+            "type": "collection",
+            "settings": {
+              "collection": "exfoliation"
+            }
+          }
+        },
+        "block_order": [
+          "46a675e2-8e8f-42ce-9bd8-277cd66d7fa0",
+          "3fdc8ba7-16c1-4401-b18f-0edc7cea50f9"
+        ],
+        "settings": {
+          "heading": "Quick Order",
+          "text": "<p><em>Minimum order amount $150<\/em><\/p>"
         }
       }
     },

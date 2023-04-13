@@ -318,6 +318,10 @@ display: none;
     margin-top: 7px;
 }
 
+.quick-order-form .ro_widget {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .jc-quick-cart-heading-col {
         -webkit-box-flex: 0;

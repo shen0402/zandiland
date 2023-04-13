@@ -8,166 +8,258 @@
 {% if product.images.size > 1 %}
   {% assign hover_image = product.images[1] %}
 {% endif %}
-
-  <div class="flex-col-collection">
-    <div class="flex-col-inner-collection">
-      <div>
-        <a href="{{product.url}}" class="flex-col-img-link-collection w-inline-block">
-          <div class="flex-col-img-block-collection">
-            <div class="flex-col-img-inner-collection"><img src="{{ product.featured_image | img_url: '800x' }}" loading="eager" alt="{{product.title}}" class="flex-col-img-collection">{% unless hover_image == blank %}<img src="{{ hover_image | img_url: '800x' }}" loading="eager" alt="{{product.title}}" class="flex-col-img-collection-hover">{% endunless %}</div>
+<div class="flex-col-collection">
+  <div class="flex-col-inner-collection">
+    <div>
+      <a href="{{product.url}}" class="flex-col-img-link-collection w-inline-block">
+        <div class="flex-col-img-block-collection">
+          <div class="flex-col-img-inner-collection"><img
+              src="{{ product.featured_image | img_url: '800x' }}"
+              loading="eager"
+              alt="{{product.title}}"
+              class="flex-col-img-collection">{% unless hover_image == blank %}<img
+                src="{{ hover_image | img_url: '800x' }}"
+                loading="eager"
+                alt="{{product.title}}"
+                class="flex-col-img-collection-hover">{% endunless %}
           </div>
-        </a>
-        <div class="flex-col-info-wrapper-collection">
-          <h4 class="w-basic-heading flex-col-heading-collection">
-            <a href="{{product.url}}" class="flex-col-heading-link-collection">{{product.title}}</a>
-          </h4>
-          {% unless subHeading == blank %}
-              <div class="flex-col-sub-heading-collection mobile-hidden">{{subHeading}}</div>
-          {% endunless %}
-          {% if compare_at_price > price  %}
-            <div class="flex-col-price-text-collection"><span style="text-decoration: line-through;">{{ compare_at_price | money }}</span> {{price | money }}</div>
-          {% else %}
-            <div class="flex-col-price-text-collection">{{price | money }}</div>
-          {% endif %}
         </div>
+      </a>
+      <div class="flex-col-info-wrapper-collection">
+        <h4 class="w-basic-heading flex-col-heading-collection">
+          <a href="{{product.url}}" class="flex-col-heading-link-collection">{{ product.title }}</a>
+        </h4>
+        {% unless subHeading == blank %}
+          <div class="flex-col-sub-heading-collection mobile-hidden">{{ subHeading }}</div>
+        {% endunless %}
+        {% if compare_at_price > price %}
+          <div class="flex-col-price-text-collection">
+            <span style="text-decoration: line-through;">{{ compare_at_price | money }}</span>
+            {{ price | money }}</div>
+        {% else %}
+          <div class="flex-col-price-text-collection">{{ price | money }}</div>
+        {% endif %}
       </div>
-      <div class="flex-col-btn-wrapper-collection">
-        {% form "product", product %}
+    </div>
+    <div class="flex-col-btn-wrapper-collection">
+      {% form "product", product %}
 
         {% comment %}
-         product 7630561935572 - deck glow
-         collection 401408950484 - clothing
-         collection 401408917716 - accessories
-         collection 215816077374 - swag
-         collection 30592172094 - shop package offers 
+        product 7630561935572 - deck glow
+        collection 401408950484 - clothing
+        collection 401408917716 - accessories
+        collection 215816077374 - swag
+        collection 30592172094 - shop package offers 
         {% endcomment %}
         {% assign sk_custom_quantity_step = true %}
 
-          {% if product.id == 7630561935572 or
-            product.id == 1955274981438 or
-            product.id == 6568316207166 %}
+        {% if product.id == 7630561935572 or
+ product.id == 1955274981438 or
+ product.id == 6568316207166 %}
+          {% assign sk_custom_quantity_step = false %}
+        {% endif %}
+
+        {% for collection in product.collections %}
+
+          {% if collection.id == 401408950484 or
+ collection.id == 401408917716 or
+ collection.id == 215816077374 or 
+ collection.id == 30592172094
+ %}
             {% assign sk_custom_quantity_step = false %}
           {% endif %}
+        {% endfor %}
 
-          {% for collection in product.collections %}
+        {% assign is_available = product.available %}
 
-            {% if collection.id == 401408950484 or
-            collection.id == 401408917716 or
-            collection.id == 215816077374 or 
-            collection.id == 30592172094
-             %}
-                {% assign sk_custom_quantity_step = false %}
-            {% endif %}
-          {% endfor %}
+        {% if is_available == true %}
+          {% assign cart_btn_text = 'Shop Now' %}
+          {% assign cart_disabled = '' %}
+        {% else %}
+          {% assign cart_btn_text = 'Sold Out' %}
+          {% assign cart_disabled = 'disabled="disabled"' %}
+        {% endif %}
 
-          {% assign is_available = product.available %}
-
-          {% if is_available == true %}
-              {% assign cart_btn_text = 'Shop Now' %}
-              {% assign cart_disabled = '' %}
-            {% else %}
-              {% assign cart_btn_text = 'Sold Out' %}
-              {% assign cart_disabled = 'disabled="disabled"' %}
-          {% endif %}
-          
-          {% if sk_custom_quantity_step == true %}
-              <input type="number" class="form-quantity-input-product w-input" maxlength="256" name="quantity" value="6" min="6" step="6" id="Quantity" required="" style="display: none;">
-            {% else %}
-              <input type="number" class="form-quantity-input-product w-input" maxlength="256" name="quantity" value="1" min="1" pattern="[0-9]*" id="Quantity" required="" style="display: none;">
-          {% endif %}
-          <select name="id" class="jc-product-input-hide" style="display: none;">
-            {% for variant in product.variants %}
-              <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %}  value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-            {% endfor %}
-          </select>
-
-          
-          <div class="jc-product-page-flex-col jc-product-page-flex-col-input">
-            <div class="jc-product-quantity-wrapper">
-
-              {%comment%}
-              <input type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector">
-              {%endcomment%}
-
-              
-              {% if sk_custom_quantity_step == true %}
-                  <input id="input-6" type="number" class="form-quantity-input-product w-input center " maxlength="256" name="quantity" value="6" min="6" step="6" id="Quantity" required="" style="width: 170px">
-              {% else %}
-                  <input id="input-1" type="number" onclick="checkValid()" class="form-quantity-input-product w-input center" maxlength="256" name="quantity" value="1" min="1" pattern="[0-9]*" id="Quantity" required="" style="width: 170px">
+        {% if sk_custom_quantity_step == true %}
+          <input
+            type="number"
+            class="form-quantity-input-product w-input"
+            maxlength="256"
+            name="quantity"
+            value="6"
+            min="6"
+            step="6"
+            id="Quantity"
+            required=""
+            style="display: none;">
+        {% else %}
+          <input
+            type="number"
+            class="form-quantity-input-product w-input"
+            maxlength="256"
+            name="quantity"
+            value="1"
+            min="1"
+            pattern="[0-9]*"
+            id="Quantity"
+            required=""
+            style="display: none;">
+        {% endif %}
+        <select
+          name="id"
+          class="jc-product-input-hide"
+          style="display: none;">
+          {% for variant in product.variants %}
+            <option
+              {% if variant == product.selected_or_first_available_variant %}
+              selected="selected"
               {% endif %}
+              value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+          {% endfor %}
+        </select>
 
-              <script>
-                function checkValid() {
-                  const input6 = document.getElementById("input-6");
-                  if (!input6.checkValidity()) {
-                    document.getElementById("demo").innerHTML = "You must purchase this product in quantities of 6";
-                  } else {
-                    
-                  } 
-                } 
 
-              </script>
+        <div class="jc-product-page-flex-col jc-product-page-flex-col-input">
+          <div class="jc-product-quantity-wrapper">
 
-              {%comment%}
-              {% if sk_custom_quantity_step == true %}
+            {% comment %}
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector">
+            {% endcomment %}
 
-              <a id="jc-quantity-btn-down" href="#" class="jc-quantity-btn w-inline-block">
-                <div class="jc-quantity-btn-breaker"></div>
-              </a>
-               
 
-               <input id="updates_large_{{ item.key }}" class="cart__qty-input js-quantity-selector jc-js-quantity-selector" type="number"
-               name="updates[]" value="1" min="1"  pattern="[0-9]*"
-               data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop required="">
+            {% if sk_custom_quantity_step == true %}
+              <input
+                id="input-6"
+                type="number"
+                class="form-quantity-input-product w-input center "
+                maxlength="256"
+                name="quantity"
+                value="6"
+                min="6"
+                step="6"
+                id="Quantity"
+                required=""
+                style="width: 170px">
+            {% else %}
+              <input
+                id="input-1"
+                type="number"
+                onclick="checkValid()"
+                class="form-quantity-input-product w-input center"
+                maxlength="256"
+                name="quantity"
+                value="1"
+                min="1"
+                pattern="[0-9]*"
+                id="Quantity"
+                required=""
+                style="width: 170px">
+            {% endif %}
 
-                <a id="jc-quantity-btn-up" href="#" class="jc-quantity-btn w-inline-block">
-                  <div class="jc-quantity-btn-breaker"></div>
-                  <div class="jc-quantity-btn-breaker jc-quantity-btn-breaker-alt"></div>
-                </a>
-                
+            <script>
+              function checkValid() {
+                const input6 = document.getElementById("input-6");
+                if (! input6.checkValidity()) {
+                  document.getElementById("demo").innerHTML = "You must purchase this product in quantities of 6";
+                } else {}
+              }
+            </script>
 
-                {% else %}
+            {% comment %}
+            {% if sk_custom_quantity_step == true %}
 
-                
-                <a id="jc-quantity-btn-down" href="#" class="jc-quantity-btn w-inline-block">
-                  <div class="jc-quantity-btn-breaker"></div>
-                </a>
-                 
-                
-                <input id="updates_large_{{ item.key }}" class="cart__qty-input js-quantity-selector jc-js-quantity-selector" type="number"
-                name="updates[]" value="1" min="1"  pattern="[0-9]*"
-                data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop required="">
+            <a id="jc-quantity-btn-down" href="#" class="jc-quantity-btn w-inline-block">
+            <div class="jc-quantity-btn-breaker"></div>
+            </a>
 
-               
-                <a id="jc-quantity-btn-up" href="#" class="jc-quantity-btn w-inline-block">
-                  <div class="jc-quantity-btn-breaker"></div>
-                  <div class="jc-quantity-btn-breaker jc-quantity-btn-breaker-alt"></div>
-                </a>
-                
-                {% endif %}
-                {%endcomment%}
-             
-              
-            </div>
-            
+
+            <input id="updates_large_{{ item.key }}" class="cart__qty-input js-quantity-selector jc-js-quantity-selector" type="number"
+            name="updates[]" value="1" min="1"  pattern="[0-9]*"
+            data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop required="">
+
+            <a id="jc-quantity-btn-up" href="#" class="jc-quantity-btn w-inline-block">
+            <div class="jc-quantity-btn-breaker"></div>
+            <div class="jc-quantity-btn-breaker jc-quantity-btn-breaker-alt"></div>
+            </a>
+
+
+            {% else %}
+
+
+            <a id="jc-quantity-btn-down" href="#" class="jc-quantity-btn w-inline-block">
+            <div class="jc-quantity-btn-breaker"></div>
+            </a>
+
+
+            <input id="updates_large_{{ item.key }}" class="cart__qty-input js-quantity-selector jc-js-quantity-selector" type="number"
+            name="updates[]" value="1" min="1"  pattern="[0-9]*"
+            data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop required="">
+
+
+            <a id="jc-quantity-btn-up" href="#" class="jc-quantity-btn w-inline-block">
+            <div class="jc-quantity-btn-breaker"></div>
+            <div class="jc-quantity-btn-breaker jc-quantity-btn-breaker-alt"></div>
+            </a>
+
+            {% endif %}
+            {% endcomment %}
+
+
           </div>
 
-          <a class="btn-main btn-main-sm sk-collection-btn w-button" href="{{product.url}}" >
-            {{cart_btn_text}}
-          </a>
+        </div>
+        <form
+          method="post"
+          action="/cart/add"
+          id="product_form_{{ product.id }}"
+          accept-charset="UTF-8"
+          class="shopify-product-form collection-product-form"
+          enctype="multipart/form-data">
+          <input
+            type="hidden"
+            name="form_type"
+            value="product">
+          <input
+            type="hidden"
+            name="utf8"
+            value="✓">
+          <div class="jc-product-quantity-wrapper">
+            <a href="#" class="jc-quantity-btn w-inline-block jc-quantity-btn-down jc-quantity-btn-quick-order">
+              <div class="jc-quantity-btn-breaker"></div>
+            </a>
+            <input
+              type="number"
+              id="Quantity"
+              name="quantity"
+              value="0"
+              min="1"
+              class="js-quantity-selector jc-js-quantity-selector">
+            <a href="#" class="jc-quantity-btn w-inline-block jc-quantity-btn-up jc-quantity-btn-quick-order">
+              <div class="jc-quantity-btn-breaker" style="background-color: rgb(0, 0, 0);"></div>
+              <div class="jc-quantity-btn-breaker jc-quantity-btn-breaker-alt" style="background-color: rgb(0, 0, 0);"></div>
+            </a>
+          </div>
+          <input
+            class="btn-main btn-main-sm sk-collection-btn w-button"
+            type="submit"
+            value="Add To Cart">
+          <select name="id" class="jc-product-input-hide jc-product-select">
+            {% for variant in product.variants %}
+              <option selected="selected" value="{{ variant.id }}">{{ variant.title }}</option>
+            {% endfor %}
+          </select>
+        </form>
 
-          {%comment%}
+        {% comment %}
 
-          <button class="btn-main btn-main-sm sk-collection-btn w-button" type="submit" {{cart_disabled}} >
-            {{cart_btn_text}}
-          </button>
-          {%endcomment%}
+        <button class="btn-main btn-main-sm sk-collection-btn w-button" type="submit" {{cart_disabled}} >
+        {{cart_btn_text}}
+        </button>
+        {% endcomment %}
 
-        {% endform %}  
-        
+      {% endform %}
 
-      </div>
+
     </div>
   </div>
-
-
+</div>

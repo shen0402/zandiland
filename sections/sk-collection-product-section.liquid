@@ -1,3 +1,4 @@
+{{ 'jc-quick-order.css' | asset_url | stylesheet_tag }}
 <div class="mid-wrapper-collection">
   <div class="container-large less-padding">
     <div class="menu-row-collection" data-ix="fadeindown">
@@ -12,7 +13,7 @@
           <div>BUNDLES</div>
         </a>
       </div>
-      
+
       <div class="menu-bullet-collection">•</div>
       <div class="menu-col-collection">
         <a href="/collections/exfoliation" class="menu-link-collection w-inline-block">
@@ -50,17 +51,16 @@
       {% paginate collection.products by 12 %}
 
 
-          <div class="flex-row-collection" data-ix="fadeinright">
-            {% for product in collection.products %}
-               
-              {% render 'sk-product-loop', product: product %}
+        <div class="flex-row-collection" data-ix="fadeinright">
+          {% for product in collection.products %}
 
-            {% endfor %}   
+            {% render 'sk-product-loop', product: product %}
+
+          {% endfor %}
 
 
-            
 
-          </div>
+        </div>
 
         {% if paginate.pages > 1 %}
           {% include 'pagination' %}
@@ -75,15 +75,15 @@
 
     {% endif %}
 
-    
+
 
   </div>
 </div>
-
+<script
+  src="{{ 'jc-quick-order.js' | asset_url }}"
+  type="text/javascript"
+  defer="defer"></script>
 
 {% schema %}
-{
-  "name": "Product Section"
-}
+  {"name": "Product Section"}
 {% endschema %}
-

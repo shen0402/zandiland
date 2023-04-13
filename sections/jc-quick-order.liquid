@@ -126,7 +126,7 @@
                           type="submit"
                           value="Add To Cart">
                       </div>
-                      <select name="id" class="{% if product.has_only_default_variant or product.variants.size ==1 %}jc-product-input-hide{% endif %} jc-product-select">
+                      <select name="id" class="jc-product-input-hide jc-product-select">
                         {% for variant in product.variants %}
                           <option selected="selected" value="{{ variant.id }}">{{ variant.title }}</option>
                         {% endfor %}
@@ -154,9 +154,6 @@
             <div class="jc-quick-cart-bottom-text-wrapper">
               <p class="jc-quick-cart-bottom-text jc-quick-cart-bottom-text-margin">
                 <em>Shipping calculated at checkout.</em>
-              </p>
-              <p class="jc-quick-cart-bottom-text-alt">
-                <strong>Minimum order amount $150.</strong>
               </p>
             </div>
             <div class="jc-quick-cart-btn-wrapper">

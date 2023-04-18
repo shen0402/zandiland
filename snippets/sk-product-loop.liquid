@@ -120,7 +120,7 @@
 
 
         <div class="jc-product-page-flex-col jc-product-page-flex-col-input">
-          <div class="jc-product-quantity-wrapper">
+          <div class="jc-product-quantity-wrapper" data-qty-step="{% if product.metafields.product_info.min_quantity_6 %}6{% else %}1{% endif %}">
 
             {% comment %}
             <input type="number" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector jc-js-quantity-selector">
@@ -223,7 +223,7 @@
             type="hidden"
             name="utf8"
             value="✓">
-          <div class="jc-product-quantity-wrapper">
+          <div class="jc-product-quantity-wrapper" data-qty-step="{% if product.metafields.product_info.min_quantity_6 %}6{% else %}1{% endif %}">
             <a href="#" class="jc-quantity-btn w-inline-block jc-quantity-btn-down jc-quantity-btn-quick-order">
               <div class="jc-quantity-btn-breaker"></div>
             </a>

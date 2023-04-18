@@ -8,8 +8,9 @@ function updatePrice($addToCartForm) {
 
 $(document).on('click', '.jc-quantity-btn-down', function(e){
     e.preventDefault();
+    var step = $(this).closest('.jc-product-quantity-wrapper').data('qty-step');
     var input = $(this).closest('.jc-product-quantity-wrapper').find('.jc-js-quantity-selector');
-    var qty = Number(input.val()) - 6;
+    var qty = Number(input.val()) - step;
     if (qty >= 0) {
         input.val(qty);
     }
@@ -20,9 +21,10 @@ $(document).on('click', '.jc-quantity-btn-down', function(e){
 
 $(document).on('click', '.jc-quantity-btn-up', function(e){
     e.preventDefault();
+    var step = $(this).closest('.jc-product-quantity-wrapper').data('qty-step');
     var input = $(this).closest('.jc-product-quantity-wrapper').find('.jc-js-quantity-selector');
     console.log(input.val());
-    var qty = Number(input.val()) + 6;
+    var qty = Number(input.val()) + step;
     input.val(qty);
     if ($(this).closest('.quick-order-form').length) {
         updatePrice($(this).closest('.quick-order-form'));

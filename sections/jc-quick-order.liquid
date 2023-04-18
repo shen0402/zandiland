@@ -96,7 +96,7 @@
                       </div>
                     </div>
                     <div class="jc-quick-cart-col jc-quick-cart-col-3">
-                      <div class="jc-product-quantity-wrapper">
+                        <div class="jc-product-quantity-wrapper" data-qty-step="{% if product.metafields.product_info.min_quantity_6 %}6{% else %}1{% endif %}">
                         <a href="#" class="jc-quantity-btn w-inline-block jc-quantity-btn-down jc-quantity-btn-quick-order">
                           <div class="jc-quantity-btn-breaker"></div>
                         </a>

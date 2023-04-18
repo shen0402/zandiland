@@ -1058,26 +1058,12 @@
             "settings": {
               "collection": "serums"
             }
-          },
-          "0b520e55-519e-4e17-9bdc-8f2a3cc9ac05": {
-            "type": "collection",
-            "settings": {
-              "collection": "back-bar"
-            }
-          },
-          "e271ac3a-6e2c-4e04-b0d2-92d887267ac3": {
-            "type": "collection",
-            "settings": {
-              "collection": "clothing"
-            }
           }
         },
         "block_order": [
           "3fdc8ba7-16c1-4401-b18f-0edc7cea50f9",
           "46a675e2-8e8f-42ce-9bd8-277cd66d7fa0",
-          "a6b9f34b-0341-4ebf-8862-3dd84750e7e1",
-          "0b520e55-519e-4e17-9bdc-8f2a3cc9ac05",
-          "e271ac3a-6e2c-4e04-b0d2-92d887267ac3"
+          "a6b9f34b-0341-4ebf-8862-3dd84750e7e1"
         ],
         "settings": {
           "heading": "Quick Order",

@@ -1044,26 +1044,12 @@
           "3fdc8ba7-16c1-4401-b18f-0edc7cea50f9": {
             "type": "collection",
             "settings": {
-              "collection": "exfoliation"
-            }
-          },
-          "46a675e2-8e8f-42ce-9bd8-277cd66d7fa0": {
-            "type": "collection",
-            "settings": {
-              "collection": "hydration"
-            }
-          },
-          "a6b9f34b-0341-4ebf-8862-3dd84750e7e1": {
-            "type": "collection",
-            "settings": {
-              "collection": "serums"
+              "collection": "all-products"
             }
           }
         },
         "block_order": [
-          "3fdc8ba7-16c1-4401-b18f-0edc7cea50f9",
-          "46a675e2-8e8f-42ce-9bd8-277cd66d7fa0",
-          "a6b9f34b-0341-4ebf-8862-3dd84750e7e1"
+          "3fdc8ba7-16c1-4401-b18f-0edc7cea50f9"
         ],
         "settings": {
           "heading": "Quick Order",

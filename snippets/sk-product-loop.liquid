@@ -242,7 +242,8 @@
           <input
             class="btn-main btn-main-sm sk-collection-btn w-button"
             type="submit"
-            value="Add To Cart">
+            value="{% if product.selected_or_first_available_variant.available %}Add To Cart{% else %}OUT OF STOCK{% endif %}"
+            {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
           <select name="id" class="jc-product-input-hide jc-product-select">
             {% for variant in product.variants %}
               <option selected="selected" value="{{ variant.id }}">{{ variant.title }}</option>
